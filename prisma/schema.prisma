@@ -1,20 +1,53 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// Note:
+// - Install the prisma extension in VSCode to get syntax highlighting and better auto-completion
+
+// Syntax:
+// not null:
+//    attr: dtype? -> nullable
+//    attr: dtype  -> default is not null
+// default:
+//    attr: dtype @default(value)
+// primary key:
+//    id: dtype @id @default(autoincrement())
+// timestamp:
+//    createdAt DateTime   @default(now())
+//    updatedAt DateTime   @updatedAt
+//
+// See more:
+// relation: https://www.prisma.io/docs/concepts/components/prisma-schema/relations
+// enum: https://www.prisma.io/docs/concepts/components/prisma-schema/data-model#defining-enums
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  // provider = "postgresql"
-  // url      = env("DATABASE_URL")
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  email     String   @unique
-  name      String?
+// coffee_shops
+// coffee_shop_ID       int       PK, NOT NULL
+// name                 varchar   NOT NULL,50B
+// business_hours       varchar   NOT NULL
+// description          text      最大: 2000 文字
+// phone_number         varchar   NOT NULL,10B,0~9
+// owner_ID※1          int       FK, NOT NULL
+// status※3            int       NOT NULL (0 or 1 or 2)
+// address              varchar   NOT NULL
+// verified ※2         int       NOT NULL (0 or 1)
+model coffee_shops {
+  id             Int    @id @default(autoincrement())
+  name           String @db.VarChar(50)
+  business_hours String
+  description    String @default("") @db.Text()
+  phone_number   String @db.VarChar(10)
+  status         Int // todo: defalut=?
+  address        String
+  verified       Int // todo: defalut=?
+
+  // todo: add owner_ID※1 fkey
 }
