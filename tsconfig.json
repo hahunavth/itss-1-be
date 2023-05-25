@@ -6,7 +6,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    // "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -17,7 +16,6 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    // new config
     "importHelpers": true,
     "lib": ["es2019"],
     "target": "es2019",
@@ -27,9 +25,11 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@configs/*": ["src/configs/*"],
-      "@src/*": ["src/*"]
+      "@src/*": ["src/*"],
+      "@app/prisma-crud": ["libs/prisma-crud/src"],
+      "@app/prisma-crud/*": ["libs/prisma-crud/src/*"]
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "libs/prisma-crud/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

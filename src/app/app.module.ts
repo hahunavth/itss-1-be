@@ -18,17 +18,19 @@ import {
   PrismaExceptionFilter,
 } from '@src/common';
 import { configuration } from '@src/configs';
+import { CoffeeShopController, CoffeeShopModule } from '@src/coffee_shops';
 
 @Module({
   imports: [
     PrismaModule,
+    CoffeeShopModule,
     // Configuration
     // https://docs.nestjs.com/techniques/configuration
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: [configuration],
-    }),
-    CommonModule,
+    // ConfigModule.forRoot({
+    //   isGlobal: true,
+    //   load: [configuration],
+    // }),
+    // CommonModule,
     CacheModule.register({
       isGlobal: true,
     }),
@@ -64,9 +66,9 @@ import { configuration } from '@src/configs';
       provide: APP_INTERCEPTOR,
       useClass: CacheInterceptor,
     },
-    // Global Pipe, Validation check
-    // https://docs.nestjs.com/pipes#global-scoped-pipes
-    // https://docs.nestjs.com/techniques/validation
+    // // Global Pipe, Validation check
+    // // https://docs.nestjs.com/pipes#global-scoped-pipes
+    // // https://docs.nestjs.com/techniques/validation
     {
       provide: APP_PIPE,
       useValue: new ValidationPipe({

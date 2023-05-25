@@ -3,6 +3,19 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "plugins": ["@nestjs/swagger"]
+  },
+  "projects": {
+    "prisma-crud": {
+      "type": "library",
+      "root": "libs/prisma-crud",
+      "entryFile": "index",
+      "sourceRoot": "libs/prisma-crud/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/prisma-crud/tsconfig.lib.json"
+      }
+    }
   }
 }

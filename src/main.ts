@@ -27,6 +27,7 @@ async function bootstrap() {
       enableDebugMessages: true,
       whitelist: true, // removes any property of query, body, and a parameter that is not part of our DTO
       transform: true, // enables the transformation of our incoming request
+      always: true, // always transform incoming request
     }),
   );
 
@@ -46,6 +47,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();
