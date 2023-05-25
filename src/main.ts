@@ -3,9 +3,9 @@ import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 
 import { AppModule } from '@app/app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { PrismaService } from '@app/prisma/prisma.service';
-import { HttpExceptionFilter } from '@src/exceptions/http-exception.filter';
-import { PrismaExceptionFilter } from '@src/exceptions/prisma-exception.filter';
+import { PrismaService } from '@src/common/prisma/prisma.service';
+import { HttpExceptionFilter } from '@src/common/filters/http-exception.filter';
+import { PrismaExceptionFilter } from '@src/common/filters/prisma-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
