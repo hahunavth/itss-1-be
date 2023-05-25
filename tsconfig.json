@@ -6,7 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    // "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -16,6 +16,20 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
-  }
+    "noFallthroughCasesInSwitch": false,
+    // new config
+    "importHelpers": true,
+    "lib": ["es2019"],
+    "target": "es2019",
+    "typeRoots": ["node_modules/@types"],
+    "types": ["jest", "node"],
+    "rootDir": ".",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@configs/*": ["src/configs/*"],
+      "@src/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
