@@ -40,14 +40,135 @@ datasource db {
 // address              varchar   NOT NULL
 // verified ※2         int       NOT NULL (0 or 1)
 model coffee_shops {
-  id             Int    @id @default(autoincrement())
-  name           String @db.VarChar(50)
-  business_hours String
-  description    String @default("") @db.Text()
-  phone_number   String @db.VarChar(10)
-  status         Int // todo: defalut=?
-  address        String
-  verified       Int // todo: defalut=?
+  coffee_shop_ID         Int                      @id @default(autoincrement())
+  name                   String                   @db.VarChar(50)
+  business_hours         String
+  description            String?                  @default("") @db.Text()
+  phone_number           String                   @db.VarChar(10)
+  status                 Int // todo: defalut=?
+  address                String
+  verified               Int // todo: defalut=?
+  reviews                reviews[]
+  user                   users                    @relation(fields: [owner_ID], references: [user_ID])
+  owner_ID               Int                      @unique
+  images                 images[]
+  bookmarks              bookmarks[]
+  coffee_shop_categories coffee_shop_categories[]
+  coffee_shop_devices    coffee_shop_devices[]
+}
 
-  // todo: add owner_ID※1 fkey
+// users 
+// user_ID			     int			  PK, NOT NULL
+// username			     varchar		30B, NOT NULL
+// password ※1			varchar		 NOT NULL,30B
+// email			       varchar		NOT NULL,30B
+// phone_number			 varchar		10B
+// date_of_birth		 DATE			
+// image_url			   varchar			
+// role ※2			    int			   NOT NULL (0 or 1)
+model users {
+  user_ID       Int           @id @default(autoincrement())
+  username      String        @db.VarChar(30)
+  password      String        @db.VarChar(30)
+  email         String        @db.VarChar(30)
+  phone_number  String?       @db.VarChar(10)
+  date_of_birth DateTime?
+  image_url     String?
+  role          Int
+  coffee_shops  coffee_shops?
+  reviews       reviews[]
+  bookmarks     bookmarks[]
+}
+
+// reviews
+// review_ID			      int			    PK, NOT NULL			
+// coffee_shop_ID※1		 int			   FK, NOT NULL			
+// user_ID※2			     int			   FK, NOT NULL			
+// review			          varchar		  NOT NULL			
+// star			            int			    NOT NULL, (1,2,3,4,5)			
+// create_at			      DATETIME		default(NOW())			
+model reviews {
+  review_ID      Int          @id @default(autoincrement())
+  review         String       @db.Text
+  star           Int
+  create_at      DateTime     @default(now())
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [coffee_shop_ID])
+  coffee_shop_ID Int
+  user           users        @relation(fields: [user_ID], references: [user_ID])
+  user_ID        Int
+  images         images[]
+}
+
+// images
+// image_ID			      int			    PK, NOT NULL
+// image_url			    varchar			NOT NULL
+// coffee_shop_ID			int			    FK ※1
+// review_ID			    int			    FK ※2
+model images {
+  image_ID       Int          @id @default(autoincrement())
+  image_url      String
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [coffee_shop_ID])
+  coffee_shop_ID Int
+  review         reviews      @relation(fields: [review_ID], references: [review_ID])
+  review_ID      Int
+}
+
+// bookmarks
+// bookmark_ID			       int		 PK
+// coffee_shop_ID ※1			int			FK
+// userID ※2			        int			FK
+model bookmarks {
+  bookmark_ID    Int          @id @default(autoincrement())
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [coffee_shop_ID])
+  coffee_shop_ID Int
+  user           users        @relation(fields: [user_ID], references: [user_ID])
+  user_ID        Int
+}
+
+// categories
+// category_ID			int			    PK
+// name			        varchar			NOT NULL
+// description			varchar			最大: 255 文字
+model categories {
+  category_ID            Int                      @id @default(autoincrement())
+  name                   String
+  description            String?                  @db.VarChar(255)
+  coffee_shop_categories coffee_shop_categories[]
+}
+
+// devices
+// device_ID			int			    PK
+// name			      varchar			NOT NULL
+model devices {
+  device_ID           Int                   @id @default(autoincrement())
+  name                String
+  coffee_shop_devices coffee_shop_devices[]
+}
+
+// coffee_shop_categories			
+// ID			          int			PK
+// category_ID			int			FK※1
+// coffee_shop_ID		int			FK※2
+model coffee_shop_categories {
+  ID             Int          @id @default(autoincrement())
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [coffee_shop_ID])
+  coffee_shop_ID Int
+  category       categories   @relation(fields: [category_ID], references: [category_ID])
+  category_ID    Int
+}
+
+// coffee_shop_devices
+// ID			            int			    PK
+// device_ID			    int			    FK※1
+// coffee_shop_ID			int			    FK※2
+// quantity			      int			    NOT NULL
+// status			        varchar			NOT NULL, 最大: 255 文字
+model coffee_shop_devices {
+  ID             Int          @id @default(autoincrement())
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [coffee_shop_ID])
+  coffee_shop_ID Int
+  device         devices      @relation(fields: [device_ID], references: [device_ID])
+  device_ID      Int
+  quantity       Int
+  status         String       @db.VarChar(255)
 }
