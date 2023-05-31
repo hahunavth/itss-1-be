@@ -21,4 +21,6 @@ export class CoffeeShopEntity implements coffee_shops {
   address: string;
   @IsNumber()
   verified: number;
+
+  owner_ID: number;
 }
