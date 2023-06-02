@@ -23,10 +23,10 @@ import {
   UpdateCoffeeShopDto,
 } from './dto';
 import { PrismaService } from '@src/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiProperty, ApiTags } from '@nestjs/swagger';
 import { TimeQT } from './dto/timeqt.dto';
 
-@ApiTags('Coffee Shop')
+@ApiTags('Coffee Shop (deprecated)')
 @Controller('coffee_shop')
 export class CoffeeShopController {
   constructor(
@@ -35,6 +35,7 @@ export class CoffeeShopController {
   ) {}
 
   @Get()
+  @ApiOperation({ deprecated: true })
   @ApiGetAllQuery(AttrQueryCoffeeShopDto, { filter: true })
   async findAll(
     @PaginateQuery() paginate: PaginateReqQueryT,
@@ -46,16 +47,19 @@ export class CoffeeShopController {
   }
 
   @Post()
+  @ApiOperation({ deprecated: true })
   create(@Body() createCoffeeShopDto: CreateCoffeeShopDto) {
     return this.service.create(createCoffeeShopDto);
   }
 
   @Get(':id')
+  @ApiOperation({ deprecated: true })
   findOne(@Param('id') id: string) {
     return this.service.findOne(+id);
   }
 
   @Patch(':id')
+  @ApiOperation({ deprecated: true })
   update(
     @Param('id') id: string,
     @Body() updateCoffeeShopDto: UpdateCoffeeShopDto,
@@ -64,6 +68,7 @@ export class CoffeeShopController {
   }
 
   @Delete(':id')
+  @ApiOperation({ deprecated: true })
   remove(@Param('id') id: string) {
     return this.service.remove(+id);
   }

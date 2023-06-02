@@ -49,52 +49,52 @@ model coffee_shops {
   address                String
   verified               Int // todo: defalut=?
   reviews                reviews[]
-  user                   users                    @relation(fields: [owner_ID], references: [id])
-  owner_ID               Int                      @unique
+  owner_ID               Int?
+  user                   users?                   @relation(fields: [owner_ID], references: [id])
   images                 images[]
   bookmarks              bookmarks[]
   coffee_shop_categories coffee_shop_categories[]
   coffee_shop_devices    coffee_shop_devices[]
 }
 
-// users 
+// users
 // user_ID			     int			  PK, NOT NULL
 // username			     varchar		30B, NOT NULL
 // password ※1			varchar		 NOT NULL,30B
 // email			       varchar		NOT NULL,30B
 // phone_number			 varchar		10B
-// date_of_birth		 DATE			
-// image_url			   varchar			
+// date_of_birth		 DATE
+// image_url			   varchar
 // role ※2			    int			   NOT NULL (0 or 1)
 model users {
-  id            Int           @id @default(autoincrement()) @map("user_ID")
-  username      String        @db.VarChar(30)
-  password      String        @db.VarChar(30)
-  email         String        @db.VarChar(30)
-  phone_number  String?       @db.VarChar(10)
+  id            Int            @id @default(autoincrement()) @map("user_ID")
+  username      String         @db.VarChar(30)
+  password      String         @db.VarChar(30)
+  email         String         @db.VarChar(30)
+  phone_number  String?        @db.VarChar(10)
   date_of_birth DateTime?
   image_url     String?
   role          Int
-  coffee_shops  coffee_shops?
+  coffee_shops  coffee_shops[]
   reviews       reviews[]
   bookmarks     bookmarks[]
 }
 
 // reviews
-// review_ID			      int			    PK, NOT NULL			
-// coffee_shop_ID※1		 int			   FK, NOT NULL			
-// user_ID※2			     int			   FK, NOT NULL			
-// review			          varchar		  NOT NULL			
-// star			            int			    NOT NULL, (1,2,3,4,5)			
-// create_at			      DATETIME		default(NOW())			
+// review_ID			      int			    PK, NOT NULL
+// coffee_shop_ID※1		 int			   FK, NOT NULL
+// user_ID※2			     int			   FK, NOT NULL
+// review			          varchar		  NOT NULL
+// star			            int			    NOT NULL, (1,2,3,4,5)
+// create_at			      DATETIME		default(NOW())
 model reviews {
-  id             Int          @id @default(autoincrement()) @map("review_ID")
-  review         String       @db.Text
+  id             Int           @id @default(autoincrement()) @map("review_ID")
+  review         String        @db.Text
   star           Int
-  create_at      DateTime     @default(now())
-  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id])
+  create_at      DateTime      @default(now())
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
-  user           users        @relation(fields: [user_ID], references: [id])
+  user           users?        @relation(fields: [user_ID], references: [id])
   user_ID        Int
   images         images[]
 }
@@ -105,11 +105,11 @@ model reviews {
 // coffee_shop_ID			int			    FK ※1
 // review_ID			    int			    FK ※2
 model images {
-  id             Int          @id @default(autoincrement()) @map("image_ID")
+  id             Int           @id @default(autoincrement()) @map("image_ID")
   image_url      String
-  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id])
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
-  review         reviews      @relation(fields: [review_ID], references: [id])
+  review         reviews?      @relation(fields: [review_ID], references: [id])
   review_ID      Int
 }
 
@@ -118,10 +118,10 @@ model images {
 // coffee_shop_ID ※1			int			FK
 // userID ※2			        int			FK
 model bookmarks {
-  id             Int          @id @default(autoincrement()) @map("bookmark_ID")
-  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id])
+  id             Int           @id @default(autoincrement()) @map("bookmark_ID")
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
-  user           users        @relation(fields: [user_ID], references: [id])
+  user           users?        @relation(fields: [user_ID], references: [id])
   user_ID        Int
 }
 
@@ -145,15 +145,15 @@ model devices {
   coffee_shop_devices coffee_shop_devices[]
 }
 
-// coffee_shop_categories			
+// coffee_shop_categories
 // ID			          int			PK
 // category_ID			int			FK※1
 // coffee_shop_ID		int			FK※2
 model coffee_shop_categories {
-  id             Int          @id @default(autoincrement())
-  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id])
+  id             Int           @id @default(autoincrement())
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
-  category       categories   @relation(fields: [category_ID], references: [id])
+  category       categories?   @relation(fields: [category_ID], references: [id])
   category_ID    Int
 }
 
@@ -164,11 +164,11 @@ model coffee_shop_categories {
 // quantity			      int			    NOT NULL
 // status			        varchar			NOT NULL, 最大: 255 文字
 model coffee_shop_devices {
-  id             Int          @id @default(autoincrement())
-  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id])
+  id             Int           @id @default(autoincrement())
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
-  device         devices      @relation(fields: [device_ID], references: [id])
+  device         devices?      @relation(fields: [device_ID], references: [id])
   device_ID      Int
   quantity       Int
-  status         String       @db.VarChar(255)
+  status         String        @db.VarChar(255)
 }

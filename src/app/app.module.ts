@@ -19,11 +19,21 @@ import {
 } from '@src/common';
 import { configuration } from '@src/configs';
 import { CoffeeShopController, CoffeeShopModule } from '@src/coffee_shops';
+import { PrismaCrudModule } from 'nestjs-prisma-crud';
+import { CoffeeShopV2Module } from '@src/coffee-shop-v2/coffee-shop-v2.module';
 
 @Module({
   imports: [
     PrismaModule,
+    /**
+     *  PrismaCrudModule registers the PrismaService provider globally.
+     *  No need to provide it anywhere else!
+     */
+    PrismaCrudModule.register({
+      prismaService: PrismaService,
+    }),
     CoffeeShopModule,
+    CoffeeShopV2Module,
     // Configuration
     // https://docs.nestjs.com/techniques/configuration
     // ConfigModule.forRoot({
