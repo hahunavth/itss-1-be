@@ -93,9 +93,9 @@ model reviews {
   review         String        @db.Text
   star           Int
   create_at      DateTime      @default(now())
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffee_shop_ID Int
-  user           users?        @relation(fields: [user_ID], references: [id])
+  user           users?        @relation(fields: [user_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   user_ID        Int
   images         images[]
 
@@ -125,12 +125,11 @@ model images {
 // userID ※2			        int			FK
 model bookmarks {
   // id             Int           @id @default(autoincrement()) @map("bookmark_ID")
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffee_shop_ID Int
-  user           users?        @relation(fields: [user_ID], references: [id])
+  user           users?        @relation(fields: [user_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   user_ID        Int
 
-  // @@unique([coffee_shop_ID, user_ID])
   @@id([coffee_shop_ID, user_ID])
 }
 
@@ -160,12 +159,11 @@ model devices {
 // coffee_shop_ID		int			FK※2
 model coffee_shop_categories {
   // id             Int           @id @default(autoincrement())
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffee_shop_ID Int
-  category       categories?   @relation(fields: [category_ID], references: [id])
+  category       categories?   @relation(fields: [category_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   category_ID    Int
 
-  // @@unique([coffee_shop_ID, category_ID], name: "coffee_shop_categories_coffee_shop_ID_category_ID_unique")
   @@id([coffee_shop_ID, category_ID])
 }
 
@@ -177,13 +175,12 @@ model coffee_shop_categories {
 // status			        varchar			NOT NULL, 最大: 255 文字
 model coffee_shop_devices {
   // id             Int           @id @default(autoincrement())
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
+  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffee_shop_ID Int
-  device         devices?      @relation(fields: [device_ID], references: [id])
+  device         devices?      @relation(fields: [device_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   device_ID      Int
   quantity       Int
   status         String        @db.VarChar(255)
-  // @@unique([coffee_shop_ID, device_ID], name: "coffee_shop_devices_coffee_shop_ID_device_ID_unique")
 
   @@id([coffee_shop_ID, device_ID])
 }

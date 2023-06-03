@@ -88,11 +88,10 @@ export class CoffeeShopV2Controller {
     const dev_name_list = attrQuery.devices || [];
 
     const shopList: any[] = await this.prismaService.$queryRaw`
-      SELECT "coffee_shop_ID", "name", "business_hours", "description", "phone_number", "status", "address", "verified"
+      SELECT "coffee_shop_ID" as "id", "name", "business_hours", "description", "phone_number", "status", "address", "verified"
       FROM
         "coffee_shops"
       WHERE
-        -- ("coffee_shops"."coffee_shop_ID" = "C"."id" or ${!useCateFilter})
         ("coffee_shops"."coffee_shop_ID"
           in (
             SELECT "coffee_shop_ID" as "id" FROM (
@@ -101,14 +100,12 @@ export class CoffeeShopV2Controller {
                       RIGHT JOIN "coffee_shop_categories" ON "categories"."category_ID" = "coffee_shop_categories"."category_ID"
                       ORDER BY "name"
                     ) as "categories"
-              WHERE "categories"."name" IN (${Prisma.join(
-                cate_name_list || ['test'],
-              )})
+              WHERE "categories"."name" IN (${
+                cate_name_list.length ? Prisma.join(cate_name_list) : 'test'
+              } )
               GROUP BY "coffee_shop_ID"
             ) AS B
-            WHERE "cate_names" = ${(cate_name_list || ['test'])
-              .sort()
-              .join(',')}
+            WHERE "cate_names" = ${cate_name_list.sort().join(',')}
           )
         or ${!useCateFilter})
         AND
@@ -125,7 +122,7 @@ export class CoffeeShopV2Controller {
               })
               GROUP BY "coffee_shop_ID"
             ) AS B
-            WHERE "cate_names" = ${(dev_name_list || ['test']).sort().join(',')}
+            WHERE "cate_names" = ${dev_name_list.sort().join(',')}
           )
         or ${!useDevFilter})
         AND ("coffee_shops"."name" LIKE ${
@@ -207,6 +204,11 @@ export class CoffeeShopV2Controller {
     @Param('id') id: number,
     // @Query('crudQuery') crudQuery: string
   ) {
+    // return this.prismaService.coffee_shops.delete({
+    //   where: {
+    //     id,
+    //   },
+    // });
     return this.coffeeShopV2Service.remove(id, { crudQuery: {} });
   }
 }
