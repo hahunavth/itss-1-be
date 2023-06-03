@@ -37,13 +37,13 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
     description: 'Find coffee shop with all categories name',
   })
   @IsOptional()
-  @IsArray()
+  // @IsArray()
   categories?: string[];
   @ApiProperty({
     description: 'Find coffee shop with all devices name',
   })
   @IsOptional()
-  @IsArray()
+  // @IsArray()
   devices?: string[];
 
   toQuery() {

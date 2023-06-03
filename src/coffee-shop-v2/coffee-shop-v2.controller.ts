@@ -25,7 +25,7 @@ import {
 } from '@src/common';
 
 // version 2
-@ApiTags('Coffee Shop v2')
+@ApiTags('Coffee Shop')
 // @ApiHeader({
 //   name: 'X-MyHeader',
 //   description: 'Custom header',
@@ -37,8 +37,6 @@ export class CoffeeShopV2Controller {
     private readonly prismaService: PrismaService,
   ) {}
 
-  // @ApiProperty({
-  // })
   @ApiOperation({
     summary: 'Create a coffee shop',
     description: `
@@ -46,6 +44,7 @@ export class CoffeeShopV2Controller {
     - Request body:
       - common fields: name, business_hours, description, phone_number, status, address, verified
       - categories: string[] (optional) - only create if the category exists else return error
+      - TODO: create with devices
     - Response body: CoffeeShop
     `,
   })
@@ -77,6 +76,18 @@ export class CoffeeShopV2Controller {
     });
   }
 
+  @ApiOperation({
+    summary: 'Find coffee shop list',
+    description: `
+    - Request query:
+      - name: if not provided, return all, else return all that match the name (contains)
+      - categories: string[] (optional) - only create if the category exists else return error
+    - Response body:
+      - data: list of record
+      - pageSize: number of record per page
+      - page: current page
+    `,
+  })
   @Get()
   async findMany(
     @Query() attrQuery: QueryCoffeeShopV2Dto,
@@ -84,8 +95,18 @@ export class CoffeeShopV2Controller {
   ) {
     const useCateFilter = !!attrQuery.categories;
     const useDevFilter = !!attrQuery.devices;
-    const cate_name_list = attrQuery.categories || [];
-    const dev_name_list = attrQuery.devices || [];
+
+    console.log('attrQuery.categories');
+    console.log(attrQuery.categories);
+
+    const cate_name_list =
+      typeof attrQuery.categories === 'string'
+        ? [attrQuery.categories]
+        : attrQuery.categories || [];
+    const dev_name_list =
+      typeof attrQuery.devices === 'string'
+        ? [attrQuery.devices]
+        : attrQuery.devices || [];
 
     const shopList: any[] = await this.prismaService.$queryRaw`
       SELECT "coffee_shop_ID" as "id", "name", "business_hours", "description", "phone_number", "status", "address", "verified"
@@ -139,7 +160,7 @@ export class CoffeeShopV2Controller {
       shopList.map(async (s) => {
         const devices = await this.prismaService.coffee_shop_devices.findMany({
           where: {
-            coffee_shop_ID: s.coffee_shop_ID,
+            coffee_shop_ID: s.id,
           },
           include: {
             device: true,
@@ -148,10 +169,19 @@ export class CoffeeShopV2Controller {
         const categories =
           await this.prismaService.coffee_shop_categories.findMany({
             where: {
-              coffee_shop_ID: s.coffee_shop_ID,
+              coffee_shop_ID: s.id,
             },
             include: {
               category: true,
+            },
+          });
+        let user = null;
+        if (s.owner_ID)
+          user = await this.prismaService.users.findFirst({
+            where: {
+              id: {
+                equals: s.owner_ID,
+              },
             },
           });
 
@@ -159,6 +189,7 @@ export class CoffeeShopV2Controller {
           ...s,
           coffee_shop_devices: devices,
           coffee_shop_categories: categories,
+          owner: user,
         };
       }),
     );
@@ -199,6 +230,11 @@ export class CoffeeShopV2Controller {
     return updated;
   }
 
+  @ApiOperation({
+    summary: 'Delete coffee shop',
+    description:
+      'Also delete all related records in coffee_shop_categories, coffee_shop_devices, bookmarks, images, reviews',
+  })
   @Delete(':id')
   async remove(
     @Param('id') id: number,

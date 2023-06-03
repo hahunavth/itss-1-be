@@ -43,12 +43,15 @@ async function bootstrap() {
   // see https://docs.nestjs.com/openapi/introduction
   const config = new DocumentBuilder()
     .setTitle('Eko api')
-    .setDescription('')
+    .setDescription('The eko API description')
     .setVersion('1.0')
-    // .addTag('eko')
     .build();
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  const document = SwaggerModule.createDocument(app, config, {});
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: {
+      docExpansion: 'none',
+    },
+  });
 
   await app.listen(3000);
 }

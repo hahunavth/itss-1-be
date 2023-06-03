@@ -21,6 +21,8 @@ import { configuration } from '@src/configs';
 import { CoffeeShopController, CoffeeShopModule } from '@src/coffee_shops';
 import { PrismaCrudModule } from 'nestjs-prisma-crud';
 import { CoffeeShopV2Module } from '@src/coffee-shop-v2/coffee-shop-v2.module';
+import { UserModule } from '@src/users/user.module';
+import { DevicesModule } from '@src/devices';
 
 @Module({
   imports: [
@@ -34,6 +36,8 @@ import { CoffeeShopV2Module } from '@src/coffee-shop-v2/coffee-shop-v2.module';
     }),
     CoffeeShopModule,
     CoffeeShopV2Module,
+    UserModule,
+    DevicesModule,
     // Configuration
     // https://docs.nestjs.com/techniques/configuration
     // ConfigModule.forRoot({
