@@ -1,9 +1,9 @@
-# fly.toml file generated for itss-1-be on 2023-05-31T17:29:59+07:00
+# fly.toml file generated for itss-1-be on 2023-06-03T00:12:34+07:00
 
 app = "itss-1-be"
 kill_signal = "SIGINT"
 kill_timeout = 5
-primary_region = "hkg"
+primary_region = "sin"
 processes = []
 
 [env]

@@ -18,6 +18,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 COPY yarn.lock ./
 COPY prisma ./prisma/
+RUN yarn install --production
 RUN yarn --only=production
 RUN yarn prisma:generate
 COPY . .

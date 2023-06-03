@@ -1,4 +1,4 @@
-name: fly
+name: Fly.io
 on:
   push:
     branches: [main]

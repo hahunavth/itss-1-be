@@ -27,7 +27,7 @@ import { ApiOperation, ApiProperty, ApiTags } from '@nestjs/swagger';
 import { TimeQT } from './dto/timeqt.dto';
 
 @ApiTags('Coffee Shop (deprecated)')
-@Controller('coffee_shop')
+@Controller({ path: 'coffee-shops', version: '1' })
 export class CoffeeShopController {
   constructor(
     private readonly service: CoffeeShopService,

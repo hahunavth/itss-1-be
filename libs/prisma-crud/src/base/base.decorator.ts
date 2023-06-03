@@ -10,10 +10,13 @@ import { PaginateReqQueryT } from './base.dto';
  *
  * Created on Wed Dec 14 2022
  * Copyright (c) 2022 Hahunavth
+ *
+ * @deprecated
  */
 
 /*
  * @brief Parse: req.query => paginate attrs
+ * @deprecated
  */
 export const PaginateQuery = createParamDecorator(
   (_data: unknown, ctx: ExecutionContext): PaginateReqQueryT => {
@@ -39,6 +42,7 @@ export const PaginateQuery = createParamDecorator(
  * @brief Nhận danh sách filter từ request.query
  *
  * @param _filterCls Class chứa attribute để filter
+ * @deprecated
  */
 export const AttrQuery = createParamDecorator(
   (_filterCls: Type<any>, ctx: ExecutionContext) => {

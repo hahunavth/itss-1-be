@@ -18,6 +18,8 @@ import { paginateResponse } from './response.mapper';
  *
  * Created on Wed Dec 14 2022
  * Copyright (c) 2022 Hahunavth
+ *
+ * @deprecated
  */
 export abstract class CRUDService<M, C, U> {
   constructor(

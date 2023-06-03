@@ -21,7 +21,8 @@
 // enum: https://www.prisma.io/docs/concepts/components/prisma-schema/data-model#defining-enums
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
 }
 
 datasource db {
@@ -97,6 +98,8 @@ model reviews {
   user           users?        @relation(fields: [user_ID], references: [id])
   user_ID        Int
   images         images[]
+
+  @@unique([coffee_shop_ID, user_ID])
 }
 
 // images
@@ -105,12 +108,15 @@ model reviews {
 // coffee_shop_ID			int			    FK ※1
 // review_ID			    int			    FK ※2
 model images {
-  id             Int           @id @default(autoincrement()) @map("image_ID")
-  image_url      String
+  // id             Int           @id @default(autoincrement()) @map("image_ID")
+  image_url      String        @unique // NOTE: Modified: add unique constraint
   coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
   review         reviews?      @relation(fields: [review_ID], references: [id])
   review_ID      Int
+
+  // @@unique([coffee_shop_ID, review_ID])
+  @@id([coffee_shop_ID, review_ID])
 }
 
 // bookmarks
@@ -118,11 +124,14 @@ model images {
 // coffee_shop_ID ※1			int			FK
 // userID ※2			        int			FK
 model bookmarks {
-  id             Int           @id @default(autoincrement()) @map("bookmark_ID")
+  // id             Int           @id @default(autoincrement()) @map("bookmark_ID")
   coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
   user           users?        @relation(fields: [user_ID], references: [id])
   user_ID        Int
+
+  // @@unique([coffee_shop_ID, user_ID])
+  @@id([coffee_shop_ID, user_ID])
 }
 
 // categories
@@ -131,7 +140,7 @@ model bookmarks {
 // description			varchar			最大: 255 文字
 model categories {
   id                     Int                      @id @default(autoincrement()) @map("category_ID")
-  name                   String
+  name                   String                   @unique // NOTE: Modified: add unique constraint
   description            String?                  @db.VarChar(255)
   coffee_shop_categories coffee_shop_categories[]
 }
@@ -141,7 +150,7 @@ model categories {
 // name			      varchar			NOT NULL
 model devices {
   id                  Int                   @id @default(autoincrement()) @map("device_ID")
-  name                String
+  name                String                @unique // NOTE: Modified: add unique constraint
   coffee_shop_devices coffee_shop_devices[]
 }
 
@@ -150,11 +159,14 @@ model devices {
 // category_ID			int			FK※1
 // coffee_shop_ID		int			FK※2
 model coffee_shop_categories {
-  id             Int           @id @default(autoincrement())
+  // id             Int           @id @default(autoincrement())
   coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
   category       categories?   @relation(fields: [category_ID], references: [id])
   category_ID    Int
+
+  // @@unique([coffee_shop_ID, category_ID], name: "coffee_shop_categories_coffee_shop_ID_category_ID_unique")
+  @@id([coffee_shop_ID, category_ID])
 }
 
 // coffee_shop_devices
@@ -164,11 +176,14 @@ model coffee_shop_categories {
 // quantity			      int			    NOT NULL
 // status			        varchar			NOT NULL, 最大: 255 文字
 model coffee_shop_devices {
-  id             Int           @id @default(autoincrement())
+  // id             Int           @id @default(autoincrement())
   coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
   device         devices?      @relation(fields: [device_ID], references: [id])
   device_ID      Int
   quantity       Int
   status         String        @db.VarChar(255)
+  // @@unique([coffee_shop_ID, device_ID], name: "coffee_shop_devices_coffee_shop_ID_device_ID_unique")
+
+  @@id([coffee_shop_ID, device_ID])
 }

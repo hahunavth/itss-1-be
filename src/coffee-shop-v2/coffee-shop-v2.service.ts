@@ -9,10 +9,16 @@ export class CoffeeShopV2Service extends PrismaCrudService {
       allowedJoins: [
         'user',
         'bookmarks',
-        'coffee_shop_categories',
-        'coffee_shop_devices',
+        'coffee_shop_devices.device',
+        'coffee_shop_categories.category',
+        'categories.hasEvery',
+        'coffee_shop_categories.categories.hasEvery',
       ],
-      defaultJoins: ['user', 'coffee_shop_categories', 'coffee_shop_devices'],
+      defaultJoins: [
+        'user',
+        'coffee_shop_categories.category',
+        'coffee_shop_devices.device',
+      ],
     });
   }
 }

@@ -19,7 +19,7 @@ async function bootstrap() {
 
   app.enableVersioning({
     type: VersioningType.URI,
-    defaultVersion: '1',
+    defaultVersion: '2',
   });
 
   app.useGlobalPipes(
@@ -27,6 +27,9 @@ async function bootstrap() {
       enableDebugMessages: true,
       whitelist: true, // removes any property of query, body, and a parameter that is not part of our DTO
       transform: true, // enables the transformation of our incoming request
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
       always: true, // always transform incoming request
     }),
   );
