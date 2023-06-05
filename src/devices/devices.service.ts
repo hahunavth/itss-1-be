@@ -10,4 +10,14 @@ export class DevicesService extends PrismaCrudService {
       defaultJoins: [],
     });
   }
+
+  // /**
+  //  * Add new device if not exists
+  //  * Add new coffee shop device if not exists
+  //  * @param coffeeShopId
+  //  * @param deviceId
+  //  */
+  // async addCoffeeShopDevice(coffeeShopId: number, deviceId: number) {
+
+  // }
 }

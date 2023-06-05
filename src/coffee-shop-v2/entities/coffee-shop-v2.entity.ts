@@ -1,9 +1,15 @@
-import { OmitType } from '@nestjs/swagger';
 import { IsString, IsNumber, IsOptional, IsDefined } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { AddDeviceDto } from './add-device.dto';
+import { coffee_shops } from '@prisma/client';
+import { CreateDeviceDto } from '@src/devices';
+import { AddDeviceDto } from '../dto/add-device.dto';
+import { Type } from 'class-transformer';
 
-export class CreateCoffeeShopV2Dto {
+export class CoffeeShopV2Entity implements coffee_shops {
+  @IsNumber()
+  id: number;
+  @IsNumber()
+  owner_ID: number;
   @ApiProperty()
   @IsString()
   name: string;
@@ -21,11 +27,10 @@ export class CreateCoffeeShopV2Dto {
   @IsNumber()
   verified: number;
 
-  @IsOptional()
   @IsString({ each: true })
   categories: string[];
 
-  @IsOptional()
-  @ApiProperty({ type: () => AddDeviceDto, isArray: true })
+  @IsDefined()
+  @ApiProperty({ type: () => [AddDeviceDto], isArray: true })
   devices: AddDeviceDto[];
 }

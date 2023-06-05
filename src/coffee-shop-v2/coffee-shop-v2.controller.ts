@@ -10,11 +10,22 @@ import {
   UsePipes,
   ValidationPipe,
   ConflictException,
+  NotFoundException,
+  BadRequestException,
+  Put,
 } from '@nestjs/common';
 import { CoffeeShopV2Service } from './coffee-shop-v2.service';
 import { CreateCoffeeShopV2Dto } from './dto/create-coffee-shop-v2.dto';
 import { UpdateCoffeeShopV2Dto } from './dto/update-coffee-shop-v2.dto';
-import { ApiHeader, ApiOperation, ApiProperty, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBadRequestResponse,
+  ApiHeader,
+  ApiNotFoundResponse,
+  ApiOperation,
+  ApiProperty,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { QueryCoffeeShopV2Dto } from './dto/query-coffee-shop.dto';
 import { PaginateQueryDto } from '../dto/query-paginate.dto';
 import { Prisma, PrismaClient } from '@prisma/client';
@@ -23,6 +34,9 @@ import {
   connectPrismaMNCreateOne,
   flattenPrismaMNJoinMany,
 } from '@src/common';
+import { AddDeviceDto } from './dto/add-device.dto';
+import { CoffeeShopV2Entity } from './entities/coffee-shop-v2.entity';
+import { SetCategoriesDto } from './dto';
 
 // version 2
 @ApiTags('Coffee Shop')
@@ -48,14 +62,15 @@ export class CoffeeShopV2Controller {
     - Response body: CoffeeShop
     `,
   })
+  @ApiResponse({
+    status: 201,
+    type: CoffeeShopV2Entity,
+  })
   @Post()
-  async create(
-    @Body() createCoffeeShopV2Dto: CreateCoffeeShopV2Dto,
-    // @Query('crudQuery') crudQuery: string,
-  ) {
+  async create(@Body() createCoffeeShopV2Dto: CreateCoffeeShopV2Dto) {
     const createObj = createCoffeeShopV2Dto;
 
-    if (createObj.categories !== undefined) {
+    if (createObj.categories) {
       const additional = await connectPrismaMNCreateOne(
         this.prismaService,
         'coffee_shop_categories',
@@ -68,7 +83,24 @@ export class CoffeeShopV2Controller {
       delete createObj.categories;
       createObj['coffee_shop_categories'] =
         additional['coffee_shop_categories'];
-      console.log(additional['coffee_shop_categories'].createMany.data);
+    }
+
+    if (createObj.devices) {
+      const additional = await connectPrismaMNCreateOne(
+        this.prismaService,
+        'coffee_shop_devices',
+        'devices',
+        createObj.devices.map((d) => d.name),
+        'name',
+        'device_ID',
+        'id',
+        createObj.devices.map((d) => ({
+          quantity: d.quantity,
+          status: d.status,
+        })),
+      );
+      delete createObj.devices;
+      createObj['coffee_shop_devices'] = additional['coffee_shop_devices'];
     }
 
     return await this.prismaService.coffee_shops.create({
@@ -87,6 +119,11 @@ export class CoffeeShopV2Controller {
       - pageSize: number of record per page
       - page: current page
     `,
+  })
+  @ApiResponse({
+    status: 200,
+    isArray: true,
+    type: CoffeeShopV2Entity,
   })
   @Get()
   async findMany(
@@ -194,33 +231,34 @@ export class CoffeeShopV2Controller {
       }),
     );
 
-    const result = flattenPrismaMNJoinMany(
-      shopListNested,
-      'coffee_shop_categories',
-      'category',
-      [],
-    );
-
     return {
-      data: result,
+      data: await this.coffeeShopV2Service.transformPrismaNestedJoinToEntityList(
+        shopListNested,
+      ),
       ...paginate.toQuery(),
     };
   }
 
+  @ApiOperation({
+    summary: 'Find coffee shop by id',
+  })
+  @ApiResponse({
+    status: 200,
+    type: CoffeeShopV2Entity,
+  })
   @Get(':id')
-  async findOne(
-    @Param('id') id: number,
-    // @Query('crudQuery') crudQuery: string,
-  ) {
+  async findOne(@Param('id') id: number) {
     const match = await this.coffeeShopV2Service.findOne(id, { crudQuery: {} });
-    return match;
+    return this.coffeeShopV2Service.transformPrismaNestedJoinToEntity(match);
   }
 
+  @ApiOperation({
+    summary: 'Update coffee shop (only coffee_shop table)',
+  })
   @Patch(':id')
   async update(
     @Param('id') id: number,
     @Body() updateCoffeeShopV2Dto: UpdateCoffeeShopV2Dto,
-    // @Query('crudQuery') crudQuery: string,
   ) {
     const updated = await this.coffeeShopV2Service.update(
       id,
@@ -236,15 +274,159 @@ export class CoffeeShopV2Controller {
       'Also delete all related records in coffee_shop_categories, coffee_shop_devices, bookmarks, images, reviews',
   })
   @Delete(':id')
-  async remove(
-    @Param('id') id: number,
-    // @Query('crudQuery') crudQuery: string
-  ) {
-    // return this.prismaService.coffee_shops.delete({
-    //   where: {
-    //     id,
-    //   },
-    // });
+  async remove(@Param('id') id: number) {
     return this.coffeeShopV2Service.remove(id, { crudQuery: {} });
+  }
+
+  @ApiOperation({
+    summary: 'Add a device to a coffee shop',
+  })
+  @ApiNotFoundResponse({
+    description: 'Coffee shop not found',
+  })
+  @ApiBadRequestResponse({
+    description: 'Coffee shop already has this device',
+  })
+  @Post(':id/devices')
+  async addDevice(
+    @Param('id') coffeeShopId: number,
+    @Body() addDeviceDto: AddDeviceDto,
+  ) {
+    // find coffee shop
+    const coffeeShop = await this.prismaService.coffee_shops.findFirst({
+      where: {
+        id: {
+          equals: coffeeShopId,
+        },
+      },
+    });
+    if (!coffeeShop) {
+      throw new NotFoundException('Coffee shop not found');
+    }
+
+    // find device, if not exist, create new
+    let device = await this.prismaService.devices.findFirst({
+      where: {
+        name: {
+          equals: addDeviceDto.name,
+        },
+      },
+    });
+    if (!device) {
+      device = await this.prismaService.devices.create({
+        data: {
+          name: addDeviceDto.name,
+          // coffee_shop_devices
+        },
+      });
+    }
+
+    // check if coffee_shop_devices already exist
+    const coffeeShopDevice =
+      await this.prismaService.coffee_shop_devices.findFirst({
+        where: {
+          coffee_shop_ID: {
+            equals: coffeeShopId,
+          },
+          device_ID: {
+            equals: device.id,
+          },
+        },
+      });
+    if (coffeeShopDevice) {
+      throw new BadRequestException('Device already exist');
+    }
+    // create coffee_shop_devices relation
+    const newCoffeeShopDevice =
+      await this.prismaService.coffee_shop_devices.create({
+        data: {
+          coffee_shop_ID: coffeeShopId,
+          device_ID: device.id,
+          quantity: addDeviceDto.quantity,
+          status: addDeviceDto.status,
+        },
+      });
+
+    return newCoffeeShopDevice;
+  }
+
+  @ApiOperation({
+    summary: 'Set category list of a coffee shop',
+  })
+  @ApiNotFoundResponse({
+    description: 'Coffee shop not found',
+  })
+  @ApiNotFoundResponse({
+    description: 'Categories not found',
+  })
+  @Put(':id/categories')
+  async addCategory(
+    @Param('id') coffeeShopId: number,
+    @Body() addCategoryDto: SetCategoriesDto,
+  ) {
+    const categories = addCategoryDto.categories;
+
+    // find coffee shop
+    const coffeeShop = await this.prismaService.coffee_shops.findFirst({
+      where: {
+        id: {
+          equals: coffeeShopId,
+        },
+      },
+    });
+    if (!coffeeShop) {
+      throw new NotFoundException('Coffee shop not found');
+    }
+
+    // delete all coffee_shop_categories of this coffee shop
+    await this.prismaService.coffee_shop_categories.deleteMany({
+      where: {
+        coffee_shop_ID: {
+          equals: coffeeShopId,
+        },
+      },
+    });
+
+    // find all categories
+    const categoryList = await this.prismaService.categories.findMany({
+      where: {
+        name: {
+          in: categories,
+        },
+      },
+    });
+    const notExistsCategories = categories.filter(
+      (c) => !categoryList.find((cl) => cl.name === c),
+    );
+    if (notExistsCategories.length > 0) {
+      throw new BadRequestException(
+        `Categories not found: ${notExistsCategories.join(', ')}`,
+      );
+      // // create
+      // const newCategories = await Promise.all(
+      //   notExistsCategories.map(async (c) => {
+      //     return await this.prismaService.categories.create({
+      //       data: {
+      //         name: c,
+      //       },
+      //     });
+      //   }),
+      // );
+      // categoryList.push(...newCategories);
+    }
+
+    // create new coffee_shop_categories
+    const newCoffeeShopCategories = await Promise.all(
+      categoryList.map(async (c) => {
+        return await this.prismaService.coffee_shop_categories.create({
+          data: {
+            coffee_shop_ID: coffeeShopId,
+            category_ID: c.id,
+          },
+        });
+      }),
+    );
+
+    return newCoffeeShopCategories;
   }
 }

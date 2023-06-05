@@ -11,7 +11,7 @@ import {
 import { DevicesService } from './devices.service';
 import { CreateDeviceDto } from './dto/create-device.dto';
 import { UpdateDeviceDto } from './dto/update-device.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Devices')
 @Controller('Devices')
@@ -43,6 +43,9 @@ export class DevicesController {
     return updated;
   }
 
+  @ApiOperation({
+    summary: 'Delete a device (and all relations with coffee_shops)',
+  })
   @Delete(':id')
   async remove(@Param('id') id: number) {
     return this.devicesService.remove(id, { crudQuery: {} });

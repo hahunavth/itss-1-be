@@ -13,6 +13,7 @@ export async function connectPrismaMNCreateOne(
   targetFindKey: string,
   targetCreateIntermediateTableKey: string,
   targetCreateTargetTableKey: string,
+  additionalIntermediateData?: any[],
 ) {
   const rc = await prismaService[targetTable].findMany({
     where: {
@@ -32,12 +33,34 @@ export async function connectPrismaMNCreateOne(
     );
   }
 
+  const rc2 = [];
+  if (additionalIntermediateData && additionalIntermediateData.length > 0) {
+    if (additionalIntermediateData.length !== targetValues.length) {
+      throw new BadRequestException(
+        'additionalIntermediateData length must be equal to targetValues length',
+      );
+    }
+    for (let i = 0; i < rc.length; i++) {
+      rc2.push({
+        [targetCreateIntermediateTableKey]: rc[i][targetCreateTargetTableKey],
+        ...additionalIntermediateData[i],
+      });
+    }
+  } else {
+    for (let i = 0; i < rc.length; i++) {
+      rc2.push({
+        [targetCreateIntermediateTableKey]: rc[i][targetCreateTargetTableKey],
+      });
+    }
+  }
+
   const additional = {
     [relationName]: {
       createMany: {
-        data: rc.map((r) => ({
-          [targetCreateIntermediateTableKey]: r[targetCreateTargetTableKey],
-        })),
+        data: rc2,
+        // rc.map((r) => ({
+        //   [targetCreateIntermediateTableKey]: r[targetCreateTargetTableKey],
+        // })),
       },
     },
   };
