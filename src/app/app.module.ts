@@ -76,9 +76,9 @@ import { AuthModule } from '@src/auth/auth.module';
     //   },
     // ]),
   ],
-  controllers: [AppController],
+  // controllers: [AppController],
   providers: [
-    AppService,
+    // AppService,
     PrismaService,
     {
       provide: APP_FILTER,

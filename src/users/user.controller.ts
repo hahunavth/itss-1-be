@@ -77,14 +77,14 @@ export class UserController {
     return this.userService.remove(id);
   }
 
-  @ApiOperation({})
-  @Get('users/:id/reviews')
-  async getReviewsByUser(@Param('id') id: number) {
-    // todo: paginate
-    return this.prismaService.reviews.findMany({
-      where: {
-        user_ID: id,
-      },
-    });
-  }
+  // @ApiOperation({})
+  // @Get('users/:id/reviews')
+  // async getReviewsByUser(@Param('id') id: number) {
+  //   // todo: paginate
+  //   return this.prismaService.reviews.findMany({
+  //     where: {
+  //       user_ID: id,
+  //     },
+  //   });
+  // }
 }
