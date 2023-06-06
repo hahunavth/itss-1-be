@@ -26,7 +26,7 @@ import { PrismaService } from '@src/common';
 import { ApiOperation, ApiProperty, ApiTags } from '@nestjs/swagger';
 import { TimeQT } from './dto/timeqt.dto';
 
-@ApiTags('Coffee Shop (deprecated)')
+@ApiTags('coffee-shops')
 @Controller({ path: 'coffee-shops', version: '1' })
 export class CoffeeShopController {
   constructor(

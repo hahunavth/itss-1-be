@@ -16,7 +16,7 @@ import { QueryReviewsDto } from './dto/query-reviews.dto';
 
 class UserCreateReviewsDto extends OmitType(CreateReviewDto, ['user_ID']) {}
 
-@ApiTags('Reviews')
+@ApiTags('reviews')
 @Controller('users/:user_ID/reviews')
 export class UserReviewsController {
   constructor(private readonly reviewsService: ReviewsService) {}

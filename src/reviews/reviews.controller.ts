@@ -15,7 +15,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { QueryReviewsDto } from './dto/query-reviews.dto';
 import { PaginateQueryDto } from '@src/dto/query-paginate.dto';
 
-@ApiTags('Reviews')
+@ApiTags('reviews')
 @Controller('reviews')
 export class ReviewsController {
   constructor(private readonly reviewsService: ReviewsService) {}

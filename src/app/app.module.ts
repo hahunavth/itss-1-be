@@ -24,22 +24,26 @@ import { CoffeeShopV2Module } from '@src/coffee-shop-v2/coffee-shop-v2.module';
 import { UserModule } from '@src/users/user.module';
 import { DevicesModule } from '@src/devices';
 import { ReviewsModule } from '@src/reviews/reviews.module';
+import { CategoriesModule } from '@src/categories/categories.module';
 
 @Module({
   imports: [
     PrismaModule,
     /**
      *  PrismaCrudModule registers the PrismaService provider globally.
-     *  No need to provide it anywhere else!
      */
     PrismaCrudModule.register({
       prismaService: PrismaService,
     }),
+    /**
+     * Api service modules
+     */
     CoffeeShopModule,
     CoffeeShopV2Module,
     UserModule,
     DevicesModule,
     ReviewsModule,
+    CategoriesModule,
     // Configuration
     // https://docs.nestjs.com/techniques/configuration
     // ConfigModule.forRoot({

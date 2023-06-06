@@ -7,16 +7,28 @@ import {
   Param,
   Delete,
   Query,
+  NotFoundException,
+  BadRequestException,
 } from '@nestjs/common';
 import { DevicesService } from './devices.service';
 import { CreateDeviceDto } from './dto/create-device.dto';
 import { UpdateDeviceDto } from './dto/update-device.dto';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBadRequestResponse,
+  ApiNotFoundResponse,
+  ApiOperation,
+  ApiTags,
+} from '@nestjs/swagger';
+import { PrismaService } from '@src/common';
+import { AddDeviceDto } from '../coffee-shop-v2/dto/add-device.dto';
 
-@ApiTags('Devices')
-@Controller('Devices')
+@ApiTags('devices')
+@Controller('devices')
 export class DevicesController {
-  constructor(private readonly devicesService: DevicesService) {}
+  constructor(
+    private readonly devicesService: DevicesService,
+    private readonly prismaService: PrismaService,
+  ) {}
 
   @Post()
   async create(@Body() createDeviceDto: CreateDeviceDto) {

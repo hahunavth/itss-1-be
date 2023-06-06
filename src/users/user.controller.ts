@@ -23,14 +23,14 @@ import { PaginateQueryDto } from '@src/dto/query-paginate.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller()
-@ApiTags('User')
+@ApiTags('users')
 export class UserController {
   constructor(
     private readonly userService: UserService,
     private prismaService: PrismaService,
   ) {}
 
-  @Post('user')
+  @Post('users')
   @ApiOperation({})
   async signupUser(@Body() userData: CreateUserDto): Promise<UserEntity> {
     return this.userService.create(userData);
