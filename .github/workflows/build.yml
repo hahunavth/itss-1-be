@@ -4,7 +4,7 @@ on:
     branches:
       - '**'        # matches every branch
       - '!dev'      # excludes dev
-      - '!master'   # excludes master
+      - '!main'   # excludes master
 
 jobs:
   test:

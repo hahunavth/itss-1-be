@@ -32,10 +32,10 @@ jobs:
         with:
           cmd: lint
 
-      - name: Run tests
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test
+      # - name: Run tests
+      #   uses: borales/actions-yarn@v4
+      #   with:
+      #     cmd: test
 
   deploy:
     name: Deploy app

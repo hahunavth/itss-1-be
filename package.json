@@ -107,7 +107,8 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@app/prisma-crud(|/.*)$": "<rootDir>/libs/prisma-crud/src/$1"
+      "^@app/prisma-crud(|/.*)$": "<rootDir>/libs/prisma-crud/src/$1",
+      "^@src(|/.*)$": "<rootDir>/src/$1"
     }
   }
 }
