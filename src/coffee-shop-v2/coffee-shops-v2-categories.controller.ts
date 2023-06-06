@@ -10,6 +10,9 @@ import { ApiNotFoundResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { PrismaService } from '@src/common';
 import { SetCategoriesDto } from './dto/set-categories.dto';
 
+/**
+ * @deprecated
+ */
 @ApiTags('coffee-shops-v2')
 @Controller('coffee-shops')
 export class CoffeeShopsV2CategoriesController {

@@ -286,13 +286,33 @@ export class CoffeeShopV2Controller {
   }
 
   @ApiOperation({
-    summary: 'Update coffee shop (only coffee_shop table)',
+    summary: 'Update coffee shop (include set categories and devices)',
+  })
+  @ApiNotFoundResponse({
+    description: 'Coffee shop not found',
+  })
+  @ApiNotFoundResponse({
+    description: 'Categories not found',
   })
   @Patch(':id')
   async update(
     @Param('id') id: number,
     @Body() updateCoffeeShopV2Dto: UpdateCoffeeShopV2Dto,
   ) {
+    if (updateCoffeeShopV2Dto.categories) {
+      this.coffeeShopV2Service.setCategories(id, {
+        categories: updateCoffeeShopV2Dto.categories,
+      });
+      delete updateCoffeeShopV2Dto.categories;
+    }
+
+    if (updateCoffeeShopV2Dto.devices) {
+      this.coffeeShopV2Service.setDevices(id, {
+        devices: updateCoffeeShopV2Dto.devices,
+      });
+      delete updateCoffeeShopV2Dto.devices;
+    }
+
     const updated = await this.coffeeShopV2Service.update(
       id,
       updateCoffeeShopV2Dto,

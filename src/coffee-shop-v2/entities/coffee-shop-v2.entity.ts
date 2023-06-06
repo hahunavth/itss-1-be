@@ -38,7 +38,7 @@ export class CoffeeShopV2Entity implements coffee_shops {
   categories: string[];
 
   @IsDefined()
-  @ApiProperty({ type: () => [AddDeviceDto], isArray: true })
+  @ApiProperty({ type: () => AddDeviceDto, isArray: true })
   devices: AddDeviceDto[];
 
   @ApiProperty({ type: () => ReviewSummaryDto })

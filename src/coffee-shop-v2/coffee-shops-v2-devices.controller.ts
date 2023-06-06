@@ -17,6 +17,9 @@ import { PrismaService } from '@src/common';
 import { AddDeviceDto } from './dto/add-device.dto';
 import { SetDevicesDto } from './dto/set-devices.dto';
 
+/**
+ * @deprecated
+ */
 @ApiTags('coffee-shops-v2')
 @Controller('coffee-shops')
 export class CoffeeShopsV2DevicesController {
