@@ -71,7 +71,7 @@ model users {
   id            Int            @id @default(autoincrement()) @map("user_ID")
   username      String         @db.VarChar(30)
   password      String         @db.VarChar(30)
-  email         String         @db.VarChar(30)
+  email         String         @unique @db.VarChar(30) // NOTE: Modified: add unique constraint
   phone_number  String?        @db.VarChar(10)
   date_of_birth DateTime?
   image_url     String?

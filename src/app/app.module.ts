@@ -25,6 +25,7 @@ import { UserModule } from '@src/users/user.module';
 import { DevicesModule } from '@src/devices';
 import { ReviewsModule } from '@src/reviews/reviews.module';
 import { CategoriesModule } from '@src/categories/categories.module';
+import { AuthModule } from '@src/auth/auth.module';
 
 @Module({
   imports: [
@@ -44,6 +45,7 @@ import { CategoriesModule } from '@src/categories/categories.module';
     DevicesModule,
     ReviewsModule,
     CategoriesModule,
+    AuthModule,
     // Configuration
     // https://docs.nestjs.com/techniques/configuration
     // ConfigModule.forRoot({

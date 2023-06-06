@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsDate } from 'class-validator';
+import { IsString, IsNumber, IsDate, IsEmail } from 'class-validator';
 import { users } from '@prisma/client';
 import { Type } from 'class-transformer';
 
@@ -7,6 +7,7 @@ export class UserEntity implements users {
   id: number;
   @IsString()
   password: string;
+  @IsEmail()
   @IsString()
   email: string;
   @IsString()
