@@ -5,6 +5,13 @@ import { CreateDeviceDto } from '@src/devices';
 import { AddDeviceDto } from '../dto/add-device.dto';
 import { Type } from 'class-transformer';
 
+export class ReviewSummaryDto {
+  @IsNumber()
+  star: number;
+  @IsNumber()
+  count: number;
+}
+
 export class CoffeeShopV2Entity implements coffee_shops {
   @IsNumber()
   id: number;
@@ -33,4 +40,7 @@ export class CoffeeShopV2Entity implements coffee_shops {
   @IsDefined()
   @ApiProperty({ type: () => [AddDeviceDto], isArray: true })
   devices: AddDeviceDto[];
+
+  @ApiProperty({ type: () => ReviewSummaryDto })
+  review: ReviewSummaryDto;
 }

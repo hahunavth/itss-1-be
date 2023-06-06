@@ -27,7 +27,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UserController {
   constructor(
     private readonly userService: UserService,
-    private prisma: PrismaService,
+    private prismaService: PrismaService,
   ) {}
 
   @Post('user')
@@ -47,7 +47,7 @@ export class UserController {
   @Get('users')
   // @ApiQuery({ type: FilterUserDto })
   async getAllUser(@Query() paginate: PaginateQueryDto) {
-    const data = await this.prisma.users.findMany({
+    const data = await this.prismaService.users.findMany({
       skip: (paginate.toQuery().page - 1) * paginate.toQuery().pageSize,
       take: paginate.toQuery().pageSize,
       where: {
@@ -75,5 +75,16 @@ export class UserController {
   @Delete('users/:id')
   async deleteUser(@Param('id') id: number) {
     return this.userService.remove(id);
+  }
+
+  @ApiOperation({})
+  @Get('users/:id/reviews')
+  async getReviewsByUser(@Param('id') id: number) {
+    // todo: paginate
+    return this.prismaService.reviews.findMany({
+      where: {
+        user_ID: id,
+      },
+    });
   }
 }

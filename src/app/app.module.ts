@@ -23,6 +23,7 @@ import { PrismaCrudModule } from 'nestjs-prisma-crud';
 import { CoffeeShopV2Module } from '@src/coffee-shop-v2/coffee-shop-v2.module';
 import { UserModule } from '@src/users/user.module';
 import { DevicesModule } from '@src/devices';
+import { ReviewsModule } from '@src/reviews/reviews.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { DevicesModule } from '@src/devices';
     CoffeeShopV2Module,
     UserModule,
     DevicesModule,
+    ReviewsModule,
     // Configuration
     // https://docs.nestjs.com/techniques/configuration
     // ConfigModule.forRoot({

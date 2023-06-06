@@ -108,7 +108,7 @@ model reviews {
 // coffee_shop_ID			int			    FK ※1
 // review_ID			    int			    FK ※2
 model images {
-  // id             Int           @id @default(autoincrement()) @map("image_ID")
+  id             Int           @id @default(autoincrement()) @map("image_ID")
   image_url      String        @unique // NOTE: Modified: add unique constraint
   coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
   coffee_shop_ID Int
@@ -116,7 +116,7 @@ model images {
   review_ID      Int
 
   // @@unique([coffee_shop_ID, review_ID])
-  @@id([coffee_shop_ID, review_ID])
+  // @@id([coffee_shop_ID, review_ID])
 }
 
 // bookmarks

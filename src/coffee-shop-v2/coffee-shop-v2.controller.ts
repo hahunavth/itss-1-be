@@ -222,11 +222,26 @@ export class CoffeeShopV2Controller {
             },
           });
 
+        const review_agg = await this.prismaService.reviews.aggregate({
+          _avg: {
+            star: true,
+          },
+          _count: {
+            star: true,
+          },
+          where: {
+            coffee_shop_ID: s.id,
+          },
+        });
         return {
           ...s,
           coffee_shop_devices: devices,
           coffee_shop_categories: categories,
           owner: user,
+          review: {
+            star: review_agg._avg.star || 0, // NOTE: Default star is 0 if no review
+            count: review_agg._count.star,
+          },
         };
       }),
     );
@@ -249,7 +264,27 @@ export class CoffeeShopV2Controller {
   @Get(':id')
   async findOne(@Param('id') id: number) {
     const match = await this.coffeeShopV2Service.findOne(id, { crudQuery: {} });
-    return this.coffeeShopV2Service.transformPrismaNestedJoinToEntity(match);
+
+    if (!match) throw new NotFoundException(`Coffee shop ${id} not found`);
+    const review_agg = await this.prismaService.reviews.aggregate({
+      _avg: {
+        star: true,
+      },
+      _count: {
+        star: true,
+      },
+      where: {
+        coffee_shop_ID: match.id,
+      },
+    });
+
+    return this.coffeeShopV2Service.transformPrismaNestedJoinToEntity({
+      ...match,
+      review: {
+        star: review_agg._avg.star || 0, // NOTE: Default star is 0 if no review
+        count: review_agg._count.star,
+      },
+    });
   }
 
   @ApiOperation({

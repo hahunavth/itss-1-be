@@ -26,4 +26,11 @@ export class PaginateQueryDto implements IQueryDto {
     // }
     return query;
   }
+
+  toPrismaQuery(): { skip: number; take: number } {
+    return {
+      skip: (this.toQuery().page - 1) * this.toQuery().pageSize,
+      take: this.toQuery().pageSize,
+    };
+  }
 }
