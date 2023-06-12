@@ -1,6 +1,7 @@
-import { IsString, IsNumber } from 'class-validator';
+import { IsString, IsNumber, IsOptional } from 'class-validator';
 
 import { coffee_shops } from '@prisma/client';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CoffeeShopEntity implements coffee_shops {
   @IsNumber()
@@ -23,4 +24,16 @@ export class CoffeeShopEntity implements coffee_shops {
   verified: number;
 
   owner_ID: number;
+
+  @IsOptional()
+  @IsNumber({}, { each: true })
+  @ApiProperty({
+    type: () => Number,
+    isArray: true,
+    default: [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    ],
+  })
+  crowded_hours: number[];
 }

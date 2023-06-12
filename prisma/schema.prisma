@@ -56,6 +56,16 @@ model coffee_shops {
   bookmarks              bookmarks[]
   coffee_shop_categories coffee_shop_categories[]
   coffee_shop_devices    coffee_shop_devices[]
+
+  // new 12/6/2023
+  // Thời gian đông khách
+  // crowded_hours: 24 giờ, mỗi giờ 1 số nguyên từ 0-vắng, 1-bth, 2-đông
+  // length = 48
+  // index = day * 24 + hour
+  // day = 0: T2-6
+  // day = 1: T7,CN
+  // convert to 2d array in backend
+  crowded_hours Int[] @default([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 }
 
 // users

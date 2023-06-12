@@ -46,4 +46,16 @@ export class CoffeeShopV2Entity implements coffee_shops {
     description: 'Người dùng review điều hòa của shop',
   })
   review: ReviewSummaryDto;
+
+  @IsOptional()
+  @IsNumber({}, { each: true })
+  @ApiProperty({
+    type: () => Number,
+    isArray: true,
+    default: [
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    ],
+  })
+  crowded_hours: number[];
 }

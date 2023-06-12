@@ -68,6 +68,7 @@ export class CoffeeShopV2Controller {
   async create(@Body() createCoffeeShopV2Dto: CreateCoffeeShopV2Dto) {
     const createObj = createCoffeeShopV2Dto;
 
+    console.log(createCoffeeShopV2Dto);
     if (createObj.categories) {
       const additional = await connectPrismaMNCreateOne(
         this.prismaService,
@@ -147,7 +148,7 @@ export class CoffeeShopV2Controller {
         : Prisma.sql`ORDER BY ${orderBy} DESC`;
 
     const shopList: any[] = await this.prismaService.$queryRaw`
-      SELECT "coffee_shop_ID" as "id", "name", "business_hours", "description", "phone_number", "status", "address", "verified", "review_count", "avg_star"
+      SELECT "coffee_shop_ID" as "id", "name", "business_hours", "description", "phone_number", "status", "address", "verified", "review_count", "avg_star", "crowded_hours"
       FROM
         -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
         (
