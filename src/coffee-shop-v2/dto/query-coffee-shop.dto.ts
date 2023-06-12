@@ -1,6 +1,6 @@
 import { ApiProperty, ApiQuery } from '@nestjs/swagger';
 import { IQueryDto } from '@src/dto/i-query.dto';
-import { IsArray, IsOptional, IsString } from 'class-validator';
+import { IsArray, IsEnum, IsOptional, IsString } from 'class-validator';
 
 function stringOrArrayAttrQuery(attr: string | string[]) {
   if (Array.isArray(attr)) {
@@ -46,6 +46,24 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
   // @IsArray()
   devices?: string[];
 
+  @IsOptional()
+  @IsEnum(['id', 'name', 'crowded', 'review_count', 'avg_star'])
+  /**
+   * REVIEW
+   * do not replace type string with enum here
+   * It will cause problem with swagger
+   */
+  orderBy?: string = 'id';
+
+  @IsOptional()
+  @IsEnum(['asc', 'desc'])
+  /**
+   * REVIEW
+   * do not replace type string with enum here
+   * It will cause problem with swagger
+   */
+  orderType?: string = 'asc';
+
   toQuery() {
     const query = {
       where: {},
@@ -79,6 +97,10 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
     if (this.devices) {
       query.where['devices'] = stringOrArrayAttrQuery(this.devices);
     }
+
+    query['orderBy'] = {
+      [this.orderBy]: this.orderType,
+    };
 
     return query;
   }

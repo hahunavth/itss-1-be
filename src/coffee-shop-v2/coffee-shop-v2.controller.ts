@@ -56,7 +56,7 @@ export class CoffeeShopV2Controller {
     - Request body:
       - common fields: name, business_hours, description, phone_number, status, address, verified
       - categories: string[] (optional) - only create if the category exists else return error
-      - TODO: create with devices
+      - devices: - only create if the device exists else return error
     - Response body: CoffeeShop
     `,
   })
@@ -108,15 +108,15 @@ export class CoffeeShopV2Controller {
 
   @ApiOperation({
     summary: 'Find coffee shop list',
-    description: `
-    - Request query:
-      - name: if not provided, return all, else return all that match the name (contains)
-      - categories: string[] (optional) - only create if the category exists else return error
-    - Response body:
-      - data: list of record
-      - pageSize: number of record per page
-      - page: current page
-    `,
+    // description: `
+    // - Request query:
+    //   - name: if not provided, return all, else return all that match the name (contains)
+    //   - categories: string[] (optional) - only create if the category exists else return error
+    // - Response body:
+    //   - data: list of record
+    //   - pageSize: number of record per page
+    //   - page: current page
+    // `,
   })
   @ApiResponse({
     status: 200,
@@ -131,9 +131,6 @@ export class CoffeeShopV2Controller {
     const useCateFilter = !!attrQuery.categories;
     const useDevFilter = !!attrQuery.devices;
 
-    console.log('attrQuery.categories');
-    console.log(attrQuery.categories);
-
     const cate_name_list =
       typeof attrQuery.categories === 'string'
         ? [attrQuery.categories]
@@ -142,12 +139,28 @@ export class CoffeeShopV2Controller {
       typeof attrQuery.devices === 'string'
         ? [attrQuery.devices]
         : attrQuery.devices || [];
+    const orderBy = attrQuery.orderBy;
+    const orderType = attrQuery.orderType;
+    const orderByClause =
+      orderType.toUpperCase() === 'ASC'
+        ? Prisma.sql`ORDER BY ${orderBy} ASC`
+        : Prisma.sql`ORDER BY ${orderBy} DESC`;
 
     const shopList: any[] = await this.prismaService.$queryRaw`
-      SELECT "coffee_shop_ID" as "id", "name", "business_hours", "description", "phone_number", "status", "address", "verified"
+      SELECT "coffee_shop_ID" as "id", "name", "business_hours", "description", "phone_number", "status", "address", "verified", "review_count", "avg_star"
       FROM
-        "coffee_shops"
+        -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
+        (
+          SELECT
+            "coffee_shops".*,
+            Coalesce(AVG("reviews"."star"), 0)::int as "avg_star", -- NOTE: AVG RETURN NULL IF NO ROWS -> USE COALESCE TO RETURN 0
+            COUNT("reviews"."review_ID")::int as "review_count"    -- NOTE: COUNT RETURN 0 IF NO ROWS; RETURN TYPE IS BIGINT, CAST TO INT
+          FROM "coffee_shops"
+            LEFT JOIN "reviews" ON "coffee_shops"."coffee_shop_ID" = "reviews"."coffee_shop_ID"
+          GROUP BY "coffee_shops"."coffee_shop_ID"
+        ) AS "coffee_shops"
       WHERE
+        -- FILTER BY CATEGORY
         ("coffee_shops"."coffee_shop_ID"
           in (
             SELECT "coffee_shop_ID" as "id" FROM (
@@ -164,7 +177,9 @@ export class CoffeeShopV2Controller {
             WHERE "cate_names" = ${cate_name_list.sort().join(',')}
           )
         or ${!useCateFilter})
+        --
         AND
+        -- FILTER BY DEVICE
         ("coffee_shops"."coffee_shop_ID"
           in (
             SELECT "coffee_shop_ID" as "id" FROM (
@@ -181,14 +196,21 @@ export class CoffeeShopV2Controller {
             WHERE "cate_names" = ${dev_name_list.sort().join(',')}
           )
         or ${!useDevFilter})
+        --
+        -- FILTER BY NAME
         AND ("coffee_shops"."name" LIKE ${
           attrQuery.name ? '%' + attrQuery.name + '%' : '%'
         })
+        -- FILTER BY STATUS
         AND ("coffee_shops"."business_hours" LIKE ${
           attrQuery.business_hours || '%'
         })
+      -- ORDER BY
+      ${orderByClause}
+      -- PAGINATE
       LIMIT ${paginate.toQuery().pageSize}
       OFFSET ${paginate.toQuery().pageSize * (paginate.toQuery().page - 1)}
+      ;
       `;
 
     const shopListNested = await Promise.all(
@@ -220,26 +242,17 @@ export class CoffeeShopV2Controller {
             },
           });
 
-        const review_agg = await this.prismaService.reviews.aggregate({
-          _avg: {
-            star: true,
-          },
-          _count: {
-            star: true,
-          },
-          where: {
-            coffee_shop_ID: s.id,
-          },
-        });
+        s['review'] = {
+          star: s.avg_star,
+          count: s.review_count,
+        };
+        delete s['review_count'];
+        delete s['avg_star'];
         return {
           ...s,
           coffee_shop_devices: devices,
           coffee_shop_categories: categories,
           owner: user,
-          review: {
-            star: review_agg._avg.star || 0, // NOTE: Default star is 0 if no review
-            count: review_agg._count.star,
-          },
         };
       }),
     );
@@ -249,6 +262,7 @@ export class CoffeeShopV2Controller {
         shopListNested,
       ),
       ...paginate.toQuery(),
+      query: attrQuery.toQuery(),
     };
   }
 

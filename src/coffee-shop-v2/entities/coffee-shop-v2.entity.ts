@@ -41,6 +41,9 @@ export class CoffeeShopV2Entity implements coffee_shops {
   @ApiProperty({ type: () => AddDeviceDto, isArray: true })
   devices: AddDeviceDto[];
 
-  @ApiProperty({ type: () => ReviewSummaryDto })
+  @ApiProperty({
+    type: () => ReviewSummaryDto,
+    description: 'Người dùng review điều hòa của shop',
+  })
   review: ReviewSummaryDto;
 }
