@@ -68,6 +68,9 @@ export class CreateCoffeeShopV2Dto {
   @IsPhoneNumber('VN')
   phone_number: string;
 
+  @ApiProperty({
+    description: 'Đánh giá của admin về điều hòa của quán này',
+  })
   @IsNumber()
   @Type(() => Number)
   status: number;

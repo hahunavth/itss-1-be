@@ -82,4 +82,11 @@ export class CoffeeShopV2Entity implements coffee_shops {
   //   }
   // })
   crowded_hours: number[];
+
+  @ApiProperty({
+    type: () => String,
+    isArray: true,
+  })
+  @IsString({ each: true })
+  images: string[];
 }

@@ -1,25 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Note:
-// - Install the prisma extension in VSCode to get syntax highlighting and better auto-completion
-
-// Syntax:
-// not null:
-//    attr: dtype? -> nullable
-//    attr: dtype  -> default is not null
-// default:
-//    attr: dtype @default(value)
-// primary key:
-//    id: dtype @id @default(autoincrement())
-// timestamp:
-//    createdAt DateTime   @default(now())
-//    updatedAt DateTime   @updatedAt
-//
-// See more:
-// relation: https://www.prisma.io/docs/concepts/components/prisma-schema/relations
-// enum: https://www.prisma.io/docs/concepts/components/prisma-schema/data-model#defining-enums
-
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["views"]
@@ -30,171 +8,102 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// coffee_shops
-// coffee_shop_ID       int       PK, NOT NULL
-// name                 varchar   NOT NULL,50B
-// business_hours       varchar   NOT NULL
-// description          text      最大: 2000 文字
-// phone_number         varchar   NOT NULL,10B,0~9
-// owner_ID※1          int       FK, NOT NULL
-// status※3            int       NOT NULL (0 or 1 or 2)
-// address              varchar   NOT NULL
-// verified ※2         int       NOT NULL (0 or 1)
 model coffee_shops {
   id                     Int                      @id @default(autoincrement()) @map("coffee_shop_ID")
   name                   String                   @db.VarChar(50)
-  // new 14/6/2023
-  // note that opening_at and closing_at are in UTC
-  // business_hours         String
   opening_at             DateTime
   closing_at             DateTime
-  description            String?                  @default("") @db.Text()
+  description            String?                  @default("")
   phone_number           String                   @db.VarChar(10)
-  status                 Int // todo: defalut=?
+  status                 Int
   address                String
-  verified               Int // todo: defalut=?
-  reviews                reviews[]
+  verified               Int
   owner_ID               Int?
-  user                   users?                   @relation(fields: [owner_ID], references: [id])
-  images                 images[]
+  crowded_hours          Int[]                    @default([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+  images                 String[]
   bookmarks              bookmarks[]
   coffee_shop_categories coffee_shop_categories[]
   coffee_shop_devices    coffee_shop_devices[]
-
-  // new 12/6/2023
-  // Thời gian đông khách
-  // crowded_hours: 24 giờ, mỗi giờ 1 số nguyên từ 0-vắng, 1-bth, 2-đông
-  // length = 48
-  // index = day * 24 + hour
-  // day = 0: T2-6
-  // day = 1: T7,CN
-  // convert to 2d array in backend
-  crowded_hours Int[] @default([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+  user                   users?                   @relation(fields: [owner_ID], references: [id])
+  rv_images              images[]
+  reviews                reviews[]
 }
 
-// users
-// user_ID			     int			  PK, NOT NULL
-// username			     varchar		30B, NOT NULL
-// password ※1			varchar		 NOT NULL,30B
-// email			       varchar		NOT NULL,30B
-// phone_number			 varchar		10B
-// date_of_birth		 DATE
-// image_url			   varchar
-// role ※2			    int			   NOT NULL (0 or 1)
 model users {
   id            Int            @id @default(autoincrement()) @map("user_ID")
   username      String         @db.VarChar(30)
   password      String         @db.VarChar(30)
-  email         String         @unique @db.VarChar(30) // NOTE: Modified: add unique constraint
+  email         String         @unique @db.VarChar(30)
   phone_number  String?        @db.VarChar(10)
   date_of_birth DateTime?
   image_url     String?
   role          Int
+  bookmarks     bookmarks[]
   coffee_shops  coffee_shops[]
   reviews       reviews[]
-  bookmarks     bookmarks[]
 }
 
-// reviews
-// review_ID			      int			    PK, NOT NULL
-// coffee_shop_ID※1		 int			   FK, NOT NULL
-// user_ID※2			     int			   FK, NOT NULL
-// review			          varchar		  NOT NULL
-// star			            int			    NOT NULL, (1,2,3,4,5)
-// create_at			      DATETIME		default(NOW())
 model reviews {
-  id             Int           @id @default(autoincrement()) @map("review_ID")
-  review         String        @db.Text
+  id             Int          @id @default(autoincrement()) @map("review_ID")
+  review         String
   star           Int
-  create_at      DateTime      @default(now())
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  create_at      DateTime     @default(now())
   coffee_shop_ID Int
-  user           users?        @relation(fields: [user_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   user_ID        Int
   images         images[]
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id], onDelete: Cascade)
+  user           users        @relation(fields: [user_ID], references: [id], onDelete: Cascade)
 
   @@unique([coffee_shop_ID, user_ID])
 }
 
-// images
-// image_ID			      int			    PK, NOT NULL
-// image_url			    varchar			NOT NULL
-// coffee_shop_ID			int			    FK ※1
-// review_ID			    int			    FK ※2
 model images {
-  id             Int           @id @default(autoincrement()) @map("image_ID")
-  image_url      String        @unique // NOTE: Modified: add unique constraint
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id])
+  id             Int          @id @default(autoincrement()) @map("image_ID")
+  image_url      String       @unique
   coffee_shop_ID Int
-  review         reviews?      @relation(fields: [review_ID], references: [id])
   review_ID      Int
-
-  // @@unique([coffee_shop_ID, review_ID])
-  // @@id([coffee_shop_ID, review_ID])
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id])
+  review         reviews      @relation(fields: [review_ID], references: [id])
 }
 
-// bookmarks
-// bookmark_ID			       int		 PK
-// coffee_shop_ID ※1			int			FK
-// userID ※2			        int			FK
 model bookmarks {
-  // id             Int           @id @default(autoincrement()) @map("bookmark_ID")
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffee_shop_ID Int
-  user           users?        @relation(fields: [user_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   user_ID        Int
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id], onDelete: Cascade)
+  user           users        @relation(fields: [user_ID], references: [id], onDelete: Cascade)
 
   @@id([coffee_shop_ID, user_ID])
 }
 
-// categories
-// category_ID			int			    PK
-// name			        varchar			NOT NULL
-// description			varchar			最大: 255 文字
 model categories {
   id                     Int                      @id @default(autoincrement()) @map("category_ID")
-  name                   String                   @unique // NOTE: Modified: add unique constraint
+  name                   String                   @unique
   description            String?                  @db.VarChar(255)
   coffee_shop_categories coffee_shop_categories[]
 }
 
-// devices
-// device_ID			int			    PK
-// name			      varchar			NOT NULL
 model devices {
   id                  Int                   @id @default(autoincrement()) @map("device_ID")
-  name                String                @unique // NOTE: Modified: add unique constraint
+  name                String                @unique
   coffee_shop_devices coffee_shop_devices[]
 }
 
-// coffee_shop_categories
-// ID			          int			PK
-// category_ID			int			FK※1
-// coffee_shop_ID		int			FK※2
 model coffee_shop_categories {
-  // id             Int           @id @default(autoincrement())
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffee_shop_ID Int
-  category       categories?   @relation(fields: [category_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   category_ID    Int
+  category       categories   @relation(fields: [category_ID], references: [id], onDelete: Cascade)
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id], onDelete: Cascade)
 
   @@id([coffee_shop_ID, category_ID])
 }
 
-// coffee_shop_devices
-// ID			            int			    PK
-// device_ID			    int			    FK※1
-// coffee_shop_ID			int			    FK※2
-// quantity			      int			    NOT NULL
-// status			        varchar			NOT NULL, 最大: 255 文字
 model coffee_shop_devices {
-  // id             Int           @id @default(autoincrement())
-  coffee_shop    coffee_shops? @relation(fields: [coffee_shop_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffee_shop_ID Int
-  device         devices?      @relation(fields: [device_ID], references: [id], onUpdate: Cascade, onDelete: Cascade)
   device_ID      Int
   quantity       Int
-  status         String        @db.VarChar(255)
+  status         String       @db.VarChar(255)
+  coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id], onDelete: Cascade)
+  device         devices      @relation(fields: [device_ID], references: [id], onDelete: Cascade)
 
   @@id([coffee_shop_ID, device_ID])
 }
