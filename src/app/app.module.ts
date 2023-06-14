@@ -39,7 +39,7 @@ import { AuthModule } from '@src/auth/auth.module';
     /**
      * Api service modules
      */
-    CoffeeShopModule,
+    // CoffeeShopModule,
     CoffeeShopV2Module,
     UserModule,
     DevicesModule,

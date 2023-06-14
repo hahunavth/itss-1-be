@@ -28,7 +28,7 @@ import {
 } from '@nestjs/swagger';
 import { QueryCoffeeShopV2Dto } from './dto/query-coffee-shop.dto';
 import { PaginateQueryDto } from '../dto/query-paginate.dto';
-import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient, coffee_shops } from '@prisma/client';
 import {
   PrismaService,
   connectPrismaMNCreateOne,
@@ -142,13 +142,25 @@ export class CoffeeShopV2Controller {
         : attrQuery.devices || [];
     const orderBy = attrQuery.orderBy;
     const orderType = attrQuery.orderType;
+    const day = attrQuery.now || new Date(Date.now());
+    const dayId = day.getDate() === 0 ? 1 : 0;
+    const hourId = dayId * 24 + day.getHours();
+    console.log(attrQuery.now);
     const orderByClause =
-      orderType.toUpperCase() === 'ASC'
+      orderBy === 'crowded'
+        ? orderType.toUpperCase() === 'ASC'
+          ? Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) ASC`
+          : Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) DESC`
+        : orderType.toUpperCase() === 'ASC'
         ? Prisma.sql`ORDER BY ${orderBy} ASC`
         : Prisma.sql`ORDER BY ${orderBy} DESC`;
 
     const shopList: any[] = await this.prismaService.$queryRaw`
-      SELECT "coffee_shop_ID" as "id", "name", "business_hours", "description", "phone_number", "status", "address", "verified", "review_count", "avg_star", "crowded_hours"
+      SELECT
+        "coffee_shop_ID" as "id", "name",
+        -- "business_hours",
+        "opening_at", "closing_at",
+        "description", "phone_number", "status", "address", "verified", "review_count", "avg_star", "crowded_hours"
       FROM
         -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
         (
@@ -202,10 +214,19 @@ export class CoffeeShopV2Controller {
         AND ("coffee_shops"."name" LIKE ${
           attrQuery.name ? '%' + attrQuery.name + '%' : '%'
         })
-        -- FILTER BY STATUS
-        AND ("coffee_shops"."business_hours" LIKE ${
-          attrQuery.business_hours || '%'
-        })
+        -- FILTER BY OPENING TIME
+        AND ("coffee_shops"."opening_at" <= ${
+          attrQuery.opening_at
+        } or ${!attrQuery.opening_at})
+        -- FILTER BY CLOSING TIME
+        AND ("coffee_shops"."closing_at" >= ${
+          attrQuery.closing_at
+        } or ${!attrQuery.closing_at})
+        -- FILTER BY CROWDED
+        AND ("coffee_shops"."crowded_hours"[${hourId}] = ${
+      attrQuery.crowded_status
+    } or ${!attrQuery.crowded_status})
+
       -- ORDER BY
       ${orderByClause}
       -- PAGINATE
@@ -249,6 +270,29 @@ export class CoffeeShopV2Controller {
         };
         delete s['review_count'];
         delete s['avg_star'];
+
+        s['opening_at'] = `${('0' + s['opening_at'].getUTCHours()).slice(
+          -2,
+        )}:${s['opening_at'].getUTCMinutes()}`;
+        s['closing_at'] = `${('0' + s['closing_at'].getUTCHours()).slice(
+          -2,
+        )}:${s['closing_at'].getUTCMinutes()}`;
+        s['crowded_hours'] = [
+          s['crowded_hours'].slice(0, 23),
+          s['crowded_hours'].slice(24, 47),
+        ];
+
+        s['current_crowded'] = s['crowded_hours'][dayId][hourId];
+        delete s['crowded_hours'];
+
+        // const currentTime = `${('0' + day.getUTCHours()).slice(
+        //   -2,
+        // )}:${day.getUTCMinutes()}`;
+        // s['is_opening'] =
+        //   s['opening_at'] < s['closing_at']
+        //     ? s['opening_at'] < currentTime && currentTime < s['closing_at']
+        //     : s['closing_at'] < currentTime && currentTime < s['opening_at'];
+
         return {
           ...s,
           coffee_shop_devices: devices,
@@ -264,6 +308,9 @@ export class CoffeeShopV2Controller {
       ),
       ...paginate.toQuery(),
       query: attrQuery.toQuery(),
+      now: day,
+      dayId,
+      hourId,
     };
   }
 
@@ -272,11 +319,13 @@ export class CoffeeShopV2Controller {
   })
   @ApiResponse({
     status: 200,
-    type: CoffeeShopV2Entity,
+    // type: CoffeeShopV2Entity,
   })
   @Get(':id')
-  async findOne(@Param('id') id: number) {
-    const match = await this.coffeeShopV2Service.findOne(id, { crudQuery: {} });
+  async findOne(@Param('id') id: number, @Query('now') now?: Date) {
+    const match = await this.coffeeShopV2Service.findOne(id, {
+      crudQuery: {},
+    });
 
     if (!match) throw new NotFoundException(`Coffee shop ${id} not found`);
     const review_agg = await this.prismaService.reviews.aggregate({
@@ -291,13 +340,34 @@ export class CoffeeShopV2Controller {
       },
     });
 
-    return this.coffeeShopV2Service.transformPrismaNestedJoinToEntity({
-      ...match,
-      review: {
-        star: review_agg._avg.star || 0, // NOTE: Default star is 0 if no review
-        count: review_agg._count.star,
-      },
-    });
+    const data =
+      await this.coffeeShopV2Service.transformPrismaNestedJoinToEntity({
+        ...match,
+        review: {
+          star: review_agg._avg.star || 0, // NOTE: Default star is 0 if no review
+          count: review_agg._count.star,
+        },
+      });
+
+    data['opening_at'] = `${('0' + data['opening_at'].getUTCHours()).slice(
+      -2,
+    )}:${data['opening_at'].getUTCMinutes()}` as any;
+    data['closing_at'] = `${('0' + data['closing_at'].getUTCHours()).slice(
+      -2,
+    )}:${data['closing_at'].getUTCMinutes()}` as any;
+
+    data['crowded_hours'] = [
+      data['crowded_hours'].slice(0, 23),
+      data['crowded_hours'].slice(24, 47),
+    ] as any;
+
+    const day = now ? new Date(now) : new Date();
+    const dayId = day.getDate() === 0 ? 1 : 0;
+    const hourId = dayId * 24 + day.getHours();
+    data['current_crowded'] = data['crowded_hours'][dayId][hourId];
+    delete data['crowded_hours'];
+
+    return data;
   }
 
   @ApiOperation({
@@ -328,11 +398,16 @@ export class CoffeeShopV2Controller {
       delete updateCoffeeShopV2Dto.devices;
     }
 
-    const updated = await this.coffeeShopV2Service.update(
-      id,
-      updateCoffeeShopV2Dto,
-      { crudQuery: {} },
-    );
+    if (updateCoffeeShopV2Dto.crowded_hours) {
+      updateCoffeeShopV2Dto.crowded_hours = {
+        set: updateCoffeeShopV2Dto.crowded_hours,
+      } as any;
+    }
+
+    const updated = await this.prismaService.coffee_shops.update({
+      data: updateCoffeeShopV2Dto,
+      where: { id },
+    });
     return updated;
   }
 

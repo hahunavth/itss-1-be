@@ -1,9 +1,16 @@
-import { IsString, IsNumber, IsOptional, IsDefined } from 'class-validator';
+import {
+  IsString,
+  IsNumber,
+  IsOptional,
+  IsDefined,
+  IsDate,
+} from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { coffee_shops } from '@prisma/client';
 import { CreateDeviceDto } from '@src/devices';
 import { AddDeviceDto } from '../dto/add-device.dto';
-import { Type } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
+import { HttpException, HttpStatus } from '@nestjs/common';
 
 export class ReviewSummaryDto {
   @IsNumber()
@@ -20,8 +27,21 @@ export class CoffeeShopV2Entity implements coffee_shops {
   @ApiProperty()
   @IsString()
   name: string;
-  @IsString()
-  business_hours: string;
+
+  @ApiProperty({
+    description: 'Bắt đầu mở từ thời gian này',
+    type: String,
+  })
+  @IsDate()
+  opening_at: Date;
+
+  @ApiProperty({
+    description: 'Bắt đầu mở từ thời gian này',
+    type: String,
+  })
+  @IsDate()
+  closing_at: Date;
+
   @IsString()
   description: string;
   @IsString()
@@ -49,13 +69,11 @@ export class CoffeeShopV2Entity implements coffee_shops {
 
   @IsOptional()
   @IsNumber({}, { each: true })
-  @ApiProperty({
-    type: () => Number,
-    isArray: true,
-    default: [
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    ],
-  })
+  // @Transform(({ obj }) => {
+  //   const arr = obj.crowded_hours.flat();
+  //   if (arr.length !== 48) {
+  //     throw new Error('crowded_hours must be 48 elements');
+  //   }
+  // })
   crowded_hours: number[];
 }

@@ -43,7 +43,11 @@ datasource db {
 model coffee_shops {
   id                     Int                      @id @default(autoincrement()) @map("coffee_shop_ID")
   name                   String                   @db.VarChar(50)
-  business_hours         String
+  // new 14/6/2023
+  // note that opening_at and closing_at are in UTC
+  // business_hours         String
+  opening_at             DateTime
+  closing_at             DateTime
   description            String?                  @default("") @db.Text()
   phone_number           String                   @db.VarChar(10)
   status                 Int // todo: defalut=?
