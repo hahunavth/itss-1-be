@@ -14,15 +14,19 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 
 export class ReviewSummaryDto {
   @IsNumber()
+  @Type(() => Number)
   star: number;
   @IsNumber()
+  @Type(() => Number)
   count: number;
 }
 
 export class CoffeeShopV2Entity implements coffee_shops {
   @IsNumber()
+  @Type(() => Number)
   id: number;
   @IsNumber()
+  @Type(() => Number)
   owner_ID: number;
   @ApiProperty()
   @IsString()
@@ -48,10 +52,12 @@ export class CoffeeShopV2Entity implements coffee_shops {
   phone_number: string;
 
   @IsNumber()
+  @Type(() => Number)
   status: number;
   @IsString()
   address: string;
   @IsNumber()
+  @Type(() => Number)
   verified: number;
 
   @IsString({ each: true })

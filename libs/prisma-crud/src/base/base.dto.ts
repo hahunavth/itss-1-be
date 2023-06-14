@@ -1,3 +1,4 @@
+import { Type } from 'class-transformer';
 import { IsString, IsNumber, IsOptional } from 'class-validator';
 
 export type ApiSuccess<T> = {
@@ -29,9 +30,11 @@ export class PaginateReqQuery implements PaginateReqQueryT {
 
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   page?: number | undefined;
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   limit?: number | undefined;
 }
 
@@ -65,8 +68,10 @@ export class BaseFilterQuery {
   endAt?: string;
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   page?: number | undefined;
   @IsOptional()
   @IsNumber()
+  @Type(() => Number)
   limit?: number | undefined;
 }

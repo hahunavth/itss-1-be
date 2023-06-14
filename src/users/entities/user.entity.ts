@@ -4,6 +4,7 @@ import { Type } from 'class-transformer';
 
 export class UserEntity implements users {
   @IsNumber()
+  @Type(() => Number)
   id: number;
   @IsString()
   password: string;
@@ -20,5 +21,6 @@ export class UserEntity implements users {
   @IsString()
   image_url: string;
   @IsNumber()
+  @Type(() => Number)
   role: number;
 }

@@ -9,7 +9,7 @@ import {
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { AddDeviceDto } from './add-device.dto';
-import { Expose, Transform } from 'class-transformer';
+import { Expose, Transform, Type } from 'class-transformer';
 import { HttpException, HttpStatus } from '@nestjs/common';
 
 export class CreateCoffeeShopV2Dto {
@@ -69,10 +69,12 @@ export class CreateCoffeeShopV2Dto {
   phone_number: string;
 
   @IsNumber()
+  @Type(() => Number)
   status: number;
   @IsString()
   address: string;
   @IsNumber()
+  @Type(() => Number)
   verified: number;
 
   @IsOptional()

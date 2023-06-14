@@ -2,11 +2,12 @@ import { IsString, IsNumber, IsOptional, IsDate } from 'class-validator';
 
 import { coffee_shops } from '@prisma/client';
 import { ApiProperty } from '@nestjs/swagger';
-import { Transform } from 'class-transformer';
+import { Transform, Type } from 'class-transformer';
 import { HttpException, HttpStatus } from '@nestjs/common';
 
 export class CoffeeShopEntity implements coffee_shops {
   @IsNumber()
+  @Type(() => Number)
   id: number;
 
   @IsString()
@@ -58,10 +59,12 @@ export class CoffeeShopEntity implements coffee_shops {
   phone_number: string;
 
   @IsNumber()
+  @Type(() => Number)
   status: number;
   @IsString()
   address: string;
   @IsNumber()
+  @Type(() => Number)
   verified: number;
 
   owner_ID: number;
