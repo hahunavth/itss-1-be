@@ -11,7 +11,7 @@ import {
 import { ReviewsService } from './reviews.service';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { UpdateReviewDto } from './dto/update-review.dto';
-import { ApiTags, OmitType } from '@nestjs/swagger';
+import { ApiOperation, ApiTags, OmitType } from '@nestjs/swagger';
 import { QueryReviewsDto } from './dto/query-reviews.dto';
 
 class UserCreateReviewsDto extends OmitType(CreateReviewDto, ['user_ID']) {}
@@ -21,6 +21,9 @@ class UserCreateReviewsDto extends OmitType(CreateReviewDto, ['user_ID']) {}
 export class UserReviewsController {
   constructor(private readonly reviewsService: ReviewsService) {}
 
+  @ApiOperation({
+    summary: 'Sprint 2 - Task 16: Create review',
+  })
   @Post()
   create(
     @Param('user_ID') user_ID: number,

@@ -108,7 +108,7 @@ export class CoffeeShopV2Controller {
   }
 
   @ApiOperation({
-    summary: 'Find coffee shop list',
+    summary: 'Sprint 2 - Task 6, 8: Find coffee shop list',
     // description: `
     // - Request query:
     //   - name: if not provided, return all, else return all that match the name (contains)
@@ -315,7 +315,7 @@ export class CoffeeShopV2Controller {
   }
 
   @ApiOperation({
-    summary: 'Find coffee shop by id',
+    summary: 'Sprint 2 - Task 11: Find coffee shop by id',
   })
   @ApiResponse({
     status: 200,

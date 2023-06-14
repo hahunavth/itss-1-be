@@ -11,7 +11,7 @@ import {
 import { ReviewsService } from './reviews.service';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { UpdateReviewDto } from './dto/update-review.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { QueryReviewsDto } from './dto/query-reviews.dto';
 import { PaginateQueryDto } from '@src/dto/query-paginate.dto';
 
@@ -25,6 +25,9 @@ export class ReviewsController {
   //   return this.reviewsService.create(createReviewDto);
   // }
 
+  @ApiOperation({
+    summary: 'Sprint 2 - Task 13: Get all reviews',
+  })
   @Get()
   async findAll(
     @Query() paginate: PaginateQueryDto,
