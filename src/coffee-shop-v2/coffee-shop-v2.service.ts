@@ -26,9 +26,12 @@ export class CoffeeShopV2Service extends PrismaCrudService {
         'categories.hasEvery',
         'coffee_shop_categories.categories.hasEvery',
         'crowded_hours',
+        // 'images',
+        'rv_images',
       ],
       defaultJoins: [
         'user',
+        // 'images',
         'coffee_shop_categories.category',
         'coffee_shop_devices.device',
       ],

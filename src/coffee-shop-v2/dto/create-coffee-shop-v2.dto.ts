@@ -64,6 +64,11 @@ export class CreateCoffeeShopV2Dto {
   @IsString()
   description: string;
 
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  owner_ID: number;
+
   @IsString()
   @IsPhoneNumber('VN')
   phone_number: string;
@@ -114,4 +119,11 @@ export class CreateCoffeeShopV2Dto {
     ],
   })
   crowded_hours: number[];
+
+  @ApiProperty({
+    type: () => String,
+    isArray: true,
+  })
+  @IsString({ each: true })
+  images: string[];
 }

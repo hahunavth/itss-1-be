@@ -68,7 +68,6 @@ export class CoffeeShopV2Controller {
   async create(@Body() createCoffeeShopV2Dto: CreateCoffeeShopV2Dto) {
     const createObj = createCoffeeShopV2Dto;
 
-    console.log(createCoffeeShopV2Dto);
     if (createObj.categories) {
       const additional = await connectPrismaMNCreateOne(
         this.prismaService,
@@ -158,7 +157,9 @@ export class CoffeeShopV2Controller {
     const shopList: any[] = await this.prismaService.$queryRaw`
       SELECT
         "coffee_shop_ID" as "id", "name",
+        "images",
         -- "business_hours",
+        "owner_ID",
         "opening_at", "closing_at",
         "description", "phone_number", "status", "address", "verified", "review_count", "avg_star", "crowded_hours"
       FROM
@@ -262,6 +263,14 @@ export class CoffeeShopV2Controller {
                 equals: s.owner_ID,
               },
             },
+            select: {
+              username: true,
+              email: true,
+              phone_number: true,
+              date_of_birth: true,
+              image_url: true,
+              role: true,
+            },
           });
 
         s['review'] = {
@@ -271,6 +280,7 @@ export class CoffeeShopV2Controller {
         delete s['review_count'];
         delete s['avg_star'];
 
+        // if (s['opening_at'])
         s['opening_at'] = `${('0' + s['opening_at'].getUTCHours()).slice(
           -2,
         )}:${s['opening_at'].getUTCMinutes()}`;
