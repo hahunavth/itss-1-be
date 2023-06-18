@@ -1,6 +1,13 @@
 //src/auth/auth.controller.ts
 
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { AuthEntity } from './entities';
@@ -23,5 +30,15 @@ export class AuthController {
   @Get('private')
   private() {
     return 'private';
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  @Get('profile')
+  profile(
+    // req: any,
+    @Request() req: any,
+  ) {
+    return req.user;
   }
 }

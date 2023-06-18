@@ -196,7 +196,7 @@ export class CoffeeShopV2Controller {
       --
       -- FILTER BY NAME
       AND ("coffee_shops"."name" ILIKE ${
-        attrQuery.name ? '%' + attrQuery.name + '%' : '%'
+        attrQuery.name ? `%${attrQuery.name}%` : '%'
       })
       -- FILTER BY OPENING TIME
       AND ("coffee_shops"."opening_at" <= ${
@@ -309,10 +309,10 @@ export class CoffeeShopV2Controller {
         s['current_crowded'] = s['crowded_hours'][dayId][hourId];
         // delete s['crowded_hours'];
 
-        if (s['full_count']) {
+        if (s.hasOwnProperty('full_count')) {
           totalRecords = s['full_count'];
           pageCount = Math.ceil(totalRecords / pageSize);
-          delete s['full_count'];
+          delete s.full_count;
         }
 
         // const currentTime = `${('0' + day.getUTCHours()).slice(
