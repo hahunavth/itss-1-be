@@ -144,7 +144,8 @@ export class CoffeeShopV2Controller {
     const day = attrQuery.now || new Date(Date.now());
     const dayId = day.getDate() === 0 ? 1 : 0;
     const hourId = dayId * 24 + day.getHours();
-    console.log(attrQuery.now);
+    // console.log(attrQuery.now);
+
     const orderByClause =
       orderBy === 'crowded'
         ? orderType.toUpperCase() === 'ASC'
@@ -154,10 +155,74 @@ export class CoffeeShopV2Controller {
         ? Prisma.sql`ORDER BY ${orderBy} ASC`
         : Prisma.sql`ORDER BY ${orderBy} DESC`;
 
+    const whereClause = Prisma.sql`
+    WHERE
+      -- FILTER BY CATEGORY
+      ("coffee_shops"."coffee_shop_ID"
+        in (
+          SELECT "coffee_shop_ID" as "id" FROM (
+            SELECT "coffee_shop_ID", string_agg("categories"."name", ',') as "cate_names"
+            FROM (  SELECT * FROM "categories"
+                    RIGHT JOIN "coffee_shop_categories" ON "categories"."category_ID" = "coffee_shop_categories"."category_ID"
+                    ORDER BY "name"
+                  ) as "categories"
+            WHERE "categories"."name" IN (${
+              cate_name_list.length ? Prisma.join(cate_name_list) : 'test'
+            } )
+            GROUP BY "coffee_shop_ID"
+          ) AS B
+          WHERE "cate_names" = ${cate_name_list.sort().join(',')}
+        )
+      or ${!useCateFilter})
+      --
+      AND
+      -- FILTER BY DEVICE
+      ("coffee_shops"."coffee_shop_ID"
+        in (
+          SELECT "coffee_shop_ID" as "id" FROM (
+            SELECT "coffee_shop_ID", string_agg("devices"."name", ',') as "cate_names"
+            FROM (  SELECT * FROM "devices"
+                    RIGHT JOIN "coffee_shop_devices" ON "devices"."device_ID" = "coffee_shop_devices"."device_ID"
+                    ORDER BY "name"
+                  ) as "devices"
+            WHERE "devices"."name" IN (${
+              dev_name_list.length ? Prisma.join(dev_name_list) : 'test'
+            })
+            GROUP BY "coffee_shop_ID"
+          ) AS B
+          WHERE "cate_names" = ${dev_name_list.sort().join(',')}
+        )
+      or ${!useDevFilter})
+      --
+      -- FILTER BY NAME
+      AND ("coffee_shops"."name" ILIKE ${
+        attrQuery.name ? '%' + attrQuery.name + '%' : '%'
+      })
+      -- FILTER BY OPENING TIME
+      AND ("coffee_shops"."opening_at" <= ${
+        attrQuery.opening_at
+      } or ${!attrQuery.opening_at})
+      -- FILTER BY CLOSING TIME
+      AND ("coffee_shops"."closing_at" >= ${
+        attrQuery.closing_at
+      } or ${!attrQuery.closing_at})
+      -- FILTER BY CROWDED
+      AND ("coffee_shops"."crowded_hours"[${hourId}] = ${
+      attrQuery.crowded_status
+    } or ${!attrQuery.crowded_status})
+    `;
+
+    const pageSize = paginate.toQuery().pageSize;
+    const paginateClause = Prisma.sql`
+      LIMIT ${paginate.toQuery().pageSize}
+      OFFSET ${paginate.toQuery().pageSize * (paginate.toQuery().page - 1)}
+    `;
+
     const shopList: any[] = await this.prismaService.$queryRaw`
       SELECT
         "coffee_shop_ID" as "id", "name",
         "images",
+        count(*) OVER()::int AS full_count,
         -- "business_hours",
         "owner_ID",
         "opening_at", "closing_at",
@@ -173,68 +238,17 @@ export class CoffeeShopV2Controller {
             LEFT JOIN "reviews" ON "coffee_shops"."coffee_shop_ID" = "reviews"."coffee_shop_ID"
           GROUP BY "coffee_shops"."coffee_shop_ID"
         ) AS "coffee_shops"
-      WHERE
-        -- FILTER BY CATEGORY
-        ("coffee_shops"."coffee_shop_ID"
-          in (
-            SELECT "coffee_shop_ID" as "id" FROM (
-              SELECT "coffee_shop_ID", string_agg("categories"."name", ',') as "cate_names"
-              FROM (  SELECT * FROM "categories"
-                      RIGHT JOIN "coffee_shop_categories" ON "categories"."category_ID" = "coffee_shop_categories"."category_ID"
-                      ORDER BY "name"
-                    ) as "categories"
-              WHERE "categories"."name" IN (${
-                cate_name_list.length ? Prisma.join(cate_name_list) : 'test'
-              } )
-              GROUP BY "coffee_shop_ID"
-            ) AS B
-            WHERE "cate_names" = ${cate_name_list.sort().join(',')}
-          )
-        or ${!useCateFilter})
-        --
-        AND
-        -- FILTER BY DEVICE
-        ("coffee_shops"."coffee_shop_ID"
-          in (
-            SELECT "coffee_shop_ID" as "id" FROM (
-              SELECT "coffee_shop_ID", string_agg("devices"."name", ',') as "cate_names"
-              FROM (  SELECT * FROM "devices"
-                      RIGHT JOIN "coffee_shop_devices" ON "devices"."device_ID" = "coffee_shop_devices"."device_ID"
-                      ORDER BY "name"
-                    ) as "devices"
-              WHERE "devices"."name" IN (${
-                dev_name_list.length ? Prisma.join(dev_name_list) : 'test'
-              })
-              GROUP BY "coffee_shop_ID"
-            ) AS B
-            WHERE "cate_names" = ${dev_name_list.sort().join(',')}
-          )
-        or ${!useDevFilter})
-        --
-        -- FILTER BY NAME
-        AND ("coffee_shops"."name" LIKE ${
-          attrQuery.name ? '%' + attrQuery.name + '%' : '%'
-        })
-        -- FILTER BY OPENING TIME
-        AND ("coffee_shops"."opening_at" <= ${
-          attrQuery.opening_at
-        } or ${!attrQuery.opening_at})
-        -- FILTER BY CLOSING TIME
-        AND ("coffee_shops"."closing_at" >= ${
-          attrQuery.closing_at
-        } or ${!attrQuery.closing_at})
-        -- FILTER BY CROWDED
-        AND ("coffee_shops"."crowded_hours"[${hourId}] = ${
-      attrQuery.crowded_status
-    } or ${!attrQuery.crowded_status})
-
+      -- WHERE
+      ${whereClause}
       -- ORDER BY
       ${orderByClause}
       -- PAGINATE
-      LIMIT ${paginate.toQuery().pageSize}
-      OFFSET ${paginate.toQuery().pageSize * (paginate.toQuery().page - 1)}
+      ${paginateClause}
       ;
       `;
+
+    let totalRecords = 1;
+    let pageCount = 1;
 
     const shopListNested = await Promise.all(
       shopList.map(async (s) => {
@@ -293,7 +307,13 @@ export class CoffeeShopV2Controller {
         ];
 
         s['current_crowded'] = s['crowded_hours'][dayId][hourId];
-        delete s['crowded_hours'];
+        // delete s['crowded_hours'];
+
+        if (s['full_count']) {
+          totalRecords = s['full_count'];
+          pageCount = Math.ceil(totalRecords / pageSize);
+          delete s['full_count'];
+        }
 
         // const currentTime = `${('0' + day.getUTCHours()).slice(
         //   -2,
@@ -317,10 +337,14 @@ export class CoffeeShopV2Controller {
         shopListNested,
       ),
       ...paginate.toQuery(),
-      query: attrQuery.toQuery(),
-      now: day,
-      dayId,
-      hourId,
+      totalRecords,
+      pageCount,
+      __debug: {
+        query: attrQuery.toQuery(),
+        now: day,
+        dayId,
+        hourId,
+      },
     };
   }
 
