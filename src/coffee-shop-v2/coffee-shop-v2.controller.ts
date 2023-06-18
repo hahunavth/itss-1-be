@@ -283,10 +283,10 @@ export class CoffeeShopV2Controller {
         // if (s['opening_at'])
         s['opening_at'] = `${('0' + s['opening_at'].getUTCHours()).slice(
           -2,
-        )}:${s['opening_at'].getUTCMinutes()}`;
+        )}:${('0' + s['opening_at'].getUTCMinutes()).slice(-2)}`;
         s['closing_at'] = `${('0' + s['closing_at'].getUTCHours()).slice(
           -2,
-        )}:${s['closing_at'].getUTCMinutes()}`;
+        )}:${('0' + s['closing_at'].getUTCMinutes()).slice(-2)}`;
         s['crowded_hours'] = [
           s['crowded_hours'].slice(0, 23),
           s['crowded_hours'].slice(24, 47),
@@ -361,10 +361,10 @@ export class CoffeeShopV2Controller {
 
     data['opening_at'] = `${('0' + data['opening_at'].getUTCHours()).slice(
       -2,
-    )}:${data['opening_at'].getUTCMinutes()}` as any;
+    )}:${('0' + data['opening_at'].getUTCMinutes()).slice(-2)}` as any;
     data['closing_at'] = `${('0' + data['closing_at'].getUTCHours()).slice(
       -2,
-    )}:${data['closing_at'].getUTCMinutes()}` as any;
+    )}:${('0' + data['closing_at'].getUTCMinutes()).slice(-2)}` as any;
 
     data['crowded_hours'] = [
       data['crowded_hours'].slice(0, 23),
