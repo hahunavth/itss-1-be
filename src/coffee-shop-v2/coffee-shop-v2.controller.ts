@@ -139,24 +139,90 @@ export class CoffeeShopV2Controller {
       typeof attrQuery.devices === 'string'
         ? [attrQuery.devices]
         : attrQuery.devices || [];
-    const orderBy = attrQuery.orderBy;
+    const orderBy = `${attrQuery.orderBy}`;
     const orderType = attrQuery.orderType;
     const day = attrQuery.now || new Date(Date.now());
     const dayId = day.getDate() === 0 ? 1 : 0;
     const hourId = dayId * 24 + day.getHours();
     // console.log(attrQuery.now);
 
-    const orderByClause =
-      orderBy === 'crowded'
-        ? orderType.toUpperCase() === 'ASC'
-          ? Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) ASC`
-          : Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) DESC`
-        : orderType.toUpperCase() === 'ASC'
-        ? Prisma.sql`ORDER BY ${orderBy} ASC`
-        : Prisma.sql`ORDER BY ${orderBy} DESC`;
+    // const orderByClause =
+    //   orderBy === 'crowded'
+    //     ? orderType.toUpperCase() === 'ASC'
+    //       ? Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) ASC`
+    //       : Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) DESC`
+    //     : orderType.toUpperCase() === 'ASC'
+    //     ? Prisma.sql`
+    //      ORDER BY ${orderBy} ASC
+    //       `
+    //     : Prisma.sql`
+    //      ORDER BY ${orderBy} DESC
+    //      `;
+    let orderByClause = null;
+    switch (orderBy) {
+      case 'crowded':
+        orderByClause =
+          orderType.toUpperCase() === 'ASC'
+            ? Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) ASC`
+            : Prisma.sql`ORDER BY array_position("crowded_hours", ${hourId}) DESC`;
+        break;
+      case 'avg_star':
+        orderByClause =
+          orderType.toUpperCase() === 'ASC'
+            ? Prisma.sql`ORDER BY "avg_star" ASC`
+            : Prisma.sql`ORDER BY "avg_star" DESC`;
+        break;
+      case 'review_count':
+        orderByClause =
+          orderType.toUpperCase() === 'ASC'
+            ? Prisma.sql`ORDER BY "review_count" ASC`
+            : Prisma.sql`ORDER BY "review_count" DESC`;
+        break;
+      case 'name':
+        orderByClause =
+          orderType.toUpperCase() === 'ASC'
+            ? Prisma.sql`ORDER BY "name" ASC`
+            : Prisma.sql`ORDER BY "name" DESC`;
+        break;
+      case 'id':
+        orderByClause =
+          orderType.toUpperCase() === 'ASC'
+            ? Prisma.sql`ORDER BY "coffee_shop_ID" ASC`
+            : Prisma.sql`ORDER BY "coffee_shop_ID" DESC`;
+        break;
+      case null:
+        orderByClause = Prisma.empty;
+        break;
+      default:
+        throw new BadRequestException('Invalid orderBy');
+    }
 
-    const whereClause = Prisma.sql`
-    WHERE
+    console.log(orderByClause);
+
+    const pageSize = paginate.toQuery().pageSize;
+
+    const shopList: any[] = await this.prismaService.$queryRaw`
+      SELECT
+        "coffee_shop_ID" as "id", "name",
+        "images",
+        count(*) OVER()::int AS full_count,
+        -- "business_hours",
+        "owner_ID",
+        "opening_at", "closing_at",
+        "description", "phone_number", "status", "address", "verified", "review_count", "avg_star", "crowded_hours"
+      FROM
+        -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
+        (
+          SELECT
+            "coffee_shops".*,
+            Coalesce(AVG("reviews"."star"), 0)::int as "avg_star", -- NOTE: AVG RETURN NULL IF NO ROWS -> USE COALESCE TO RETURN 0
+            COUNT("reviews"."review_ID")::int as "review_count"    -- NOTE: COUNT RETURN 0 IF NO ROWS; RETURN TYPE IS BIGINT, CAST TO INT
+          FROM "coffee_shops"
+            LEFT JOIN "reviews" ON "coffee_shops"."coffee_shop_ID" = "reviews"."coffee_shop_ID"
+          GROUP BY "coffee_shops"."coffee_shop_ID"
+        ) AS "coffee_shops"
+      -- WHERE
+      WHERE
       -- FILTER BY CATEGORY
       ("coffee_shops"."coffee_shop_ID"
         in (
@@ -210,42 +276,16 @@ export class CoffeeShopV2Controller {
       AND ("coffee_shops"."crowded_hours"[${hourId}] = ${
       attrQuery.crowded_status
     } or ${!attrQuery.crowded_status})
-    `;
-
-    const pageSize = paginate.toQuery().pageSize;
-    const paginateClause = Prisma.sql`
-      LIMIT ${paginate.toQuery().pageSize}
-      OFFSET ${paginate.toQuery().pageSize * (paginate.toQuery().page - 1)}
-    `;
-
-    const shopList: any[] = await this.prismaService.$queryRaw`
-      SELECT
-        "coffee_shop_ID" as "id", "name",
-        "images",
-        count(*) OVER()::int AS full_count,
-        -- "business_hours",
-        "owner_ID",
-        "opening_at", "closing_at",
-        "description", "phone_number", "status", "address", "verified", "review_count", "avg_star", "crowded_hours"
-      FROM
-        -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
-        (
-          SELECT
-            "coffee_shops".*,
-            Coalesce(AVG("reviews"."star"), 0)::int as "avg_star", -- NOTE: AVG RETURN NULL IF NO ROWS -> USE COALESCE TO RETURN 0
-            COUNT("reviews"."review_ID")::int as "review_count"    -- NOTE: COUNT RETURN 0 IF NO ROWS; RETURN TYPE IS BIGINT, CAST TO INT
-          FROM "coffee_shops"
-            LEFT JOIN "reviews" ON "coffee_shops"."coffee_shop_ID" = "reviews"."coffee_shop_ID"
-          GROUP BY "coffee_shops"."coffee_shop_ID"
-        ) AS "coffee_shops"
-      -- WHERE
-      ${whereClause}
       -- ORDER BY
       ${orderByClause}
+      -- ORDER BY "avg_star" DESC
       -- PAGINATE
-      ${paginateClause}
+      LIMIT ${paginate.toQuery().pageSize}
+      OFFSET ${paginate.toQuery().pageSize * (paginate.toQuery().page - 1)}
       ;
       `;
+
+    // console.log(shopList);
 
     let totalRecords = 1;
     let pageCount = 1;

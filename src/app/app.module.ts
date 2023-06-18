@@ -7,6 +7,7 @@ import { PrismaService } from '@src/common/prisma/prisma.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import {
   APP_FILTER,
+  APP_GUARD,
   APP_INTERCEPTOR,
   APP_PIPE,
   RouterModule,
@@ -26,6 +27,7 @@ import { DevicesModule } from '@src/devices';
 import { ReviewsModule } from '@src/reviews/reviews.module';
 import { CategoriesModule } from '@src/categories/categories.module';
 import { AuthModule } from '@src/auth/auth.module';
+import { RolesGuard } from '@src/role/roles.guard';
 
 @Module({
   imports: [

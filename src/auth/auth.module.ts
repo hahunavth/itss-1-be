@@ -7,6 +7,8 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtStrategy, LocalStrategy } from './strategies';
 import { UserModule, UserService } from '@src/users';
+import { APP_GUARD } from '@nestjs/core';
+import { RolesGuard } from '@src/role/roles.guard';
 
 @Module({
   imports: [
@@ -25,6 +27,12 @@ import { UserModule, UserService } from '@src/users';
     JwtStrategy,
     // RefreshTokenStrategy,
     UserService,
+    // FIXME: ENABLE THIS TO MAKE GUARD RUN TWICE
+    // DISABLE THIS TO MAKE GUARD RUN ONCE
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: RolesGuard,
+    // },
   ],
   exports: [AuthService],
 })

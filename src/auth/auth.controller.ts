@@ -13,6 +13,9 @@ import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { AuthEntity } from './entities';
 import { LoginDto } from './dto/login.dto';
 import { JwtAuthGuard } from './guards';
+import { Roles } from '@src/role/roles.decorator';
+import { Role } from '@src/role/role.enum';
+import { RolesGuard } from '@src/role/roles.guard';
 
 @Controller('auth')
 @ApiTags('auth')
@@ -36,6 +39,28 @@ export class AuthController {
   @ApiBearerAuth()
   @Get('profile')
   profile(
+    // req: any,
+    @Request() req: any,
+  ) {
+    return req.user;
+  }
+
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(Role.Admin)
+  @ApiBearerAuth()
+  @Get('admin')
+  admin(
+    // req: any,
+    @Request() req: any,
+  ) {
+    return req.user;
+  }
+
+  @UseGuards(JwtAuthGuard)
+  // @Roles(Role.User)
+  @ApiBearerAuth()
+  @Get('user')
+  user(
     // req: any,
     @Request() req: any,
   ) {

@@ -1,6 +1,7 @@
 import { IsString, IsNumber, IsDate, IsEmail } from 'class-validator';
 import { users } from '@prisma/client';
 import { Type } from 'class-transformer';
+import { Role } from '@src/role/role.enum';
 
 export class UserEntity implements users {
   @IsNumber()
@@ -22,5 +23,5 @@ export class UserEntity implements users {
   image_url: string;
   @IsNumber()
   @Type(() => Number)
-  role: number;
+  role: Role;
 }
