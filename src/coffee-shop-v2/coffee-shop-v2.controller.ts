@@ -210,12 +210,16 @@ export class CoffeeShopV2Controller {
     const shopList: any[] = await this.prismaService.$queryRaw`
       SELECT
         "coffee_shop_ID" as "id", "name",
-        "images",
-        count(*) OVER()::int AS full_count,
-        -- "business_hours",
-        "owner_ID",
+        "images", "owner_ID",
         "opening_at", "closing_at",
-        "description", "phone_number", "status", "address", "verified", "review_count", "avg_star", "crowded_hours"
+        "description", "phone_number", "status", "address", "verified",
+        -- to reviews attr
+        "review_count", "avg_star",
+        "crowded_hours",
+        --
+        "coffee_shops"."crowded_hours"[${hourId}] as "current_crowded",
+        -- to list info
+        count(*) OVER()::int AS full_count
       FROM
         -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
         (
@@ -281,7 +285,7 @@ export class CoffeeShopV2Controller {
       -- FILTER BY CROWDED
       AND ("coffee_shops"."crowded_hours"[${hourId}] = ${
       attrQuery.crowded_status
-    } or ${!attrQuery.crowded_status})
+    } or ${typeof attrQuery.crowded_status !== 'number'})
       -- ORDER BY
       ${orderByClause}
       -- ORDER BY "avg_star" DESC
@@ -347,12 +351,13 @@ export class CoffeeShopV2Controller {
         s['closing_at'] = `${('0' + s['closing_at'].getUTCHours()).slice(
           -2,
         )}:${('0' + s['closing_at'].getUTCMinutes()).slice(-2)}`;
+
+        // s['current_crowded'] = s['crowded_hours'][hourId];
         s['crowded_hours'] = [
           s['crowded_hours'].slice(0, 23),
           s['crowded_hours'].slice(24, 47),
         ];
 
-        s['current_crowded'] = s['crowded_hours'][dayId][hourId];
         // delete s['crowded_hours'];
 
         if (s.hasOwnProperty('full_count')) {
