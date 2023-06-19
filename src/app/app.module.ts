@@ -78,9 +78,9 @@ import { RolesGuard } from '@src/role/roles.guard';
     //   },
     // ]),
   ],
-  // controllers: [AppController],
+  controllers: [AppController],
   providers: [
-    // AppService,
+    AppService,
     PrismaService,
     {
       provide: APP_FILTER,
