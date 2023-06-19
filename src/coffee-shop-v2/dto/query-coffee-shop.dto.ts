@@ -102,10 +102,10 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
   devices?: string[];
 
   @ApiProperty({
-    enum: ['id', 'name', 'crowded', 'review_count', 'avg_star'],
+    enum: ['id', 'name', 'crowded', 'review_count', 'avg_star', 'status'],
   })
   @IsOptional()
-  @IsEnum(['id', 'name', 'crowded', 'review_count', 'avg_star'])
+  @IsEnum(['id', 'name', 'crowded', 'review_count', 'avg_star', 'status'])
   /**
    * REVIEW
    * do not replace type string with enum here

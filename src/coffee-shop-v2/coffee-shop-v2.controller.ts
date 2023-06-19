@@ -184,6 +184,12 @@ export class CoffeeShopV2Controller {
             ? Prisma.sql`ORDER BY "name" ASC`
             : Prisma.sql`ORDER BY "name" DESC`;
         break;
+      case 'status':
+        orderByClause =
+          orderType.toUpperCase() === 'ASC'
+            ? Prisma.sql`ORDER BY "status" ASC`
+            : Prisma.sql`ORDER BY "status" DESC`;
+        break;
       case 'id':
         orderByClause =
           orderType.toUpperCase() === 'ASC'

@@ -51,7 +51,7 @@ export class AppController {
     )
     file: Express.Multer.File,
   ) {
-    console.log(file);
+    // console.log(file);
     return {
       originalname: file.originalname,
       // encoding: file.encoding,
