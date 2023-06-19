@@ -221,7 +221,7 @@ export class CoffeeShopV2Controller {
         (
           SELECT
             "coffee_shops".*,
-            Coalesce(AVG("reviews"."star"), 0)::int as "avg_star", -- NOTE: AVG RETURN NULL IF NO ROWS -> USE COALESCE TO RETURN 0
+            Coalesce(AVG("reviews"."star"), 0)::float as "avg_star", -- NOTE: AVG RETURN NULL IF NO ROWS -> USE COALESCE TO RETURN 0
             COUNT("reviews"."review_ID")::int as "review_count"    -- NOTE: COUNT RETURN 0 IF NO ROWS; RETURN TYPE IS BIGINT, CAST TO INT
           FROM "coffee_shops"
             LEFT JOIN "reviews" ON "coffee_shops"."coffee_shop_ID" = "reviews"."coffee_shop_ID"
