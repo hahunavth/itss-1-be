@@ -288,14 +288,11 @@ export class CoffeeShopV2Controller {
     } or ${typeof attrQuery.crowded_status !== 'number'})
       -- ORDER BY
       ${orderByClause}
-      -- ORDER BY "avg_star" DESC
       -- PAGINATE
       LIMIT ${paginate.toQuery().pageSize}
       OFFSET ${paginate.toQuery().pageSize * (paginate.toQuery().page - 1)}
       ;
       `;
-
-    // console.log(shopList);
 
     let totalRecords = 1;
     let pageCount = 1;
@@ -448,7 +445,7 @@ export class CoffeeShopV2Controller {
 
     const day = now ? new Date(now) : new Date();
     const dayId = day.getDate() === 0 ? 1 : 0;
-    const hourId = dayId * 24 + day.getHours();
+    const hourId = day.getHours();
     data['current_crowded'] = data['crowded_hours'][dayId][hourId];
     delete data['crowded_hours'];
 

@@ -41,7 +41,7 @@ export class CoffeeShopEntity implements coffee_shops {
     const value = obj.closing_at;
     if (typeof value === 'string') {
       if (value.match(/^\d{2}:\d{2}$/)) {
-        if (value > obj.opening_at)
+        if (!obj.opening_at || value > obj.opening_at)
           return new Date(`${'1970-01-01T'}${value}:00Z`);
         else return new Date(`${'1970-01-02T'}${value}:00Z`);
       } else
