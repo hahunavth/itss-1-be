@@ -135,7 +135,7 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
   now?: Date = new Date(Date.now());
 
   @ApiProperty({
-    description: 'Trạng thái đông đúc hiện tại',
+    description: 'Trạng thái đông đúc hiện tại, (tính theo thời gian now)',
     enum: [0, 1, 2],
   })
   @IsOptional()
@@ -144,6 +144,29 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
   // @Min(0)
   // @Max(2)
   crowded_status?: number;
+
+  @ApiProperty({
+    description:
+      'Filter các coffee_shop đã đc bookmark, (cần truyền thêm user_id)',
+    enum: ['bookmarked', 'not_bookmarked', 'all'],
+  })
+  @IsOptional()
+  @IsEnum(['bookmarked', 'not_bookmarked', 'all'])
+  bookmark_type?: 'bookmarked' | 'not_bookmarked' | 'all';
+
+  @ApiProperty({
+    description: `User_id để filter theo bookmarked_type và trường bookmarked của coffee shop\n
+      - Vói coffee_shop.bookmarked
+        + Nếu không truyền user_ID thì các coffee_shop đều có trường bookmarked = 0
+        + Nếu truyền user_ID thì các coffee_shop có trường bookmarked = 1 nếu có bookmark của user đó
+      - Với bookmarked_type = 'bookmarked' | 'not_bookmarked'
+        + Nếu không truyền user_ID thì lỗi 400
+      `,
+  })
+  @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  user_ID?: number;
 
   toQuery() {
     const query = {

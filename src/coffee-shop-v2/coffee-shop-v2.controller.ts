@@ -202,6 +202,42 @@ export class CoffeeShopV2Controller {
       default:
         throw new BadRequestException('Invalid orderBy');
     }
+    const userId = attrQuery.user_ID;
+
+    let whereBookmarkedClause = null;
+    switch (attrQuery.bookmark_type) {
+      case 'bookmarked':
+        if (userId === undefined) {
+          throw new BadRequestException(
+            'Require user_ID to get bookmarked list',
+          );
+        }
+        whereBookmarkedClause = Prisma.sql`
+            AND (
+              select count(*) from "bookmarks" where "bookmarks"."coffee_shop_ID" = "coffee_shops"."coffee_shop_ID" and "bookmarks"."user_ID" = ${userId}
+            ) = 1`;
+        break;
+      case 'not_bookmarked':
+        if (userId !== undefined) {
+          if (userId === undefined) {
+            throw new BadRequestException(
+              'Require user_ID to get not_bookmarked list',
+            );
+          }
+          whereBookmarkedClause = Prisma.sql`
+            AND (
+              select count(*) from "bookmarks" where "bookmarks"."coffee_shop_ID" = "coffee_shops"."coffee_shop_ID" and "bookmarks"."user_ID" = ${userId}
+            ) = 0`;
+        }
+        break;
+      case 'all':
+      case null:
+      case undefined:
+        whereBookmarkedClause = Prisma.empty;
+        break;
+      default:
+        throw new BadRequestException('Invalid bookmark_type');
+    }
 
     console.log(orderByClause);
 
@@ -219,7 +255,11 @@ export class CoffeeShopV2Controller {
         --
         "coffee_shops"."crowded_hours"[${hourId}] as "current_crowded",
         -- to list info
-        count(*) OVER()::int AS full_count
+        count(*) OVER()::int AS full_count,
+        -- to bookmark attr
+        (
+          select count(*)::int from "bookmarks" where "bookmarks"."coffee_shop_ID" = "coffee_shops"."coffee_shop_ID" and "bookmarks"."user_ID" = ${userId}
+        ) as "bookmarked"
       FROM
         -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
         (
@@ -286,7 +326,9 @@ export class CoffeeShopV2Controller {
       AND ("coffee_shops"."crowded_hours"[${hourId}] = ${
       attrQuery.crowded_status
     } or ${typeof attrQuery.crowded_status !== 'number'})
-      -- ORDER BY
+    -- BOOKMARKED
+    ${whereBookmarkedClause}
+        -- ORDER BY
       ${orderByClause}
       -- PAGINATE
       LIMIT ${paginate.toQuery().pageSize}
@@ -404,7 +446,11 @@ export class CoffeeShopV2Controller {
     // type: CoffeeShopV2Entity,
   })
   @Get(':id')
-  async findOne(@Param('id') id: number, @Query('now') now?: Date) {
+  async findOne(
+    @Param('id') id: number,
+    @Query('now') now?: Date,
+    @Query('user_ID') user_ID?: number,
+  ) {
     const match = await this.coffeeShopV2Service.findOne(id, {
       crudQuery: {},
     });
@@ -448,6 +494,17 @@ export class CoffeeShopV2Controller {
     const hourId = day.getHours();
     data['current_crowded'] = data['crowded_hours'][dayId][hourId];
     delete data['crowded_hours'];
+
+    if (user_ID) {
+      data['bookmarked'] = (await this.prismaService.bookmarks.findFirst({
+        where: {
+          user_ID,
+          coffee_shop_ID: id,
+        },
+      }))
+        ? 1
+        : 0;
+    }
 
     return data;
   }
