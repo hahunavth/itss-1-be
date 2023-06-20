@@ -28,6 +28,7 @@ import { ReviewsModule } from '@src/reviews/reviews.module';
 import { CategoriesModule } from '@src/categories/categories.module';
 import { AuthModule } from '@src/auth/auth.module';
 import { RolesGuard } from '@src/role/roles.guard';
+import { BookmarksModule } from '@src/bookmarks/bookmarks.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { RolesGuard } from '@src/role/roles.guard';
     ReviewsModule,
     CategoriesModule,
     AuthModule,
+    BookmarksModule,
     // Configuration
     // https://docs.nestjs.com/techniques/configuration
     // ConfigModule.forRoot({
