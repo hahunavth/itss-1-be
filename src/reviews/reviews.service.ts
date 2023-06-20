@@ -54,15 +54,32 @@ export class ReviewsService {
   }
 
   async findAll(query: QueryReviewsDto, paginate?: PaginateQueryDto) {
-    return this._transformSelectList(
+    const data = await this._transformSelectList(
       await this.prismaService.reviews.findMany({
         where: query,
         include: {
           images: true,
+          user: {
+            select: {
+              username: true,
+              email: true,
+              image_url: true,
+              role: true,
+            },
+          },
         },
         ...(paginate ? paginate.toPrismaQuery() : {}),
       }),
     );
+    // r without user
+    return data.map((r) => ({
+      ...r,
+      ...r.user,
+      user_ID: r.user_ID,
+      avatar: r.user.image_url,
+      image_url: undefined,
+      user: undefined,
+    }));
   }
 
   async findOne(id: number) {
