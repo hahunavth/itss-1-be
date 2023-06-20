@@ -4,6 +4,7 @@ import { UpdateReviewDto } from './dto/update-review.dto';
 import { PrismaService } from '@src/common';
 import { QueryReviewsDto } from './dto/query-reviews.dto';
 import { PaginateQueryDto } from '@src/dto/query-paginate.dto';
+import { SortReviewsDto } from './dto/sort-reviews.dto';
 
 @Injectable()
 export class ReviewsService {
@@ -53,10 +54,23 @@ export class ReviewsService {
     );
   }
 
-  async findAll(query: QueryReviewsDto, paginate?: PaginateQueryDto) {
+  async findAll(
+    query: QueryReviewsDto,
+    paginate?: PaginateQueryDto,
+    sort?: SortReviewsDto,
+  ) {
+    let orderBy = undefined;
+    switch (sort.orderBy) {
+      case 'create_at':
+        orderBy = {
+          create_at: sort.orderType || 'asc',
+        };
+    }
+
     const data = await this._transformSelectList(
       await this.prismaService.reviews.findMany({
         where: query,
+        orderBy: orderBy,
         include: {
           images: true,
           user: {

@@ -14,6 +14,7 @@ import { UpdateReviewDto } from './dto/update-review.dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { QueryReviewsDto } from './dto/query-reviews.dto';
 import { PaginateQueryDto } from '@src/dto/query-paginate.dto';
+import { SortReviewsDto } from './dto/sort-reviews.dto';
 
 @ApiTags('reviews')
 @Controller('reviews')
@@ -32,9 +33,10 @@ export class ReviewsController {
   async findAll(
     @Query() paginate: PaginateQueryDto,
     @Query() query: QueryReviewsDto,
+    @Query() sort: SortReviewsDto,
   ) {
     return {
-      data: await this.reviewsService.findAll(query, paginate),
+      data: await this.reviewsService.findAll(query, paginate, sort),
       ...(paginate.toQuery() || {}),
     };
   }
