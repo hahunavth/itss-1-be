@@ -259,7 +259,10 @@ export class CoffeeShopV2Controller {
         -- to bookmark attr
         (
           select count(*)::int from "bookmarks" where "bookmarks"."coffee_shop_ID" = "coffee_shops"."coffee_shop_ID" and "bookmarks"."user_ID" = ${userId}
-        ) as "bookmarked"
+        ) as "bookmarked",
+        (
+          select count(*)::int from "bookmarks" where "bookmarks"."coffee_shop_ID" = "coffee_shops"."coffee_shop_ID"
+        ) as "bookmark_count"
       FROM
         -- SELECT COFFEE SHOP WITH AVG STAR AND REVIEW COUNT
         (
