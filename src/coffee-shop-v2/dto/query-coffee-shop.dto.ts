@@ -26,7 +26,7 @@ function stringOrArrayAttrQuery(attr: string | string[]) {
 
 export class QueryCoffeeShopV2Dto implements IQueryDto {
   @ApiProperty({
-    description: 'Tìm coffee shop có chứa tên này',
+    description: 'Tìm coffee shop có chứa tên hoặc địa chỉ này',
   })
   @IsOptional()
   @IsString()

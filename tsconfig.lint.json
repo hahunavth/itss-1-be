@@ -3,5 +3,10 @@
   "compilerOptions": {
     "incremental": false
   },
-  "include": ["src/**/*.ts", "test/**/*.ts", "libs/prisma-crud/**/*.ts"]
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "prisma/**/*.ts",
+    "libs/prisma-crud/**/*.ts"
+  ]
 }

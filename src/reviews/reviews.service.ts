@@ -79,6 +79,7 @@ export class ReviewsService {
               email: true,
               image_url: true,
               role: true,
+              nationality: true,
             },
           },
         },

@@ -1,0 +1,333 @@
+{
+  "users": [
+    {
+      "password": "12345",
+      "email": "hoangdh@gmail.com",
+      "username": "hoangdh",
+      "phone_number": "0123456789",
+      "date_of_birth": "2001-02-02T07:00:33.307Z",
+      "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Duser&psig=AOvVaw09cIf0uVXkpmJNFFuUSvTi&ust=1687158375612000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOj2ke-gzP8CFQAAAAAdAAAAABAE",
+      "role": 1
+    },
+    {
+      "password": "12345",
+      "email": "hoangdh1@gmail.com",
+      "username": "hoangdh1",
+      "phone_number": "0123456789",
+      "date_of_birth": "2001-02-02T07:00:33.307Z",
+      "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Duser&psig=AOvVaw09cIf0uVXkpmJNFFuUSvTi&ust=1687158375612000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOj2ke-gzP8CFQAAAAAdAAAAABAE",
+      "role": 0
+    },
+    {
+      "password": "12345",
+      "email": "hoangdh2@gmail.com",
+      "username": "hoangdh2",
+      "phone_number": "0123456789",
+      "date_of_birth": "2001-02-02T07:00:33.307Z",
+      "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Duser&psig=AOvVaw09cIf0uVXkpmJNFFuUSvTi&ust=1687158375612000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOj2ke-gzP8CFQAAAAAdAAAAABAE",
+      "role": 0
+    },
+    {
+      "password": "12345",
+      "email": "hoangdh3@gmail.com",
+      "username": "hoangdh3",
+      "phone_number": "0123456789",
+      "date_of_birth": "2001-02-02T07:00:33.307Z",
+      "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Duser&psig=AOvVaw09cIf0uVXkpmJNFFuUSvTi&ust=1687158375612000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOj2ke-gzP8CFQAAAAAdAAAAABAE",
+      "role": 0
+    },
+    {
+      "password": "12345",
+      "email": "hoangdh4@gmail.com",
+      "username": "hoangdh4",
+      "phone_number": "0123456789",
+      "date_of_birth": "2001-02-02T07:00:33.307Z",
+      "image_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Fsearch%3Fq%3Duser&psig=AOvVaw09cIf0uVXkpmJNFFuUSvTi&ust=1687158375612000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOj2ke-gzP8CFQAAAAAdAAAAABAE",
+      "role": 0
+    }
+  ],
+  "coffee_shops": [
+    {
+      "name": "Eden Coffee",
+      "opening_at": "07:00",
+      "closing_at": "23:00",
+      "status": 3,
+      "owner_ID": 14,
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 4,
+          "status": "good"
+        }
+      ],
+      "images": [
+        "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-3-768x1024.jpeg?tr=dpr-2,w-675"
+      ],
+      "crowded_hours": [
+        [
+          0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0
+        ],
+        [0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 0, 0, 0, 1, 0, 0, 0, 0]
+      ],
+      "description": "この店からは、ハノイの有名な観光スポットの 1 つである古代大聖堂を直接望む最高の景色を眺めることができます。 レストランには屋内スペースと屋外スペースがあります。 床には芝生のカーペットが敷き詰められ、上部には植物や花が飾られ、太陽の光と風があふれる楽園の庭園の真ん中でコーヒーを飲んでいるような気分になれます。",
+      "phone_number": "0135798642",
+      "address": "Số 2 Nhà Thờ, Hoàn Kiếm, Hà Nội",
+      "verified": 1,
+      "categories": ["猫カフェ"]
+    },
+    {
+      "name": "Check in Crema Coffee",
+      "opening_at": "07:30",
+      "closing_at": "21:00",
+      "status": 4,
+      "owner_ID": 14,
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 2,
+          "status": "good"
+        }
+      ],
+      "images": [
+        "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-1-979x1024.jpeg?tr=dpr-2,w-675"
+      ],
+      "crowded_hours": [
+        [
+          0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0
+        ],
+        [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0, 0, 0]
+      ],
+      "description": "ハノイにある日本庭園風の美しいカフェです。 店内はワンフロアですが、裏と表の2か所に中庭があり、今もきらめく「バーチャルリビング」コーナーが無数にあります。 メインのインテリアは茶色の木を基調とし、随所に緑の木々が配置されており、安らぎとくつろぎの感覚が満たされます。",
+      "phone_number": "0159876432",
+      "address": "65 P. Trần Quang Diệu, Chợ Dừa, Đống Đa, Hà Nội",
+      "verified": 1,
+      "categories": ["猫カフェ"]
+    },
+    {
+      "name": "Trill Rooftop Cafe Hei Tower",
+      "opening_at": "08:00",
+      "closing_at": "23:00",
+      "status": 1,
+      "owner_ID": 14,
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 1,
+          "status": "bad"
+        }
+      ],
+      "images": [
+        "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-11-1024x1024.jpeg?tr=dpr-2,w-675"
+      ],
+      "crowded_hours": [
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0
+        ],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0]
+      ],
+      "description": "ハノイで広い屋外スペースのある美しいカフェをお探しなら、Trill Rooftop は見逃せない提案です。 ここは、上空からハノイの街を眺めながらお気に入りのドリンクを飲むのに最適な場所です。",
+      "phone_number": "0159876122",
+      "address": "Hei Tower, 1 P.Ngụy Như Kon Tum, Nhân Chính, Thanh Xuân, Hà Nội",
+      "verified": 0,
+      "categories": ["猫カフェ"]
+    },
+    {
+      "name": "Lofita Cafe",
+      "opening_at": "08:00",
+      "closing_at": "23:00",
+      "status": 2,
+      "owner_ID": 14,
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 1,
+          "status": "bad"
+        }
+      ],
+      "images": [
+        "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-5.jpg?tr=dpr-2,w-675"
+      ],
+      "crowded_hours": [
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0
+        ],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 2, 2, 1, 1, 2, 2, 1, 0, 0, 0]
+      ],
+      "description": "ハノイにあるこの美しいカフェは、紅茶、フレッシュジュース、砂糖を含まないすべての飲み物など、非常に健康的なドリンクメニューを「提供」しています。 バルコニーの隅々まで、窓枠一つ一つが光で満たされています。 広大な景色は夢見る心を満たしてくれます。",
+      "phone_number": "0158306122",
+      "address": "Tầng 9 – 10, 338 Phố Huế, Hai Bà Trưng, Hà Nội",
+      "verified": 0,
+      "categories": ["猫カフェ"]
+    },
+    {
+      "name": "Nola Cafe",
+      "opening_at": "10:00",
+      "closing_at": "23:30",
+      "status": 5,
+      "owner_ID": 14,
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 3,
+          "status": "good"
+        }
+      ],
+      "images": [
+        "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-6-1024x683.jpeg?tr=dpr-2,w-675"
+      ],
+      "crowded_hours": [
+        [
+          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 1, 2, 2, 1, 0, 0, 0
+        ],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 0, 0, 0]
+      ],
+      "description": "Nola Cafeはいつ見ても美しく、どの角度から見ても美しいです。 レストランのハイライトは、秋のロマンチックな緑の夏の蔓です。 ここからは、マ メイ ストリートにある苔むした古いタウンハウスを眺めることができます。 音楽が流れる店内は、一度来たら戻りたくない、優しくて温かい。",
+      "phone_number": "0105306122",
+      "address": "89 Mã Mây, Hoàn Kiếm, Hà Nội",
+      "verified": 1,
+      "categories": ["猫カフェ"]
+    }
+  ],
+  "reviews": [
+    {
+      "review": "涼しいエアコン、熱心なスタッフ",
+      "star": 5,
+      "create_at": "2023-06-17T07:30:53.400Z",
+      "coffee_shop_ID": 43,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン。このお店はとても美しく、ヴィンテージで芸術的な空間です",
+      "star": 4,
+      "create_at": "2023-06-18T07:30:53.400Z",
+      "coffee_shop_ID": 43,
+      "images": []
+    },
+    {
+      "review": "素敵なレストラン、広々とした静かな空間。涼しいエアコン",
+      "star": 5,
+      "create_at": "2023-06-18T07:30:53.400Z",
+      "coffee_shop_ID": 43,
+      "images": []
+    },
+    {
+      "review": "店内はエアコンが効いていてとても涼しいです",
+      "star": 5,
+      "create_at": "2023-06-16T07:30:53.400Z",
+      "coffee_shop_ID": 43,
+      "images": []
+    },
+    {
+      "review": "暑い",
+      "star": 1,
+      "create_at": "2023-06-12T07:30:53.400Z",
+      "coffee_shop_ID": 44,
+      "images": []
+    },
+    {
+      "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+      "star": 1,
+      "create_at": "2023-06-09T07:30:53.400Z",
+      "coffee_shop_ID": 44,
+      "images": []
+    },
+    {
+      "review": "カフェの中はとても暑いです",
+      "star": 2,
+      "create_at": "2023-06-10T07:30:53.400Z",
+      "coffee_shop_ID": 44,
+      "images": []
+    },
+    {
+      "review": "エアコンをつけてもまだ暑い",
+      "star": 3,
+      "create_at": "2023-05-16T07:30:53.400Z",
+      "coffee_shop_ID": 44,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン",
+      "star": 4,
+      "create_at": "2023-06-13T07:30:53.400Z",
+      "coffee_shop_ID": 45,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン。このお店はとても美しい",
+      "star": 5,
+      "create_at": "2023-06-10T07:30:53.400Z",
+      "coffee_shop_ID": 45,
+      "images": []
+    },
+    {
+      "review": "素敵なレストラン、広々とした静かな空間。涼しいエアコン",
+      "star": 5,
+      "create_at": "2023-06-11T07:30:53.400Z",
+      "coffee_shop_ID": 45,
+      "images": []
+    },
+    {
+      "review": "店内はエアコンが効いていてとても涼しいです",
+      "star": 5,
+      "create_at": "2023-06-12T07:30:53.400Z",
+      "coffee_shop_ID": 45,
+      "images": []
+    },
+    {
+      "review": "暑いすぎいいいいいいい",
+      "star": 1,
+      "create_at": "2023-06-10T07:30:53.400Z",
+      "coffee_shop_ID": 40,
+      "images": []
+    },
+    {
+      "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+      "star": 2,
+      "create_at": "2023-06-09T07:30:53.400Z",
+      "coffee_shop_ID": 40,
+      "images": []
+    },
+    {
+      "review": "カフェの中はとても暑いです",
+      "star": 2,
+      "create_at": "2023-06-10T07:30:53.400Z",
+      "coffee_shop_ID": 40,
+      "images": []
+    },
+    {
+      "review": "店内はエアコンをつけていない",
+      "star": 1,
+      "create_at": "2023-05-16T07:30:53.400Z",
+      "coffee_shop_ID": 40,
+      "images": []
+    },
+    {
+      "review": "素敵なレストラン、広々とした静かな空間。涼しいエアコン",
+      "star": 5,
+      "create_at": "2023-06-01T07:30:53.400Z",
+      "coffee_shop_ID": 42,
+      "images": []
+    },
+    {
+      "review": "店内はエアコンが効いていてとても涼しいです",
+      "star": 5,
+      "create_at": "2023-06-12T07:30:53.400Z",
+      "coffee_shop_ID": 42,
+      "images": []
+    },
+    {
+      "review": "エアコンをつけずに暑い昼下がり",
+      "star": 1,
+      "create_at": "2023-06-09T07:30:53.400Z",
+      "coffee_shop_ID": 42,
+      "images": []
+    },
+    {
+      "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+      "star": 2,
+      "create_at": "2023-06-09T07:30:53.400Z",
+      "coffee_shop_ID": 42,
+      "images": []
+    }
+  ]
+}

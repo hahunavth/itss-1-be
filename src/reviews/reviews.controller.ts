@@ -27,7 +27,8 @@ export class ReviewsController {
   // }
 
   @ApiOperation({
-    summary: 'Sprint 2 - Task 13: Get all reviews',
+    summary:
+      'Sprint 2 - Task 13: Get all reviews; Sprint 3 - Task 6: review filter by user nationality',
   })
   @Get()
   async findAll(
@@ -36,7 +37,7 @@ export class ReviewsController {
     @Query() sort: SortReviewsDto,
   ) {
     return {
-      data: await this.reviewsService.findAll(query, paginate, sort),
+      data: await this.reviewsService.findAll(query.toQuery(), paginate, sort),
       ...(paginate.toQuery() || {}),
     };
   }

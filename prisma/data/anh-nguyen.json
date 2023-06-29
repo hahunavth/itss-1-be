@@ -1,0 +1,653 @@
+{
+  "users": [
+    {
+      "username": "AnhNguyen1",
+      "password": "1234567890",
+      "email": "nguyenletuananh@gmail.com",
+      "phone_number": "5699470700",
+      "date_of_birth": "2001-03-15T00:00:00.000Z",
+      "image_url": "https://robohash.org/voluptatesipsamut.png?size=1280x800&set=set1",
+      "role": 1
+    },
+    {
+      "username": "AnhNguyen12",
+      "password": "1234567891",
+      "email": "nguyenletuananh1@gmail.com",
+      "phone_number": "9413279491",
+      "date_of_birth": "2005-07-17T00:00:00.000Z",
+      "image_url": "https://robohash.org/dignissimosculpain.png?size=1280x800&set=set1",
+      "role": 0
+    },
+    {
+      "username": "AnhNguyen123",
+      "password": "1234567892",
+      "email": "nguyenletuananh2@gmail.com",
+      "phone_number": "6042368178",
+      "date_of_birth": "2007-08-20T00:00:00.000Z",
+      "image_url": "https://robohash.org/ducimusdoloremaccusamus.png?size=1280x800&set=set1",
+      "role": 0
+    },
+    {
+      "username": "AnhNguyen1234",
+      "password": "1234567893",
+      "email": "nguyenletuananh3@gmail.com",
+      "phone_number": "4839403216",
+      "date_of_birth": "2008-10-10T00:00:00.000Z",
+      "image_url": "https://robohash.org/voluptasearumrepudiandae.png?size=1280x800&set=set1",
+      "role": 0
+    },
+    {
+      "username": "AnhNguyen12345",
+      "password": "1234567894",
+      "email": "nguyenletuananh4@gmail.com",
+      "phone_number": "2331869761",
+      "date_of_birth": "2003-09-24T00:00:00.000Z",
+      "image_url": "https://robohash.org/atquedoloremvoluptatum.png?size=1280x800&set=set1",
+      "role": 0
+    }
+  ],
+  "coffee_shops": [
+    {
+      "name": "Highlands Coffee",
+      "images": ["http://rb.gy/q8skg", "http://rb.gy/zj98d"],
+      "owner_ID": 8,
+      "opening_at": "07:00",
+      "closing_at": "22:00",
+      "description": "Highlands Coffee® was established in 1999 and born out of love for Vietnam, its coffee and its communities.",
+      "phone_number": "0987654321",
+      "status": 5,
+      "address": "91 Tran Dai Nghia, Bach Khoa, Hai Ba Trung, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 3,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "InFact Coffee",
+      "images": ["http://rb.gy/c0e6s"],
+      "owner_ID": 9,
+      "opening_at": "08:00",
+      "closing_at": "22:00",
+      "description": "A Positive & Creative Co-Working Café Focused On Making Good Ideas & Innovation",
+      "phone_number": "0862828342",
+      "status": 5,
+      "address": "342 Ba Trieu, Le Dai Hanh, Hai Ba Trung, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 1, 0, 1, 1, 2, 1, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 6,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Moc An Coffee & Tea",
+      "images": ["http://rb.gy/ygrdi", "http://rb.gy/mfues"],
+      "owner_ID": 9,
+      "opening_at": "07:00",
+      "closing_at": "22:00",
+      "description": "It is a place with excellent coffee, quiet space, sincerity",
+      "phone_number": "0382202836",
+      "status": 5,
+      "address": "19 Le Thanh Nghi, Bach Mai, Hai Ba Trung, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 4,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Phuc Long Coffee & Tea",
+      "images": ["http://rb.gy/eao5e"],
+      "owner_ID": 8,
+      "opening_at": "07:30",
+      "closing_at": "22:30",
+      "description": "After more than 50 years of extracting the quintessence from premium green tea buds and coffee beans and wishing to bring customers the most valuable experiences when enjoying, Phuc Long is continuously a pioneer brand with many ideas. Innovative ideas at the forefront of the tea and coffee industry.\n\nWe believe that each tea and coffee product will be more and more excellent when created from constant striving and passion. And it is the connection based on trust, honesty and trust that contributes to bringing the beauty of tea & coffee culture to fly higher and farther. Continuing efforts, from the first store, until now, Phuc Long has built more than 80 stores in the areas of Ho Chi Minh City, Binh Duong, Bien Hoa, Can Tho, Da Nang, Nha Trang, and Hanoi serving the Fresh drinks from tea and coffee. Not stopping there, we continue to develop and expand the store system from South to North. Increase product coverage to all systems: supermarkets, convenience stores…\n\nWorking with the motto ",
+      "phone_number": "0914162689",
+      "status": 5,
+      "address": "69 Tran Dai Nghia, Bach Khoa, Hai Ba Trung, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 3,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "The Copa Coffee",
+      "images": ["http://rb.gy/va4iu"],
+      "owner_ID": 9,
+      "opening_at": "08:00",
+      "closing_at": "22:00",
+      "description": "Copa - A Cup of Goodness",
+      "phone_number": "0944696889",
+      "status": 5,
+      "address": "65 Tran Dai Nghia, Bach Khoa, Hai Ba Trung, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 1,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "All Day Coffee",
+      "images": ["http://rb.gy/uunzp"],
+      "owner_ID": 9,
+      "opening_at": "07:00",
+      "closing_at": "23:00",
+      "description": "All Day Coffee\nVietnamese Specialty Coffee\nYour Everyday Coffee � Roasted Daily",
+      "phone_number": "0987654321",
+      "status": 5,
+      "address": "37 Quang Trung, Tran Hung Dao, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 7,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Tranquil Books & Coffee",
+      "images": ["http://rb.gy/s4hai"],
+      "owner_ID": 9,
+      "opening_at": "08:00",
+      "closing_at": "22:30",
+      "description": "",
+      "phone_number": "0395049075",
+      "status": 5,
+      "address": "5 Nguyen Quang Bich, Cua Dong, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 3,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Cafe Giảng",
+      "images": ["http://rb.gy/obf4z"],
+      "owner_ID": 9,
+      "opening_at": "07:00",
+      "closing_at": "22:00",
+      "description": "Café Giảng is headquartered in Hanoi, Vietnam, is the birthplace of egg coffee, invented in 1946 by Mr. Nguyen Van Giang, the father of the current owner, and a bartender at the 5-star hotel Sofitel Legend Metropole in Hanoi at that time.",
+      "phone_number": "0989892298",
+      "status": 5,
+      "address": "39 Nguyen Huu Huan, Ly Thai To, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 5,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Xofa Café & Bistro",
+      "images": ["http://rb.gy/jgv5f"],
+      "owner_ID": 8,
+      "opening_at": "00:00",
+      "closing_at": "23:00",
+      "description": "In a quiet corner by the window, you are awakened by the warm aroma of coffee, reaching out to welcome the last rays of summer sun and a refreshing autumn breeze, welcoming a new peaceful day!\nTry to spend an early autumn morning at Xofa and feel it!",
+      "phone_number": "0987654321",
+      "status": 5,
+      "address": "14 Tong Duy Tan, Hang Bong, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 0, 0],
+        [2, 2, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 7,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Dream Beans Coffee Roastery",
+      "images": ["http://rb.gy/noqvm"],
+      "owner_ID": 10,
+      "opening_at": "07:30",
+      "closing_at": "17:00",
+      "description": "This is a small independent coffee house, run by a local family. This young couple who are passionat",
+      "phone_number": "0934683020",
+      "status": 5,
+      "address": "79 Ly Nam De, Cua Dong, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 5,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Hoa10Giờ Floral & Book Cafe",
+      "images": ["http://rb.gy/x65li"],
+      "owner_ID": 9,
+      "opening_at": "07:30",
+      "closing_at": "22:00",
+      "description": "Vintage style fresh flower shop and very beautiful Book Cafe",
+      "phone_number": "0366578989",
+      "status": 5,
+      "address": "26 Hang Voi, Ly Thai To, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 3,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "The Note Coffee",
+      "images": ["http://rb.gy/p3egj"],
+      "owner_ID": 9,
+      "opening_at": "07:00",
+      "closing_at": "23:00",
+      "description": "The Note Coffee is a special cafe with tens of thousands of messages left by customers",
+      "phone_number": "0975194466",
+      "status": 5,
+      "address": "64 Luong Van Can, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 5,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Circle Coffee - Bar",
+      "images": ["http://rb.gy/xzrcq"],
+      "owner_ID": 9,
+      "opening_at": "10:00",
+      "closing_at": "23:00",
+      "description": "Circle Coffee Bar is an ancient French house that is both old and modern with open space hidden behind a small path lit by the light of small lanterns. That will probably be one of your interesting experiences.",
+      "phone_number": "0983922452",
+      "status": 5,
+      "address": "49 Hang Quat, Hang Gai, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 7,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Cafe Đinh",
+      "images": ["http://rb.gy/8s262"],
+      "owner_ID": 9,
+      "opening_at": "07:00",
+      "closing_at": "22:30",
+      "description": "",
+      "phone_number": "0906221106",
+      "status": 5,
+      "address": "13 Dinh Tien Hoang, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 6,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "The Little Plan café",
+      "images": ["http://rb.gy/67zyf"],
+      "owner_ID": 9,
+      "opening_at": "08:00",
+      "closing_at": "22:30",
+      "description": "Drinks & some sweetness in an old French mansion",
+      "phone_number": "0987267670",
+      "status": 5,
+      "address": "11 Phu Doan, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 4,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "An bread & cafe",
+      "images": ["http://rb.gy/u6dxr"],
+      "owner_ID": 10,
+      "opening_at": "08:00",
+      "closing_at": "22:00",
+      "description": "Bread, coffee, smoothies.....",
+      "phone_number": "0918685538",
+      "status": 5,
+      "address": "15 Phu Doan, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 3,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "HoLLee Coffee Shop",
+      "images": ["http://rb.gy/pfb63"],
+      "owner_ID": 10,
+      "opening_at": "08:00",
+      "closing_at": "19:00",
+      "description": "Hollee Coffee Shop is a cafe with many special coffee machine lines",
+      "phone_number": "0904173429",
+      "status": 5,
+      "address": "91 Tran Quoc Toan, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 2,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Kalina Café",
+      "images": ["http://rb.gy/gkc6m"],
+      "owner_ID": 11,
+      "opening_at": "07:00",
+      "closing_at": "23:30",
+      "description": "",
+      "phone_number": "0913002707",
+      "status": 5,
+      "address": "2 Ba Trieu, Trang Tien, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 6,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Blackbird Coffee",
+      "images": ["http://rb.gy/uki6m"],
+      "owner_ID": 11,
+      "opening_at": "07:00",
+      "closing_at": "21:00",
+      "description": "",
+      "phone_number": "0389513053",
+      "status": 5,
+      "address": "5 Chan Cam, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 1, 0, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 1,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    },
+    {
+      "name": "Cafe Mai",
+      "images": ["http://rb.gy/4cls7"],
+      "owner_ID": 9,
+      "opening_at": "07:00",
+      "closing_at": "22:00",
+      "description": "Grinding technique handed down from former generations \nUnder French processing method\n Developed in H",
+      "phone_number": "0987654321",
+      "status": 5,
+      "address": "52 Nguyen Du, Tran Hung Dao, Hai Ba Trung, Hanoi, Vietnam",
+      "verified": 0,
+      "crowded_hours": [
+        [0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+      ],
+      "devices": [
+        {
+          "name": "エアコン",
+          "quantity": 5,
+          "status": "good"
+        }
+      ],
+      "categories": ["喫茶店"]
+    }
+  ],
+  "reviews": [
+    {
+      "review": "涼しいエアコン、熱心なスタッフ",
+      "star": 5,
+      "coffee_shop_ID": 20,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン、広々とした空間",
+      "star": 5,
+      "coffee_shop_ID": 20,
+      "images": []
+    },
+    {
+      "review": "壊れたエアコン",
+      "star": 3,
+      "coffee_shop_ID": 20,
+      "images": []
+    },
+    {
+      "review": "エアコンはありますが暑いです",
+      "star": 3,
+      "coffee_shop_ID": 20,
+      "images": []
+    },
+    {
+      "review": "エアコンが寒すぎる",
+      "star": 5,
+      "coffee_shop_ID": 20,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン、熱心なスタッフ",
+      "star": 3,
+      "coffee_shop_ID": 20,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン、広々とした空間",
+      "star": 3,
+      "coffee_shop_ID": 17,
+      "images": []
+    },
+    {
+      "review": "エアコンが壊れているのでとても暑いです",
+      "star": 3,
+      "coffee_shop_ID": 17,
+      "images": []
+    },
+    {
+      "review": "エアコンが寒すぎる",
+      "star": 5,
+      "coffee_shop_ID": 17,
+      "images": []
+    },
+    {
+      "review": "エアコンはありますが暑いです",
+      "star": 1,
+      "coffee_shop_ID": 17,
+      "images": []
+    },
+    {
+      "review": "エアコンがとても涼しいです",
+      "star": 5,
+      "coffee_shop_ID": 17,
+      "images": []
+    },
+    {
+      "review": "エアコンが寒すぎる",
+      "star": 3,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "エアコンはありますが暑いです",
+      "star": 2,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン、広々とした空間",
+      "star": 5,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "エアコンはありますが暑いです",
+      "star": 1,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "エアコンが作動しない",
+      "star": 2,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "エアコンがとても涼しいです",
+      "star": 3,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "涼しいエアコン、広々とした空間",
+      "star": 5,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "エアコンが寒すぎる",
+      "star": 3,
+      "coffee_shop_ID": 22,
+      "images": []
+    },
+    {
+      "review": "エアコンはありますが暑いです",
+      "star": 1,
+      "coffee_shop_ID": 20,
+      "images": []
+    }
+  ]
+}

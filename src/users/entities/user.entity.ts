@@ -24,4 +24,6 @@ export class UserEntity implements users {
   @IsNumber()
   @Type(() => Number)
   role: Role;
+  @IsString()
+  nationality: string;
 }

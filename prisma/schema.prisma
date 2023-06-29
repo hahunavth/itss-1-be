@@ -36,6 +36,7 @@ model users {
   email         String         @unique @db.VarChar(30)
   phone_number  String?        @db.VarChar(10)
   date_of_birth DateTime?
+  nationality   String         @default("日本") @db.VarChar(30)
   image_url     String?
   role          Int
   bookmarks     bookmarks[]
@@ -54,7 +55,7 @@ model reviews {
   coffee_shop    coffee_shops @relation(fields: [coffee_shop_ID], references: [id], onDelete: Cascade)
   user           users        @relation(fields: [user_ID], references: [id], onDelete: Cascade)
 
-  @@unique([coffee_shop_ID, user_ID])
+  // @@unique([coffee_shop_ID, user_ID])
 }
 
 model images {

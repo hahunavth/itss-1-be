@@ -28,7 +28,8 @@
       "@src/*": ["src/*"],
       "@app/prisma-crud": ["libs/prisma-crud/src"],
       "@app/prisma-crud/*": ["libs/prisma-crud/src/*"]
-    }
+    },
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts", "libs/prisma-crud/**/*.ts"],
   "exclude": ["node_modules", "dist"]

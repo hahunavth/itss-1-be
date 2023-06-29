@@ -107,7 +107,8 @@ export class CoffeeShopV2Controller {
   }
 
   @ApiOperation({
-    summary: 'Sprint 2 - Task 6, 8: Find coffee shop list',
+    summary:
+      'Sprint 2 - Task 6, 8: Find coffee shop list; Sprint 3 - find name and address)',
     // description: `
     // - Request query:
     //   - name: if not provided, return all, else return all that match the name (contains)
@@ -314,9 +315,15 @@ export class CoffeeShopV2Controller {
       or ${!useDevFilter})
       --
       -- FILTER BY NAME
-      AND ("coffee_shops"."name" ILIKE ${
-        attrQuery.name ? `%${attrQuery.name}%` : '%'
-      })
+      AND (
+        ("coffee_shops"."name" ILIKE ${
+          attrQuery.name ? `%${attrQuery.name}%` : '%'
+        })
+        or
+        ("coffee_shops"."address" ILIKE ${
+          attrQuery.name ? `%${attrQuery.name}%` : '%'
+        })
+      )
       -- FILTER BY OPENING TIME
       AND ("coffee_shops"."opening_at" <= ${
         attrQuery.opening_at
@@ -407,14 +414,6 @@ export class CoffeeShopV2Controller {
           pageCount = Math.ceil(totalRecords / pageSize);
           delete s.full_count;
         }
-
-        // const currentTime = `${('0' + day.getUTCHours()).slice(
-        //   -2,
-        // )}:${day.getUTCMinutes()}`;
-        // s['is_opening'] =
-        //   s['opening_at'] < s['closing_at']
-        //     ? s['opening_at'] < currentTime && currentTime < s['closing_at']
-        //     : s['closing_at'] < currentTime && currentTime < s['opening_at'];
 
         return {
           ...s,
