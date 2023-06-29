@@ -340,7 +340,10 @@ export class CoffeeShopV2Controller {
           (${
             typeof attrQuery.crowded_status === 'number'
               ? attrQuery.crowded_status
-              : Prisma.join(attrQuery.crowded_status)
+              : Array.isArray(attrQuery.crowded_status) &&
+                attrQuery.crowded_status.length > 0
+              ? Prisma.join(attrQuery.crowded_status)
+              : Prisma.join([0, 1, 2])
           })
         )
         or ${!attrQuery.crowded_status}

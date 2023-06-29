@@ -145,6 +145,7 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
   // @Max(2, { each: true })
   @Type(() => Number)
   crowded_status?: number[];
+  //  = [];
 
   @ApiProperty({
     description:
