@@ -137,13 +137,14 @@ export class QueryCoffeeShopV2Dto implements IQueryDto {
   @ApiProperty({
     description: 'Trạng thái đông đúc hiện tại, (tính theo thời gian now)',
     enum: [0, 1, 2],
+    isArray: true,
   })
   @IsOptional()
-  @IsNumber()
+  @IsNumber({}, { each: true })
+  // @Min(0, { each: true })
+  // @Max(2, { each: true })
   @Type(() => Number)
-  // @Min(0)
-  // @Max(2)
-  crowded_status?: number;
+  crowded_status?: number[];
 
   @ApiProperty({
     description:

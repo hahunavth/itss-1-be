@@ -205,6 +205,7 @@ export class CoffeeShopV2Controller {
     }
     const userId = attrQuery.user_ID;
 
+    console.log(attrQuery.crowded_status);
     let whereBookmarkedClause = null;
     switch (attrQuery.bookmark_type) {
       case 'bookmarked':
@@ -333,12 +334,20 @@ export class CoffeeShopV2Controller {
         attrQuery.closing_at
       } or ${!attrQuery.closing_at})
       -- FILTER BY CROWDED
-      AND ("coffee_shops"."crowded_hours"[${hourId}] = ${
-      attrQuery.crowded_status
-    } or ${typeof attrQuery.crowded_status !== 'number'})
-    -- BOOKMARKED
-    ${whereBookmarkedClause}
-        -- ORDER BY
+      -- array
+      AND (
+        ("coffee_shops"."crowded_hours"[${hourId}] in
+          (${
+            typeof attrQuery.crowded_status === 'number'
+              ? attrQuery.crowded_status
+              : Prisma.join(attrQuery.crowded_status)
+          })
+        )
+        or ${!attrQuery.crowded_status}
+      )
+      -- BOOKMARKED
+      ${whereBookmarkedClause}
+      -- ORDER BY
       ${orderByClause}
       -- PAGINATE
       LIMIT ${paginate.toQuery().pageSize}

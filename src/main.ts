@@ -44,6 +44,7 @@ async function bootstrap() {
   const doc = `
   ### Sprint 3:
   - [x] 03. Coffee shop get all: find address by kw (address, name)
+  - [x] 03. Coffee shop get all: filter by crowded_status: number -> crowded_status: number[]
   - [x] 06. Table users: add col nationality
   - [x] 06. Find review by nationality black|white list, return nationality in each reviews
   - [x] 08. Api create coffee shop
