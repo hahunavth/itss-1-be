@@ -41,9 +41,19 @@ async function bootstrap() {
 
   // swagger config
   // see https://docs.nestjs.com/openapi/introduction
+  const doc = `
+  ### Sprint 3:
+  - [x] 03. Coffee shop get all: find address by kw (address, name)
+  - [x] 06. Table users: add col nationality
+  - [x] 06. Find review by nationality black|white list, return nationality in each reviews
+  - [x] 08. Api create coffee shop
+  - [x] 11. Api edit coffee shop
+  - [x] 16. Add filter by bookmark_type in api get all coffee shop
+  - [x] Add login, profile routes in auth
+  `;
   const config = new DocumentBuilder()
     .setTitle('Eko api')
-    .setDescription('The eko API description')
+    .setDescription(doc)
     .setVersion('1.0')
     .addBearerAuth()
     .build();
