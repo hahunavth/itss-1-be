@@ -10,8 +10,8 @@ export class BookmarksService {
     return this.prisma.bookmarks.create({ data: createBookmarkDto });
   }
 
-  remove(query: CreateBookmarkDto) {
-    this.prisma.bookmarks.delete({
+  async remove(query: CreateBookmarkDto) {
+    return this.prisma.bookmarks.delete({
       where: {
         coffee_shop_ID_user_ID: query,
       },

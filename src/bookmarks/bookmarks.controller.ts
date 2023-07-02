@@ -18,12 +18,12 @@ export class BookmarksController {
   constructor(private readonly bookmarksService: BookmarksService) {}
 
   @Post()
-  create(@Body() createBookmarkDto: CreateBookmarkDto) {
+  async create(@Body() createBookmarkDto: CreateBookmarkDto) {
     return this.bookmarksService.create(createBookmarkDto);
   }
 
   @Delete()
-  remove(@Body() query: CreateBookmarkDto) {
+  async remove(@Body() query: CreateBookmarkDto) {
     return this.bookmarksService.remove(query);
   }
 }
