@@ -481,6 +481,14 @@ export class CoffeeShopV2Controller {
         coffee_shop_ID: match.id,
       },
     });
+    const bookmark_agg = await this.prismaService.bookmarks.aggregate({
+      _count: {
+        _all: true,
+      },
+      where: {
+        coffee_shop_ID: match.id,
+      },
+    });
 
     const data =
       await this.coffeeShopV2Service.transformPrismaNestedJoinToEntity({
@@ -489,6 +497,7 @@ export class CoffeeShopV2Controller {
           star: review_agg._avg.star || 0, // NOTE: Default star is 0 if no review
           count: review_agg._count.star,
         },
+        bookmark_count: bookmark_agg._count._all,
       });
 
     data['opening_at'] = `${('0' + data['opening_at'].getUTCHours()).slice(
