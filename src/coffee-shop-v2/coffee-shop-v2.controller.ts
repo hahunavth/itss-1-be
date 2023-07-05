@@ -516,7 +516,7 @@ export class CoffeeShopV2Controller {
     const dayId = day.getDate() === 0 ? 1 : 0;
     const hourId = day.getHours();
     data['current_crowded'] = data['crowded_hours'][dayId][hourId];
-    delete data['crowded_hours'];
+    // delete data['crowded_hours'];
 
     if (user_ID) {
       data['bookmarked'] = (await this.prismaService.bookmarks.findFirst({

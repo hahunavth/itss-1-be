@@ -10,7 +10,7 @@ import {
 import { ApiProperty } from '@nestjs/swagger';
 import { AddDeviceDto } from './add-device.dto';
 import { Expose, Transform, Type } from 'class-transformer';
-import { HttpException, HttpStatus } from '@nestjs/common';
+import { BadRequestException, HttpException, HttpStatus } from '@nestjs/common';
 
 export class CreateCoffeeShopV2Dto {
   @ApiProperty()
@@ -106,7 +106,11 @@ export class CreateCoffeeShopV2Dto {
     // console.log('obj.crowded_hours');
     const arr = obj.crowded_hours.flat();
     if (arr.length !== 48) {
-      throw new Error('crowded_hours must be 48 elements');
+      throw new BadRequestException(
+        'crowded_hours must be 48 elements but pass ' +
+          arr.length +
+          ' elements',
+      );
     }
     return arr;
   })
