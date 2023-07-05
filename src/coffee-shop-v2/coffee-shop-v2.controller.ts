@@ -417,7 +417,7 @@ export class CoffeeShopV2Controller {
         console.log(s['crowded_hours'].length);
         s['crowded_hours'] = [
           s['crowded_hours'].slice(0, 24),
-          s['crowded_hours'].slice(25, 48),
+          s['crowded_hours'].slice(24, 48),
         ];
         console.log(s['crowded_hours'][0].length);
 
@@ -511,7 +511,7 @@ export class CoffeeShopV2Controller {
 
     data['crowded_hours'] = [
       data['crowded_hours'].slice(0, 24),
-      data['crowded_hours'].slice(25, 48),
+      data['crowded_hours'].slice(24, 48),
     ] as any;
 
     const day = now ? new Date(now) : new Date();
