@@ -414,10 +414,12 @@ export class CoffeeShopV2Controller {
         )}:${('0' + s['closing_at'].getUTCMinutes()).slice(-2)}`;
 
         // s['current_crowded'] = s['crowded_hours'][hourId];
+        console.log(s['crowded_hours'].length);
         s['crowded_hours'] = [
-          s['crowded_hours'].slice(0, 23),
-          s['crowded_hours'].slice(24, 47),
+          s['crowded_hours'].slice(0, 24),
+          s['crowded_hours'].slice(25, 48),
         ];
+        console.log(s['crowded_hours'][0].length);
 
         // delete s['crowded_hours'];
 
@@ -508,8 +510,8 @@ export class CoffeeShopV2Controller {
     )}:${('0' + data['closing_at'].getUTCMinutes()).slice(-2)}` as any;
 
     data['crowded_hours'] = [
-      data['crowded_hours'].slice(0, 23),
-      data['crowded_hours'].slice(24, 47),
+      data['crowded_hours'].slice(0, 24),
+      data['crowded_hours'].slice(25, 48),
     ] as any;
 
     const day = now ? new Date(now) : new Date();
