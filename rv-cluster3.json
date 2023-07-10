@@ -1,0 +1,87 @@
+[
+  { "review": "壊れたエアコン", "star": 3, "coffee_shop_ID": 20, "images": [] },
+  {
+    "review": "涼しいエアコン",
+    "star": 4,
+    "create_at": "2023-06-13T07:30:53.400Z",
+    "coffee_shop_ID": 45,
+    "images": []
+  },
+  {
+    "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+    "star": 2,
+    "create_at": "2023-06-09T07:30:53.400Z",
+    "coffee_shop_ID": 42,
+    "images": []
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 5,
+    "coffee_shop_ID": 17,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、熱心なスタッフ",
+    "star": 5,
+    "coffee_shop_ID": 25,
+    "images": []
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 3,
+    "coffee_shop_ID": 22,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン。このお店はとても美しい",
+    "star": 5,
+    "create_at": "2023-06-10T07:30:53.400Z",
+    "coffee_shop_ID": 45,
+    "images": []
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 3,
+    "coffee_shop_ID": 20,
+    "images": []
+  },
+  {
+    "review": "暑いすぎいいいいいいい",
+    "star": 1,
+    "create_at": "2023-06-10T07:30:53.400Z",
+    "coffee_shop_ID": 40,
+    "images": []
+  },
+  {
+    "review": "エアコンが壊れているのでとても暑いです",
+    "star": 3,
+    "coffee_shop_ID": 17,
+    "images": []
+  },
+  { "review": "壊れたエアコン", "star": 3, "coffee_shop_ID": 30, "images": [] },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 1,
+    "coffee_shop_ID": 17,
+    "images": []
+  },
+  {
+    "review": "エアコンが壊れているのでとても暑いです",
+    "star": 2,
+    "coffee_shop_ID": 23,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 5,
+    "coffee_shop_ID": 22,
+    "images": []
+  },
+  {
+    "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+    "star": 1,
+    "create_at": "2023-06-09T07:30:53.400Z",
+    "coffee_shop_ID": 44,
+    "images": []
+  }
+]

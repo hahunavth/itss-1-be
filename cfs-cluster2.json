@@ -1,0 +1,214 @@
+[
+  {
+    "name": "A+ Cà Phê Bao Cấp",
+    "opening_at": "07:00",
+    "closing_at": "22:30",
+    "status": 5,
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 0, 1, 2, 1, 0, 2, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 0, 1, 2, 1, 0, 2, 1, 0, 0, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipO-Mnxz__Y7StasXNb0kXJHw-OdNkhRQe9hHj91=w408-h306-k-no"
+    ],
+    "description": "サービスオプション:屋外席、配達、取り除く、内部使用。製品サービス：コーヒー。食事のオプション：朝食、ブランチ、ケータリングサービス。施設：犬可、トイレ。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています",
+    "owner_ID": 2,
+    "phone_number": "0986969062",
+    "address": "Số 6 BT04 Trần Thủ Độ Khu đô thị, Pháp Vân, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Circle Coffee - Bar",
+    "images": ["http://rb.gy/xzrcq"],
+    "owner_ID": 9,
+    "opening_at": "10:00",
+    "closing_at": "23:00",
+    "description": "Circle Coffee Bar is an ancient French house that is both old and modern with open space hidden behind a small path lit by the light of small lanterns. That will probably be one of your interesting experiences.",
+    "phone_number": "0983922452",
+    "status": 5,
+    "address": "49 Hang Quat, Hang Gai, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 7, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Nola Cafe",
+    "opening_at": "10:00",
+    "closing_at": "23:30",
+    "status": 5,
+    "owner_ID": 14,
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "images": [
+      "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-6-1024x683.jpeg?tr=dpr-2,w-675"
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 1, 2, 2, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 0, 0, 0]
+    ],
+    "description": "Nola Cafeはいつ見ても美しく、どの角度から見ても美しいです。 レストランのハイライトは、秋のロマンチックな緑の夏の蔓です。 ここからは、マ メイ ストリートにある苔むした古いタウンハウスを眺めることができます。 音楽が流れる店内は、一度来たら戻りたくない、優しくて温かい。",
+    "phone_number": "0105306122",
+    "address": "89 Mã Mây, Hoàn Kiếm, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "HoLLee Coffee Shop",
+    "images": ["http://rb.gy/pfb63"],
+    "owner_ID": 10,
+    "opening_at": "08:00",
+    "closing_at": "19:00",
+    "description": "Hollee Coffee Shop is a cafe with many special coffee machine lines",
+    "phone_number": "0904173429",
+    "status": 5,
+    "address": "91 Tran Quoc Toan, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "The Little Plan café",
+    "images": ["http://rb.gy/67zyf"],
+    "owner_ID": 9,
+    "opening_at": "08:00",
+    "closing_at": "22:30",
+    "description": "Drinks & some sweetness in an old French mansion",
+    "phone_number": "0987267670",
+    "status": 5,
+    "address": "11 Phu Doan, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 4, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Nhất Long",
+    "opening_at": "08:00",
+    "closing_at": "20:00",
+    "status": 3,
+    "devices": [{ "name": "エアコン", "quantity": 0, "status": "bad" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 2, 2, 1, 1, 0, 0, 2, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 2, 2, 1, 1, 0, 0, 2, 0, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipOlRZHH7p8fJKcAKDWDLBnShrvWZ6I3w7oZhs7D=w426-h240-k-no"
+    ],
+    "description": "サービスオプション:屋外席、内部使用。製品サービス：コーヒー。食事のオプション：シート。施設：トイレ、子供に適した、Wi-Fi、無料Wi-Fi利用可能。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています、家族全員に適しています。",
+    "owner_ID": 2,
+    "phone_number": "0913502978",
+    "address": "27 Phương Mai, Đống Đa, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cà phê sáo",
+    "opening_at": "07:30",
+    "closing_at": "22:45",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 1, 1, 0, 0, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 1, 1, 0, 0, 1, 1, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNZzEpnW5L-BuAQagsEmtVg6CvhIjb17ogSbLhA=w408-h725-k-no"
+    ],
+    "description": "サービスオプション：屋外、選び出す、非接触型食品宅配サービス、配達、取り除く、内部使用。特徴：スポーツ。製品サービス：副菜、コーヒー、アルコール飲料。食事のオプション：ケータリングサービス、シート。施設：ジェンダーフレンドリーなトイレ、バー付き、トイレ、子供に適した、Wi-Fi、無料Wi-Fi利用可能。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています、家族全員に適しています",
+    "owner_ID": 2,
+    "phone_number": "0975504488",
+    "address": "Số 39 Ngõ 24 Kim Đồng, Giáp Bát, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Cafe Lan Anh",
+    "opening_at": "08:30",
+    "closing_at": "21:30",
+    "status": 3,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipP8uMr6Tnn4dQDgjkW3oN2GgUJESmg_ue3HOP-W=w408-h306-k-no"
+    ],
+    "description": "サービスオプション：屋外席、内部使用。製品サービス：コーヒー。食事のオプション：ケータリングサービス、シート。施設：犬可、トイレ。雰囲気：のんびりとした雰囲気。人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0979225869",
+    "address": "Cooffee Lan Anh, Liên Hiệp, Phúc Thọ, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cộng Cà phê",
+    "opening_at": "07:00",
+    "closing_at": "23:30",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 1, 0, 0, 2, 1, 2, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 1, 0, 1, 0, 0, 2, 1, 2, 1, 1, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPlVOByLW1snUzpY9CwF9juyqEm21PiZcFPcNDR=w300-h225-p-k-no"
+    ],
+    "description": "サービスオプション: 屋外席、非接触型食品宅配サービス、配達、取り除く、内部使用。特徴：迅速なサービス。アクセシビリティ：バリアフリー入口：多目的トイレ：バリアフリー席、バリアフリー駐車場。製品サービス、コーヒー、アルコール飲料、ビール。食事のオプション：ケータリングサービス、シート。施設：トイレ、子供に適した。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています。計画する：予約を受け付ける。",
+    "owner_ID": 2,
+    "phone_number": "0911811161",
+    "address": "56 P. Linh Đ., Hoàng Liệt, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Lofita Cafe",
+    "opening_at": "08:00",
+    "closing_at": "23:00",
+    "status": 2,
+    "owner_ID": 14,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "bad" }],
+    "images": [
+      "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-5.jpg?tr=dpr-2,w-675"
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 2, 2, 1, 1, 2, 2, 1, 0, 0, 0]
+    ],
+    "description": "ハノイにあるこの美しいカフェは、紅茶、フレッシュジュース、砂糖を含まないすべての飲み物など、非常に健康的なドリンクメニューを「提供」しています。 バルコニーの隅々まで、窓枠一つ一つが光で満たされています。 広大な景色は夢見る心を満たしてくれます。",
+    "phone_number": "0158306122",
+    "address": "Tầng 9 – 10, 338 Phố Huế, Hai Bà Trưng, Hà Nội",
+    "verified": 0,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Kalina Café",
+    "images": ["http://rb.gy/gkc6m"],
+    "owner_ID": 11,
+    "opening_at": "07:00",
+    "closing_at": "23:30",
+    "description": "",
+    "phone_number": "0913002707",
+    "status": 5,
+    "address": "2 Ba Trieu, Trang Tien, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 6, "status": "good" }],
+    "categories": ["喫茶店"]
+  }
+]

@@ -1,0 +1,214 @@
+[
+  {
+    "name": "Hoa10Giờ Floral & Book Cafe",
+    "images": ["http://rb.gy/x65li"],
+    "owner_ID": 9,
+    "opening_at": "07:30",
+    "closing_at": "22:00",
+    "description": "Vintage style fresh flower shop and very beautiful Book Cafe",
+    "phone_number": "0366578989",
+    "status": 5,
+    "address": "26 Hang Voi, Ly Thai To, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "LAPHO Cà phê",
+    "opening_at": "08:30",
+    "closing_at": "23:30",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 2, 1, 0, 0, 1, 1, 2, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 2, 1, 0, 0, 1, 1, 2, 2, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNMVFZ1qTLGPL_S0Qj1e4n0Tk0qfvLWB4YFuYU6=w408-h306-k-no"
+    ],
+    "description": "サービスオプション：非接触型食品宅配サービス、配達、内部使用。製品サービス：コーヒー。施設：トイレ。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0973989889",
+    "address": "LÔ 11 DV 09, Khu đô thị Tây Nam Linh Đàm, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Lak Lak",
+    "opening_at": "06:30",
+    "closing_at": "22:30",
+    "status": 0,
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipMcpLAb5PQZF_mEiHxPMGv1EY40QApDnKbz4Ewc=w426-h240-k-no"
+    ],
+    "description": "食事のオプション:朝食、ケータリングサービス。施設：トイレ、子供に適した。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ、グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0979225759",
+    "address": "Khu Vệ Lăng Cây Sung, Song Phượng, Đan Phượng, Hà Nội",
+    "verified": 0,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "LÊLA Cà Phê",
+    "opening_at": "05:00",
+    "closing_at": "22:30",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 1, 0, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 1, 0, 1, 1, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPfzkVNUHkr9W_KjV1nnPPlSRXQ4KWPWqIHWy3H=w408-h306-k-no"
+    ],
+    "description": "サービスオプション: 内部使用。製品サービス:コーヒー。施設：トイレ、子供に適した。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0869641555",
+    "address": "XRQ9+9RH, Yên Lạc, Thanh Xuân, Vĩnh Phúc",
+    "verified": 0,
+    "categories": ["猫カフェ", "喫茶店"]
+  },
+  {
+    "name": "Moc An Coffee & Tea",
+    "images": ["http://rb.gy/ygrdi", "http://rb.gy/mfues"],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "22:00",
+    "description": "It is a place with excellent coffee, quiet space, sincerity",
+    "phone_number": "0382202836",
+    "status": 5,
+    "address": "19 Le Thanh Nghi, Bach Mai, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 4, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Mai",
+    "images": ["http://rb.gy/4cls7"],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "22:00",
+    "description": "Grinding technique handed down from former generations \nUnder French processing method\n Developed in H",
+    "phone_number": "0987654321",
+    "status": 5,
+    "address": "52 Nguyen Du, Tran Hung Dao, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 5, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Fog Coffee Nam",
+    "opening_at": "07:30",
+    "closing_at": "21:30",
+    "status": 1,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 2, 1, 2, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 0, 1, 2, 1, 2, 0, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNqz7X4TMDAtIQ_Gef_oY_tQpXMfB2rFRpiRCWG=w408-h272-k-no"
+    ],
+    "description": "サービスオプション:屋外席、取り除く、内部使用。製品サービス：コーヒー。食事のオプション：シート。施設：トイレ。雰囲気：のんびりとした雰囲気",
+    "owner_ID": 2,
+    "phone_number": "0906258945",
+    "address": "stringNV1-2 Lô 32 Khu biệt thự liền kề Gelenxia, 885 Đ. Tam Trinh, Yên Sở, Hoàng Mai, Hà Nội",
+    "verified": 0,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Gia Huy",
+    "opening_at": "06:00",
+    "closing_at": "23:30",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 4, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 0, 2, 1, 0, 2, 1, 2, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 0, 1, 2, 1, 0, 2, 1, 1, 1, 1, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPDcTGUIfkcIbWZaKh8B66ve6bwosCspYt3M7X9=w426-h240-k-no"
+    ],
+    "description": "サービスオプション: 屋外席、取り除く、内部使用。アクセシビリティ：バリアフリー席。製品サービス：コーヒー。施設：犬可、トイレ。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0986795868",
+    "address": "Ki ốt số 4, Nơ 7, KĐT, Pháp Vân, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ", "喫茶店"]
+  },
+  {
+    "name": "An bread & cafe",
+    "images": ["http://rb.gy/u6dxr"],
+    "owner_ID": 10,
+    "opening_at": "08:00",
+    "closing_at": "22:00",
+    "description": "Bread, coffee, smoothies.....",
+    "phone_number": "0918685538",
+    "status": 5,
+    "address": "15 Phu Doan, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cà phê ca nhạc Hồng Phú",
+    "opening_at": "16:00",
+    "closing_at": "00:00",
+    "status": 3,
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "bad" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 2, 2, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 2, 2, 1, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNMhSnar3sHhtD2Eiu1y47BTqSrhU_Z2fu2Crpc=w408-h544-k-no"
+    ],
+    "description": "サービスオプション:内部使用。製品サービス：コーヒー。施設：トイレ。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0928273666",
+    "address": "203 Đ. Bờ Sông Sét, Đồng Tâm, Hai Bà Trưng, Hà Nội",
+    "verified": 0,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Cà Phê Hà Nội 75",
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 0, 1, 1, 1, 1, 1, 2, 0, 1, 1, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipOfXuzf19A7ms_cO0auARfUjmgmXVDhxoaWdNZi=w300-h225-p-k-no"
+    ],
+    "description": "サービスオプション：屋外席、内部使用。製品サービス：コーヒー。食事のオプション：ケータリングサービス、シート。施設：トイレ、子供に適した。雰囲気：のんびりとした雰囲気。快適な環境：人口グループ。",
+    "owner_ID": 2,
+    "phone_number": "0913502951",
+    "address": "XRPV+XXC, Tương Mai, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  }
+]

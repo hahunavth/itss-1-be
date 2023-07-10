@@ -208,7 +208,26 @@ export async function connectPrismaMNCreateOne(
 
 async function main() {
   // delete all
-  // await cleanupDatabase();
+  await cleanupDatabase();
+  // console.log(reviews.length);
+  // // random sort
+  // const reviewsRandom = reviews.sort(() => Math.random() - 0.5);
+  // // split into 4 cluster with 1/4
+  // const reviewsCluster = [
+  //   reviewsRandom.slice(0, reviews.length / 4),
+  //   reviewsRandom.slice(reviews.length / 4, reviews.length / 2),
+  //   reviewsRandom.slice(reviews.length / 2, (reviews.length / 4) * 3),
+  //   reviewsRandom.slice((reviews.length / 4) * 3, reviews.length),
+  // ];
+  // for (const cluster in reviewsCluster) {
+  //   // save to file json
+  //   await writeFile(
+  //     `./rv-cluster${cluster}.json`,
+  //     JSON.stringify(reviewsCluster[cluster]),
+  //     (err) => console.log(err),
+  //   );
+  // }
+  // seed begin
 
   const categories = [
     { name: 'カフェ', description: '' },
@@ -223,7 +242,6 @@ async function main() {
     '喫煙席',
     'エアコン',
   ];
-
   if ((await prisma.categories.count()) === 0) {
     const createdCategories = await prisma.categories.createMany({
       data: categories,
@@ -232,7 +250,6 @@ async function main() {
   } else {
     console.log('Categories already exists. Skip seeding.');
   }
-
   if ((await prisma.devices.count()) === 0) {
     const createdDevices = await prisma.devices.createMany({
       data: devices.map((name) => ({ name })),
@@ -241,7 +258,6 @@ async function main() {
   } else {
     console.log('Devices already exists. Skip seeding.');
   }
-
   if ((await prisma.users.count()) === 0) {
     const createdUsers = await prisma.users.createMany({
       data: users,
@@ -250,20 +266,36 @@ async function main() {
   } else {
     console.log('Users already exists. Skip seeding.');
   }
-
+  // create default user with id = 4
+  if (await prisma.users.findUnique({ where: { id: 4 } })) {
+    console.log('User with id = 4 already exists. Skip seeding.');
+  } else {
+    const createdUser = await prisma.users.create({
+      data: {
+        id: 4,
+        username: 'default',
+        email: 'default@gmail.com',
+        password: '123456789',
+        phone_number: '0987656789',
+        date_of_birth: '2023-07-10T06:22:12.302Z',
+        image_url:
+          'https://i1.sndcdn.com/artworks-000638979814-37elk9-t500x500.jpg',
+        role: 0,
+        nationality: '日本',
+      },
+    });
+    console.log('Created user: ', createdUser);
+  }
   const userIdList = await prisma.users.findMany({
     select: {
       id: true,
     },
   });
-
   if ((await prisma.coffee_shops.count()) === 0) {
     const createCFDtoLst = await Promise.all(
       coffeeShops.map(async (coffeeShop) => {
         const createObj = plainToInstance(CreateCoffeeShopV2Dto, coffeeShop);
-
         // const createObj = createCoffeeShopV2Dto;
-
         if (createObj.categories) {
           const additional = await connectPrismaMNCreateOne(
             prisma,
@@ -278,7 +310,6 @@ async function main() {
           createObj['coffee_shop_categories'] =
             additional['coffee_shop_categories'];
         }
-
         if (createObj.devices) {
           const additional = await connectPrismaMNCreateOne(
             prisma,
@@ -296,7 +327,6 @@ async function main() {
           delete createObj.devices;
           createObj['coffee_shop_devices'] = additional['coffee_shop_devices'];
         }
-
         return createObj;
       }),
     );
@@ -315,13 +345,11 @@ async function main() {
   } else {
     console.log('CoffeeShops already exists. Skip seeding.');
   }
-
   const cfIdList = await prisma.coffee_shops.findMany({
     select: {
       id: true,
     },
   });
-
   if ((await prisma.reviews.count()) === 0) {
     const _transformCreateImageAttr = (
       imgs: string[],
@@ -359,174 +387,6 @@ async function main() {
   } else {
     console.log('Reviews already exists. Skip seeding.');
   }
-
-  // prisma.$connect();
-  // console.log(await prisma.bookmarks.findMany());
-  // const userListWithIdMap = await getListWithIdMap({
-  //   dataList: users,
-  //   getQuery: (user) => ({ email: user.email }),
-  //   getItem: async (user, query) => {
-  //     const data = await prisma.users.findFirst({
-  //       where: query,
-  //     });
-  //     return {
-  //       data: user,
-  //       _id: data?.id,
-  //     };
-  //   },
-  //   getPrismaItemList: async () => await prisma.users.findMany(),
-  //   prismaItemToCreateDto: async (item) => ({
-  //     email: item.email,
-  //     password: item.password,
-  //     username: item.username,
-  //     phone_number: item.phone_number,
-  //     date_of_birth: item.date_of_birth,
-  //     image_url: item.image_url,
-  //     role: item.role,
-  //   }),
-  //   requiredKeys: [
-  //     'email',
-  //     'password',
-  //     'username',
-  //     'phone_number',
-  //     'date_of_birth',
-  //     'image_url',
-  //     'role',
-  //   ],
-  // });
-  // const coffeeShopSelectOption = {
-  //   id: true,
-  //   name: true,
-  //   images: true,
-  //   owner_ID: true,
-  //   closing_at: true,
-  //   opening_at: true,
-  //   description: true,
-  //   phone_number: true,
-  //   status: true,
-  //   address: true,
-  //   verified: true,
-  //   crowded_hours: true,
-  //   coffee_shop_devices: {
-  //     select: {
-  //       device: {
-  //         select: {
-  //           name: true,
-  //         },
-  //       },
-  //       quantity: true,
-  //       status: true,
-  //     },
-  //   },
-  //   coffee_shop_categories: {
-  //     select: {
-  //       category: {
-  //         select: {
-  //           name: true,
-  //         },
-  //       },
-  //     },
-  //   },
-  // };
-  // const coffeeShopListWithIdMap = await getListWithIdMap({
-  //   dataList: coffeeShops,
-  //   getQuery: (coffeeShop) => ({ name: coffeeShop.name }),
-  //   getItem: async (coffeeShop, query) => {
-  //     const data = await prisma.coffee_shops.findFirst({
-  //       where: query,
-  //       select: coffeeShopSelectOption,
-  //     });
-  //     return {
-  //       data: coffeeShop,
-  //       _id: data?.id,
-  //     };
-  //   },
-  //   getPrismaItemList: async () =>
-  //     await prisma.coffee_shops.findMany({
-  //       select: coffeeShopSelectOption,
-  //     }),
-  //   prismaItemToCreateDto: async (item) => ({
-  //     name: item.name,
-  //     images: item.images,
-  //     owner_ID: item.owner_ID,
-  //     opening_at: item.opening_at,
-  //     closing_at: item.closing_at,
-  //     description: item.description,
-  //     phone_number: item.phone_number,
-  //     status: item.status,
-  //     address: item.address,
-  //     verified: item.verified,
-  //     crowded_hours: Array.isArray(item.crowded_hours[0])
-  //       ? item.crowded_hours
-  //       : [item.crowded_hours.slice(0, 23), item.crowded_hours.slice(24, 47)],
-  //     devices:
-  //       item.device ||
-  //       item.devices ||
-  //       item.coffee_shop_devices.map((item) => ({
-  //         name: item.device.name,
-  //         quantity: item.quantity,
-  //         status: item.status,
-  //       })),
-  //     categories:
-  //       item.category ||
-  //       item.categories ||
-  //       item.coffee_shop_categories.map((item) => item.category.name),
-  //   }),
-  //   requiredKeys: [
-  //     'name',
-  //     'images',
-  //     'owner_ID',
-  //     'opening_at',
-  //     'closing_at',
-  //     'description',
-  //     'phone_number',
-  //     'status',
-  //     'address',
-  //     'verified',
-  //     'crowded_hours',
-  //     'devices',
-  //     'categories',
-  //   ],
-  // });
-  // const reviewListWithIdMap = await getListWithIdMap({
-  //   dataList: reviews,
-  //   getQuery: (review) => ({
-  //     user_ID: review.user_ID,
-  // console.log(coffeeShopListWithIdMap);
-  // console.log(Object.keys(userListWithIdMap));
-  // await writeFile(
-  //   './prisma/data/data-map.json',
-  //   JSON.stringify({
-  //     users: userListWithIdMap,
-  //     coffee_shops: coffeeShopListWithIdMap,
-  //   }),
-  //   (err) => {
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //   },
-  // );
-  // console.log(coffeeShopListWithId);
-  // for (const user of users) {
-  //   await prisma.users.create({
-  //     data: user,
-  //   });
-  // }
-  // for (let i = 0; i < coffeeShops.length; i++) {
-  //   const coffee_shop = coffeeShops[i];
-  //   try {
-  //     const cfs_create_dto = plainToInstance(
-  //       CreateCoffeeShopV2Dto,
-  //       coffee_shop,
-  //     );
-  //     await prisma.coffee_shops.create({
-  //       data: cfs_create_dto,
-  //     });
-  //   } catch (e) {
-  //     console.log('Index: ' + i);
-  //     console.log(e);
-  //   }
-  // }
 }
 
 main()

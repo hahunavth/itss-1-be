@@ -1,0 +1,87 @@
+[
+  { "review": "壊れたエアコン", "star": 3, "coffee_shop_ID": 20, "images": [] },
+  {
+    "review": "涼しいエアコン",
+    "star": 4,
+    "create_at": "2023-06-13T07:30:53.400Z",
+    "coffee_shop_ID": 45,
+    "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDh-F2Coua8ku5LVrofmgCkpBUbdXEFbgKJQ&usqp=CAU","https://image-us.eva.vn/upload/4-2022/images/2022-11-19/6-quan-cafe-dep-nhat-binh-phuoc-luc-nao-cung-dong-nghit-khach-den-check-in-cafe-thien-di-nho-xinh-giua-long-thanh-pho-dong-xo-1668830817-98-width780height585.jpg"]
+  },
+  {
+    "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+    "star": 2,
+    "create_at": "2023-06-09T07:30:53.400Z",
+    "coffee_shop_ID": 42,
+    "images": ["https://www.shutterstock.com/shutterstock/photos/1937522521/display_1500/stock-photo-closeup-image-of-a-man-and-a-woman-clinking-white-coffee-mugs-in-cafe-1937522521.jpg","https://tuart.net/wp-content/uploads/2019/11/quan-cafe-ngon-view-dep-dang-van-ngu-6-819x1024.jpg"]
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 5,
+    "coffee_shop_ID": 17,
+    "images": ["https://caphenguyenchat.vn/wp-content/uploads/2019/11/lam-sao-de-quan-ly-khach-hang-quan-cafe-hieu-qua-1-1.jpg","https://2trip.vn/wp-content/uploads/2021/01/cafe-gan-ben-xe-da-lat-1.jpg"]
+  },
+  {
+    "review": "涼しいエアコン、熱心なスタッフ",
+    "star": 5,
+    "coffee_shop_ID": 25,
+    "images": ["https://dulich9.com/wp-content/uploads/2019/02/quan-cafe-dep-o-hue-1.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC-fIdju8s7UD9z7mgg09A6FMYa1E_nNGgIg&usqp=CAU"]
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 3,
+    "coffee_shop_ID": 22,
+    "images": ["https://suanhahcm.net/wp-content/uploads/2020/01/trang-tri-tuong-quan-cafe-nho.gif","https://cafebiz.cafebizcdn.vn/162123310254002176/2022/6/26/photo-1-16562281121641022231739.jpg"]
+  },
+  {
+    "review": "涼しいエアコン。このお店はとても美しい",
+    "star": 5,
+    "create_at": "2023-06-10T07:30:53.400Z",
+    "coffee_shop_ID": 45,
+    "images": ["https://www.pos365.vn/storage/app/media/2019/11/quan-cafe-chup-anh-dep-o-ha-noi/quan-cafe-chup-anh-dep-o-ha-noi-2.png","https://noithatcaphe.vn/images/2019/07/24/thiet-ke-quan-cafe-co%20(3).jpg"]
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 3,
+    "coffee_shop_ID": 20,
+    "images": []
+  },
+  {
+    "review": "暑いすぎいいいいいいい",
+    "star": 1,
+    "create_at": "2023-06-10T07:30:53.400Z",
+    "coffee_shop_ID": 40,
+    "images": []
+  },
+  {
+    "review": "エアコンが壊れているのでとても暑いです",
+    "star": 3,
+    "coffee_shop_ID": 17,
+    "images": []
+  },
+  { "review": "壊れたエアコン", "star": 3, "coffee_shop_ID": 30, "images": [] },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 1,
+    "coffee_shop_ID": 17,
+    "images": []
+  },
+  {
+    "review": "エアコンが壊れているのでとても暑いです",
+    "star": 2,
+    "coffee_shop_ID": 23,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 5,
+    "coffee_shop_ID": 22,
+    "images": []
+  },
+  {
+    "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+    "star": 1,
+    "create_at": "2023-06-09T07:30:53.400Z",
+    "coffee_shop_ID": 44,
+    "images": []
+  }
+]

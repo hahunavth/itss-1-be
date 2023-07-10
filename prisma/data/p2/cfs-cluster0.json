@@ -1,0 +1,255 @@
+[
+  {
+    "name": "All Day Coffee",
+    "images": [
+      "https://lh3.googleusercontent.com/pw/AIL4fc-y8tUnYJtyZxLTge1dTrsq_d6QHVmAHEIToeBPxwDAZ6sfajyEET0BI4MnZEg89tYZoQShUWIBmta94ok7OYKmiUNuYCMij3j01gisWh0y-n7fln8=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc_wWOoWbamz8EW6E1C9_8BG7oixJwifODi3tsln0sefAKEegWUx__HsSectPhx6JAfot5bu3cfrvxViSZBJgArzOjYsEU2wx7D8m7yXVdi4zUzrqjs=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc-58Te1LWVf8lHqbNUiVxKfUZfXLpx0vHG8J8MSDVWF3aQfpx1qaq75lQhQ2aAYnFLiX9eceMmJyCRAuwK0RoDv1j71kJqSJvNnNQNsL913lS6rAPs=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc97jInUNZaiyM5-lzYV75ovbqd_kVLa_-E7txRXhNHBp1JZGOnhm4ZaG_Y-llNhlFvixFRq_Age3qmiF2PQUlhgJxqD1z8iZdE9Hh-fCvQHyBrEGE0=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc_FCkj3oNTkKCRYRcV9fgMDEEPN9oWtBZ-Gp9i25gd3JnnTln1FIAjZN7L974_xGx9jgWBfYTs5Zg61hOl6NTuDtx45ngBX5ayXoyrujCmMvuMUP4o=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc8u6bTikjrE-6kERkGJZTXdmVkFCWf0PEMn8cqMZOzh5gVRBU8JtBSLcT7VpAcUcZUwxHHWLdm9dfi-zMw9Iaavzqf7VTto8qFjjVrMAlZxkIiuE1U=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc8qIAFmL7AhSllxhrAM9p9DuCBQ2y2hMml4BCvEOr-69FKyFi4GDdP0vi5cFzud27x_dTR-ccXAdM_grknYpL48uDRQ1owUSO-1d2jWS-e6ZBfQKRo=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc_80LoM5DEI7Xynf1Ul8qGAcNcqwkldFrvgeV6MMEGRtlSGV58gl1KcY0d8U4BED0Ib2GPraViXb4PkEdlzL5E50HIRzhnFibo1H_nhFymNP_a_pf8=w2400"
+    ],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "description": "All Day Coffee\nVietnamese Specialty Coffee\nYour Everyday Coffee � Roasted Daily",
+    "phone_number": "0987654321",
+    "status": 5,
+    "address": "37 Quang Trung, Tran Hung Dao, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 7,
+        "status": "good"
+      }
+    ],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Giảng",
+    "images": [
+      "https://lh3.googleusercontent.com/pw/AIL4fc8pWUMEmUXvq8ddPu50TvxNYrwqm0XyUUTOwv6NQnWMfdaWlRFl50iokiDYvg1h_GU100Qx2aky34pUvgKu1N_dp_WABDdY2I5PrKibjZ0Dga4ZP-Y=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc_n70MjYCAGHKKNNHbq4aqY8TVOyci6XiiGgxtD7V2-E62lD-3arzL4FPAIrfORRfa0rEGINUsoOtzz8_s2NwP5Q1JnmO9DCq88AdPE6blReM6Bato=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc_75mJ3T1cn5-peQEtmp_H5A-W9ovGdjCCq8OWH5A6ZgQ8Re-nu27h2KEsTooRv9BygmP622HbAgPoRTcTbeffQWDDJakg6jzkFKoBf19PVy5TMB7U=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc_iZXEeuqZF9WlkG3o9omK8FQ4gkLUNvMEt_ormWlu_lZsA3hazri_4fAcPsEvSwJqpaRtA4phNGtbx7vainDNbbO4FcUzdNBjynVhnjSq1Pb9CwuI=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc95CCZrzoEqYyb09a9qQJvS79oMN1kRk5mdXqQpfrlG5ZhoiyUxDqNK7-Um7q1kYTD_MLfV5NgE-pPvjeWQUgFR8EP3ltwvtqpPB8JwwPIORt-WKmw=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc9_9tBgfPzZ_h2WIIFBY1I3d2N16_tVXv9dq4WGnTgCpT_f0tkPxM9_Yq3sKMILd17EY-XkHWPgsRYcbO5YYD7TwYewahmydVGDsHPh3cIVzwe8df4=w2400"
+    ],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "22:00",
+    "description": "Café Giảng is headquartered in Hanoi, Vietnam, is the birthplace of egg coffee, invented in 1946 by Mr. Nguyen Van Giang, the father of the current owner, and a bartender at the 5-star hotel Sofitel Legend Metropole in Hanoi at that time.",
+    "phone_number": "0989892298",
+    "status": 5,
+    "address": "39 Nguyen Huu Huan, Ly Thai To, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0]
+    ],
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 5,
+        "status": "good"
+      }
+    ],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Eden Coffee",
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "status": 3,
+    "owner_ID": 14,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 4,
+        "status": "good"
+      }
+    ],
+    "images": [
+      "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-3-768x1024.jpeg?tr=dpr-2,w-675",
+      "https://ak-d.tripcdn.com/images/100l180000014umry9A80_C_760_506_R5.jpg?proc=source%2ftrip",
+      "https://ak-d.tripcdn.com/images/100r180000014sw0456FE_C_760_506_R5.jpg?proc=source%2ftrip",
+      "https://ak-d.tripcdn.com/images/100v1800000155iim3B90_C_760_506_R5.jpg?proc=source%2ftrip",
+      "https://ak-d.tripcdn.com/images/100m1800000153uo0405F_C_760_506_R5.jpg?proc=source%2ftrip",
+      "https://ak-d.tripcdn.com/images/100s1800000151cf0041E_C_220_140_R5.jpg?proc=source%2ftrip",
+      "https://ak-d.tripcdn.com/images/100n180000014tizi7430_C_760_506_R5.jpg?proc=source%2ftrip"
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 0, 0, 0, 1, 0, 0, 0, 0]
+    ],
+    "description": "この店からは、ハノイの有名な観光スポットの 1 つである古代大聖堂を直接望む最高の景色を眺めることができます。 レストランには屋内スペースと屋外スペースがあります。 床には芝生のカーペットが敷き詰められ、上部には植物や花が飾られ、太陽の光と風があふれる楽園の庭園の真ん中でコーヒーを飲んでいるような気分になれます。",
+    "phone_number": "0135798642",
+    "address": "Số 2 Nhà Thờ, Hoàn Kiếm, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Cà Phê Diệp Chi",
+    "opening_at": "06:30",
+    "closing_at": "22:30",
+    "status": 4,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 4,
+        "status": "good"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 1, 0, 1, 2, 2, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 1, 0, 1, 2, 2, 1, 1, 1, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipOVXod80uvL_MMzcIiNXshKSUMicEd54wG-aQvE=w426-h240-k-no",
+      "https://lh3.googleusercontent.com/pw/AIL4fc-Zzrp8AmeDlZr0TDd8Tm9ZCDzt6OwueSFScLhQcYYeppSS-IJUgkNi2JHeHPq3bCXO30dRlPjZdk7VYz1JJDFcNU64YOzST4LRb8GckW_VoHnqwSk=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc9FJXOx7fm0sRrc3GLuQ_Bk_jZnjQB3vhyfUaaT2F3i5KXxWhNVn_ADJv02QfrTHgICNss1nPOzroL-Z0Qw-fjun7Jd5_ZN9PaWanVDTsU5PhOf3ig=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc-sXLDxIQR4XY-fkXuybpmQuqgj5WZ18oiVJIUBifRqf_Hdj3gdeJkupnHV_DjW9wb6t_VF9NcDFBHs03bsAKHgyFZr8tIIZPNSTZDk8hHpwdi1gF4=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc8i7A-1gqYqN4OKwndakU4-_ww0HJyAW6I0iptU7ZQNjy_KTm1Uf4IT5YY6MoYOp_7T-pr3pP9lVNED-eHHSZnNFClKfiqVX95Q0yqF4EfWetFpEKk=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc_kodBZ5VtSPtyQmdOH9jIHGrCyVmfIWclOQvCW_pHEZNgpvUUYowCPGkO-2_PaBz4X5TvnngDU7pPH9PbJqOLJkHYQwgrE5U7IrYKVLT1uZ40N2F0=w2400",
+      "https://lh3.googleusercontent.com/pw/AIL4fc8dpd-WI5JvqlKo67zE5EG4UuFm7ouWdwCUWpb50uZjDGtXqyX-nGi915xQgahAmIJw2IVDO8wTvEZcsaftHVHjLSaGZSICGUwTYxSBE6gd_2kPlOA=w2400"
+    ],
+    "description": "サービスオプション: 内部使用。アクセシビリティ：バリアフリー入口、バリアフリー席、バリアフリー駐車場。製品サービス：コーヒー。施設：トイレ。雰囲気：のんびりとした雰囲気。人口グループ：グループに適しています",
+    "owner_ID": 2,
+    "phone_number": "0904277122",
+    "address": "31 P. Trần Nguyên Đán, Khu đô thị Định Công, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ", "喫茶店"]
+  },
+  {
+    "name": "Trill Rooftop Cafe Hei Tower",
+    "opening_at": "08:00",
+    "closing_at": "23:00",
+    "status": 1,
+    "owner_ID": 14,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 1,
+        "status": "bad"
+      }
+    ],
+    "images": [
+      "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-11-1024x1024.jpeg?tr=dpr-2,w-675",
+      "https://digifood.vn/blog/wp-content/uploads/2021/06/trillgroup-rooftop-1024x1024.jpeg",
+      "https://digifood.vn/blog/wp-content/uploads/2021/06/do-uong-o-trillgroup-1024x1024.jpeg",
+      "https://digifood.vn/blog/wp-content/uploads/2021/06/trill-rooftop-cafe-trillgroup-1024x1024.jpeg",
+      "https://digifood.vn/blog/wp-content/uploads/2021/06/khong-gian-quan-trillgroup-1024x1024.jpeg",
+      "https://media-cdn.tripadvisor.com/media/photo-m/1280/14/dc/98/66/trill-rooftop.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-m/1280/14/dc/9b/eb/trill-rooftop.jpg"
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0]
+    ],
+    "description": "ハノイで広い屋外スペースのある美しいカフェをお探しなら、Trill Rooftop は見逃せない提案です。 ここは、上空からハノイの街を眺めながらお気に入りのドリンクを飲むのに最適な場所です。",
+    "phone_number": "0159876122",
+    "address": "Hei Tower, 1 P.Ngụy Như Kon Tum, Nhân Chính, Thanh Xuân, Hà Nội",
+    "verified": 0,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "The Note Coffee",
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-w/17/9c/37/8b/our-place-saves-memories.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-m/1280/17/b5/46/7d/from-the-note-coffee.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-w/17/b5/46/89/from-the-note-coffee.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-w/15/65/62/03/christmas-is-al-around.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-w/17/9c/39/6f/our-place-saves-memories.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-p/17/8a/29/d8/from-the-out-side-4-floor.jpg"
+    ],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "description": "The Note Coffee is a special cafe with tens of thousands of messages left by customers",
+    "phone_number": "0975194466",
+    "status": 5,
+    "address": "64 Luong Van Can, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 5,
+        "status": "good"
+      }
+    ],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "The Copa Coffee",
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t39.30808-6/356383995_684494237024887_8070057062347403072_n.jpg?stp=dst-jpg_e15_p640x640&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=Ta8raQjg9GkAX_B7IJO&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzEzMzQzNDU3MDE5OTAyODcwOA%3D%3D.2-ccb7-5&oh=00_AfB4EVFDnk5IklRrW_4D_1VRpD4krhp2-NRsqqb8UNbEew&oe=64B08BBA&_nc_sid=ee9879",
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t39.30808-6/358085600_691239419683702_2418508488941176363_n.jpg?stp=dst-jpg_e15&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=3IrojK2ONNcAX8Pe2cw&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzE0MjIyNjQ2OTQ4OTM1OTEwOA%3D%3D.2-ccb7-5&oh=00_AfD7t_2JcnmbIfKPtjg3U8PKXwHn4R1jB5Uca8ZyDOR0pQ&oe=64B02B8B&_nc_sid=ee9879",
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/352813607_1017801479214487_3584424867022781968_n.jpg?stp=dst-jpg_e35_p240x240&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=VegqDjatCJAAX-nqty_&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzEyMzIyODU0MTQyMDcxMTY3Nw%3D%3D.2-ccb7-5&oh=00_AfCrfRobAoKNUUll7XlyNoAr6IjL-hG5G6ygzgX-BSTvvA&oe=64AF181C&_nc_sid=ee9879",
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t39.30808-6/352817207_675171927957118_5643847335973848851_n.jpg?stp=dst-jpg_e15_p240x240&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=DTOEv_ndMF4AX8IRYm0&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzEyMjUzNjkxMzM4OTkxOTg1NA%3D%3D.2-ccb7-5&oh=00_AfBV0K_8aMNeeqDrt8wPcRRZSgqYvIUK6unxH6rhzUm-Dw&oe=64AFB686&_nc_sid=ee9879",
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t39.30808-6/351490912_799248674761504_3393732739175439158_n.jpg?stp=dst-jpg_e15_p240x240&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=c1nz-P9aEBgAX-Pe1u-&edm=ACWDqb8AAAAA&ccb=7-5&ig_cache_key=MzExODMyMDE0NzU3NDg1NTgwMg%3D%3D.2-ccb7-5&oh=00_AfCx2mVDewCxtaBqSPAtHf_VjRVTOy-TIcjjg5QrabkJ6Q&oe=64B0149F&_nc_sid=ee9879",
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/280520332_681012976290660_686358041348506061_n.jpg?stp=dst-jpg_e35_s320x320&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=9LXhzZHigQYAX8OBlTS&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjgzNTUxNzk1MDIwNTU0MDQ0MQ%3D%3D.2-ccb7-5&oh=00_AfCTqPZOXY1U-a2zCgA1Xzhkusoniyo1SvAJ0kNBi_CTdA&oe=64B019AB&_nc_sid=b41fef"
+    ],
+    "owner_ID": 9,
+    "opening_at": "08:00",
+    "closing_at": "22:00",
+    "description": "Copa - A Cup of Goodness",
+    "phone_number": "0944696889",
+    "status": 5,
+    "address": "65 Tran Dai Nghia, Bach Khoa, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 1,
+        "status": "good"
+      }
+    ],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Đinh",
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-p/16/71/99/9a/the-place.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-p/1a/1d/f1/20/cafe-dinh.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-w/0e/58/72/02/photo0jpg.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-w/17/78/a2/06/photo2jpg.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-p/0e/04/5b/9d/photo0jpg.jpg",
+      "https://media-cdn.tripadvisor.com/media/photo-p/0e/da/64/e4/khong-gian.jpg"
+    ],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "22:30",
+    "description": "",
+    "phone_number": "0906221106",
+    "status": 5,
+    "address": "13 Dinh Tien Hoang, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 0, 0, 0]
+    ],
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 6,
+        "status": "good"
+      }
+    ],
+    "categories": ["喫茶店"]
+  }
+]

@@ -1,0 +1,95 @@
+[
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 5,
+    "coffee_shop_ID": 16,
+    "images": []
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 2,
+    "coffee_shop_ID": 42,
+    "images": []
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 5,
+    "coffee_shop_ID": 23,
+    "images": []
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 3,
+    "coffee_shop_ID": 22,
+    "images": []
+  },
+  {
+    "review": "カフェの中はとても暑いです",
+    "star": 2,
+    "create_at": "2023-06-10T07:30:53.400Z",
+    "coffee_shop_ID": 40,
+    "images": []
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 4,
+    "coffee_shop_ID": 43,
+    "images": []
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 1,
+    "coffee_shop_ID": 28,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 5,
+    "coffee_shop_ID": 44,
+    "images": []
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 2,
+    "coffee_shop_ID": 37,
+    "images": []
+  },
+  {
+    "review": "暑い",
+    "star": 1,
+    "create_at": "2023-06-12T07:30:53.400Z",
+    "coffee_shop_ID": 44,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、熱心なスタッフ",
+    "star": 4,
+    "coffee_shop_ID": 20,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 4,
+    "coffee_shop_ID": 21,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、熱心なスタッフ",
+    "star": 5,
+    "create_at": "2023-06-17T07:30:53.400Z",
+    "coffee_shop_ID": 43,
+    "images": []
+  },
+  {
+    "review": "エアコンがとても涼しいです",
+    "star": 3,
+    "coffee_shop_ID": 22,
+    "images": []
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 2,
+    "coffee_shop_ID": 28,
+    "images": []
+  }
+]

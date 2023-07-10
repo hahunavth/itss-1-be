@@ -1,0 +1,127 @@
+[
+  {
+    "review": "エアコンをつけてもまだ暑い",
+    "star": 3,
+    "create_at": "2023-05-16T07:30:53.400Z",
+    "coffee_shop_ID": 44,
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-p/19/8b/2a/e0/photo0jpg.jpg"
+    ]
+  },
+  {
+    "review": "エアコンをつけずに暑い昼下がり",
+    "star": 1,
+    "create_at": "2023-06-09T07:30:53.400Z",
+    "coffee_shop_ID": 42,
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-p/12/73/ee/43/photo4jpg.jpg"
+    ]
+  },
+  {
+    "review": "エアコンが作動しない",
+    "star": 2,
+    "coffee_shop_ID": 22,
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-p/19/f4/89/b3/20191107-122211-largejpg.jpg"
+    ]
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 3,
+    "coffee_shop_ID": 35,
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-p/12/56/97/aa/cafe-dinh.jpg"
+    ]
+  },
+  {
+    "review": "エアコンが作動しない",
+    "star": 2,
+    "coffee_shop_ID": 45,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t39.30808-6/346981906_916610646112962_8314306036772721176_n.jpg?stp=dst-jpg_e35_s1080x1080_sh0.08&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=u3UCbH6i9hcAX9O0JH9&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=MzEwMzc4ODE3NDc0NTEyMzE1NA%3D%3D.2-ccb7-5&oh=00_AfA24TPVslHsoLeIIoFix-S9brYw8kXvxG7xw4-Lp8LTdA&oe=64AEE992&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "素敵なレストラン、広々とした静かな空間。涼しいエアコン",
+    "star": 5,
+    "create_at": "2023-06-18T07:30:53.400Z",
+    "coffee_shop_ID": 43,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t39.30808-6/345853094_1133859901339002_4544856156615945240_n.jpg?stp=dst-jpg_e15_p750x750&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=WgqnUKRE7PwAX_2P_i8&edm=ABmJApAAAAAA&ccb=7-5&ig_cache_key=MzA5OTQ2ODQ3NTg3NjY3OTUwMg%3D%3D.2-ccb7-5&oh=00_AfAqsn41tq4hF-OWVY7zrvla1SvCmxtxRuidP9d2txfFuA&oe=64B0CA25&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "涼しいエアコン、熱心なスタッフ",
+    "star": 5,
+    "coffee_shop_ID": 20,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/285055937_580104483742141_812340896286010374_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=VBm6BAnjdsMAX94my5O&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=Mjg1MTc1Nzk5MjA1MzYyMTAzNg%3D%3D.2-ccb7-5&oh=00_AfDkyVvQ6hyJn7-kdTofgGBifCKAOMO9BH6RDak_y-8pqA&oe=64B0B466&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "素敵なレストラン、広々とした静かな空間。涼しいエアコン",
+    "star": 5,
+    "create_at": "2023-06-11T07:30:53.400Z",
+    "coffee_shop_ID": 45,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/270123970_1065827140816779_2071761138670052010_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=Dp8_qDHk5DsAX8tPxrz&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjczODcwODIwNjQ2NDI2Njk4MQ%3D%3D.2-ccb7-5&oh=00_AfB-GpvlXicpzA27pyi4gX6fEKjlXmGw0yM612lu0aqABA&oe=64AF34DA&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 5,
+    "coffee_shop_ID": 22,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/268129823_1609380829403545_2086515984795459261_n.jpg?stp=dst-jpg_e35_p320x320&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=YtlsBuS02I4AX9jf8v-&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjczMDU3MjIwNTc5MTI3OTk2OQ%3D%3D.2-ccb7-5&oh=00_AfCsqkiMClbgICSJb_pOCuHr0R0ZcZ5MwvV2P254ehkdhw&oe=64AFB43B&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 5,
+    "coffee_shop_ID": 20,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/262522587_949552672326262_8853425322000495550_n.jpg?stp=dst-jpg_e35_s240x240&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=xLMh1J1pRjAAX-APJU0&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjcxODQwNzY0ODEzNDE0OTcwOA%3D%3D.2-ccb7-5&oh=00_AfCE6oCkPThb-3CYBW2SmjvM6FH-A3kDgnMYjCJjbg4Paw&oe=64AF45E0&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "エアコンがとても涼しいです",
+    "star": 5,
+    "coffee_shop_ID": 17,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/256378172_286805619989415_3907325269709019856_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=bXoksWallrAAX-zfSfp&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjcwNTM2MjY0MDY2MTQ2MzcwNg%3D%3D.2-ccb7-5&oh=00_AfAJoK6RNxj9L3JPObFVd7H4HTvxWn2h7Fe3BnYRtsDvbA&oe=64AFEBB4&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 5,
+    "coffee_shop_ID": 38,
+    "images": [
+      "https://instagram.fhan18-1.fna.fbcdn.net/v/t51.2885-15/247392718_462745538444650_7069771256460192491_n.jpg?stp=dst-jpg_e35_p320x320&_nc_ht=instagram.fhan18-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=FDh3-DfDGAMAX-vLtuW&edm=ABmJApABAAAA&ccb=7-5&ig_cache_key=MjY5MTM2OTczOTA0ODg3OTIzMg%3D%3D.2-ccb7-5&oh=00_AfDEmo6auxjuBL2z4dPTsqHs6-iL7rn-Tw7Fg-v-kxN1eQ&oe=64AF7E9A&_nc_sid=b41fef"
+    ]
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 1,
+    "coffee_shop_ID": 20,
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-s/19/1a/c5/9c/cafe-dinh.jpg"
+    ]
+  },
+  {
+    "review": "涼しいエアコン。このお店はとても美しく、ヴィンテージで芸術的な空間です",
+    "star": 4,
+    "create_at": "2023-06-18T07:30:53.400Z",
+    "coffee_shop_ID": 43,
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-s/12/bd/0e/48/photo0jpg.jpg"
+    ]
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 1,
+    "coffee_shop_ID": 22,
+    "images": [
+      "https://media-cdn.tripadvisor.com/media/photo-w/14/e9/16/c7/we-came-here-with-candy.jpg"
+    ]
+  }
+]

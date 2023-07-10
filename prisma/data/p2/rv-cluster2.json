@@ -1,0 +1,109 @@
+[
+  {
+    "review": "素敵なレストラン、広々とした静かな空間。涼しいエアコン",
+    "star": 5,
+    "create_at": "2023-06-01T07:30:53.400Z",
+    "coffee_shop_ID": 42,
+    "images": []
+  },
+  {
+    "review": "エアコンがとても涼しいです",
+    "star": 5,
+    "coffee_shop_ID": 35,
+    "images": [
+      "https://s3.ap-northeast-1.amazonaws.com/life-designs.jp/uploads/2019/06/9e0556b5f4c8be9485f87af53e9010b5-1024x682.jpg"
+    ]
+  },
+  {
+    "review": "店内はエアコンが効いていてとても涼しいです",
+    "star": 5,
+    "create_at": "2023-06-16T07:30:53.400Z",
+    "coffee_shop_ID": 43,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 3,
+    "coffee_shop_ID": 17,
+    "images": ["https://jumbo-news.com/wp-content/uploads/2019/03/aircoin.jpg"]
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 4,
+    "coffee_shop_ID": 40,
+    "images": []
+  },
+  {
+    "review": "店内はエアコンが効いていてとても涼しいです",
+    "star": 5,
+    "create_at": "2023-06-12T07:30:53.400Z",
+    "coffee_shop_ID": 42,
+    "images": []
+  },
+  {
+    "review": "エアコンが寒すぎる",
+    "star": 4,
+    "coffee_shop_ID": 25,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、熱心なスタッフ",
+    "star": 3,
+    "coffee_shop_ID": 20,
+    "images": []
+  },
+  {
+    "review": "店内はエアコンをつけていない",
+    "star": 1,
+    "create_at": "2023-05-16T07:30:53.400Z",
+    "coffee_shop_ID": 40,
+    "images": [
+      "https://media-int.vnecdn.net/3565821/data/images/2017/04/08/DSCF3961_1491643794_VnEx.jpg",
+      "https://www.willflyforfood.net/wp-content/uploads/2019/10/loading-t3.jpg"
+    ]
+  },
+  {
+    "review": "店内はエアコンが効いていてとても涼しいです",
+    "star": 5,
+    "create_at": "2023-06-12T07:30:53.400Z",
+    "coffee_shop_ID": 45,
+    "images": []
+  },
+  {
+    "review": "涼しいエアコン、広々とした空間",
+    "star": 5,
+    "coffee_shop_ID": 20,
+    "images": [
+      "https://sprudge.com/wp-content/uploads/2019/04/HanoiCafes_Blackbird_photobySkylar-Lindsay_01.jpg"
+    ]
+  },
+  {
+    "review": "スタッフにエアコンの調整をお願いしましたが、調整してくれませんでした。",
+    "star": 2,
+    "create_at": "2023-06-09T07:30:53.400Z",
+    "coffee_shop_ID": 40,
+    "images": []
+  },
+  {
+    "review": "エアコンがとても涼しいです",
+    "star": 5,
+    "coffee_shop_ID": 35,
+    "images": [
+      "https://vnn-imgs-f.vgcloud.vn/2019/04/29/11/hanoi-coffee-shop-decorated-with-recycled-items.jpg",
+      "https://www.willflyforfood.net/wp-content/uploads/2019/10/hanoi-house3.jpg"
+    ]
+  },
+  {
+    "review": "エアコンはありますが暑いです",
+    "star": 2,
+    "coffee_shop_ID": 22,
+    "images": []
+  },
+  {
+    "review": "カフェの中はとても暑いです",
+    "star": 2,
+    "create_at": "2023-06-10T07:30:53.400Z",
+    "coffee_shop_ID": 44,
+    "images": []
+  }
+]

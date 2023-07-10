@@ -1,0 +1,228 @@
+[
+  {
+    "name": "All Day Coffee",
+    "images": ["http://rb.gy/uunzp"],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "description": "All Day Coffee\nVietnamese Specialty Coffee\nYour Everyday Coffee � Roasted Daily",
+    "phone_number": "0987654321",
+    "status": 5,
+    "address": "37 Quang Trung, Tran Hung Dao, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 7, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Giảng",
+    "images": ["http://rb.gy/obf4z"],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "22:00",
+    "description": "Café Giảng is headquartered in Hanoi, Vietnam, is the birthplace of egg coffee, invented in 1946 by Mr. Nguyen Van Giang, the father of the current owner, and a bartender at the 5-star hotel Sofitel Legend Metropole in Hanoi at that time.",
+    "phone_number": "0989892298",
+    "status": 5,
+    "address": "39 Nguyen Huu Huan, Ly Thai To, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 5, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Eden Coffee",
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "status": 3,
+    "owner_ID": 14,
+    "devices": [{ "name": "エアコン", "quantity": 4, "status": "good" }],
+    "images": [
+      "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-3-768x1024.jpeg?tr=dpr-2,w-675"
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 0, 0, 0, 1, 0, 0, 0, 0]
+    ],
+    "description": "この店からは、ハノイの有名な観光スポットの 1 つである古代大聖堂を直接望む最高の景色を眺めることができます。 レストランには屋内スペースと屋外スペースがあります。 床には芝生のカーペットが敷き詰められ、上部には植物や花が飾られ、太陽の光と風があふれる楽園の庭園の真ん中でコーヒーを飲んでいるような気分になれます。",
+    "phone_number": "0135798642",
+    "address": "Số 2 Nhà Thờ, Hoàn Kiếm, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Cà Phê Diệp Chi",
+    "opening_at": "06:30",
+    "closing_at": "22:30",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 4, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 1, 0, 1, 2, 2, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 0, 2, 1, 1, 1, 0, 2, 1, 0, 1, 2, 2, 1, 1, 1, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipOVXod80uvL_MMzcIiNXshKSUMicEd54wG-aQvE=w426-h240-k-no"
+    ],
+    "description": "サービスオプション: 内部使用。アクセシビリティ：バリアフリー入口、バリアフリー席、バリアフリー駐車場。製品サービス：コーヒー。施設：トイレ。雰囲気：のんびりとした雰囲気。人口グループ：グループに適しています",
+    "owner_ID": 2,
+    "phone_number": "0904277122",
+    "address": "31 P. Trần Nguyên Đán, Khu đô thị Định Công, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ", "喫茶店"]
+  },
+  {
+    "name": "Trill Rooftop Cafe Hei Tower",
+    "opening_at": "08:00",
+    "closing_at": "23:00",
+    "status": 1,
+    "owner_ID": 14,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "bad" }],
+    "images": [
+      "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-11-1024x1024.jpeg?tr=dpr-2,w-675"
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 0, 0]
+    ],
+    "description": "ハノイで広い屋外スペースのある美しいカフェをお探しなら、Trill Rooftop は見逃せない提案です。 ここは、上空からハノイの街を眺めながらお気に入りのドリンクを飲むのに最適な場所です。",
+    "phone_number": "0159876122",
+    "address": "Hei Tower, 1 P.Ngụy Như Kon Tum, Nhân Chính, Thanh Xuân, Hà Nội",
+    "verified": 0,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "The Note Coffee",
+    "images": ["http://rb.gy/p3egj"],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "description": "The Note Coffee is a special cafe with tens of thousands of messages left by customers",
+    "phone_number": "0975194466",
+    "status": 5,
+    "address": "64 Luong Van Can, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 5, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "The Copa Coffee",
+    "images": ["http://rb.gy/va4iu"],
+    "owner_ID": 9,
+    "opening_at": "08:00",
+    "closing_at": "22:00",
+    "description": "Copa - A Cup of Goodness",
+    "phone_number": "0944696889",
+    "status": 5,
+    "address": "65 Tran Dai Nghia, Bach Khoa, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Sứ Cà Phê - Trần Điền",
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 0, 0, 1, 1, 2, 1, 1, 1, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPwqGv5VqcQs7CCMMj74ogQlngsDv5_wJK7BG5L=w408-h593-k-no"
+    ],
+    "description": "サービスオプション：屋外、選び出す、非接触型食品宅配サービス、配達、取り除く、内部使用。特徴：スポーツ。製品サービス：副菜、コーヒー、アルコール飲料。食事のオプション：ケータリングサービス、シート。施設：ジェンダーフレンドリーなトイレ、バー付き、トイレ、子供に適した、Wi-Fi、無料Wi-Fi利用可能。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています、家族全員に適しています",
+    "owner_ID": 2,
+    "phone_number": "0386933168",
+    "address": "A5 Lô3, 228 P. Trần Điền, Định Công, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ", "喫茶店"]
+  },
+  {
+    "name": "Cafe Đinh",
+    "images": ["http://rb.gy/8s262"],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "22:30",
+    "description": "",
+    "phone_number": "0906221106",
+    "status": 5,
+    "address": "13 Dinh Tien Hoang, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 6, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Xofa Café & Bistro",
+    "images": ["http://rb.gy/jgv5f"],
+    "owner_ID": 8,
+    "opening_at": "00:00",
+    "closing_at": "23:00",
+    "description": "In a quiet corner by the window, you are awakened by the warm aroma of coffee, reaching out to welcome the last rays of summer sun and a refreshing autumn breeze, welcoming a new peaceful day!\nTry to spend an early autumn morning at Xofa and feel it!",
+    "phone_number": "0987654321",
+    "status": 5,
+    "address": "14 Tong Duy Tan, Hang Bong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 0, 0, 0],
+      [2, 2, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 7, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Dream Beans Coffee Roastery",
+    "images": ["http://rb.gy/noqvm"],
+    "owner_ID": 10,
+    "opening_at": "07:30",
+    "closing_at": "17:00",
+    "description": "This is a small independent coffee house, run by a local family. This young couple who are passionat",
+    "phone_number": "0934683020",
+    "status": 5,
+    "address": "79 Ly Nam De, Cua Dong, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 5, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Xưa Cà Phê",
+    "opening_at": "08:30",
+    "closing_at": "23:30",
+    "status": 0,
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 1, 1, 1, 0, 1, 2, 2, 2, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 1, 1, 1, 0, 1, 2, 2, 2, 2, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNj8iEP4M0D25s5WMGAz7C6S_-1uRBLlze8OiCM=w426-h240-k-no"
+    ],
+    "description": "サービスオプション：屋外席、選び出す、非接触型食品宅配サービス、配達、内部使用。製品サービス：コーヒー。食事のオプション：シート。施設：トイレ、子供に適した。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ、グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0358229935",
+    "address": "68 Ngõ 254, Tây Sơn, Đan Phượng, Hà Nội, 越南",
+    "verified": 0,
+    "categories": ["喫茶店"]
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Blackbird Coffee",
+    "images": ["http://rb.gy/uki6m"],
+    "owner_ID": 11,
+    "opening_at": "07:00",
+    "closing_at": "21:00",
+    "description": "",
+    "phone_number": "0389513053",
+    "status": 5,
+    "address": "5 Chan Cam, Hang Trong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 1, 0, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Highlands Coffee",
+    "images": ["http://rb.gy/q8skg", "http://rb.gy/zj98d"],
+    "owner_ID": 8,
+    "opening_at": "07:00",
+    "closing_at": "22:00",
+    "description": "Highlands Coffee® was established in 1999 and born out of love for Vietnam, its coffee and its communities.",
+    "phone_number": "0987654321",
+    "status": 5,
+    "address": "91 Tran Dai Nghia, Bach Khoa, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "InFact Coffee",
+    "images": ["http://rb.gy/c0e6s"],
+    "owner_ID": 9,
+    "opening_at": "08:00",
+    "closing_at": "22:00",
+    "description": "A Positive & Creative Co-Working Café Focused On Making Good Ideas & Innovation",
+    "phone_number": "0862828342",
+    "status": 5,
+    "address": "342 Ba Trieu, Le Dai Hanh, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 1, 1, 0, 1, 1, 2, 1, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 6, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Café Nhà Sàn",
+    "opening_at": "08:00",
+    "closing_at": "22:00",
+    "status": 3,
+    "devices": [{ "name": "エアコン", "quantity": 1, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 2, 2, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 2, 2, 1, 1, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipM75zV93kQNfIvGakmvYVy3n_np9SkkIeNxVunk=w408-h408-k-no"
+    ],
+    "description": "サービスオプション: 取り除く、内部使用。特徴：迅速なサービス、ライブパフォーマンス、ライブ音楽を提供する。製品サービス：コーヒー、アルコール飲料。食事のオプション：ケータリングサービス。施設：犬可、トイレ。雰囲気：のんびりとした雰囲気。快適な環境：人口グループ、グループに適しています。計画する：予約を受け付ける。",
+    "owner_ID": 2,
+    "phone_number": "0919370183",
+    "address": "Ng. 6 P. Vĩnh Phúc, Vĩnh Phú, Ba Đình, Hà Nội, 越南",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Tranquil Books & Coffee",
+    "images": ["http://rb.gy/s4hai"],
+    "owner_ID": 9,
+    "opening_at": "08:00",
+    "closing_at": "22:30",
+    "description": "",
+    "phone_number": "0395049075",
+    "status": 5,
+    "address": "5 Nguyen Quang Bich, Cua Dong, Hoan Kiem, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 0, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Bốt Cà Phê",
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 1, 2, 2, 1, 1, 0, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 0, 1, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipO_OU88el9Y7SPUXq9kHOupFV8uVDJenZwC4DnF=w408-h272-k-no"
+    ],
+    "description": "サービスオプション: 屋外席、取り除く、内部使用。アクセシビリティ：バリアフリー入口、バリアフリー席、バリアフリー駐車場。製品サービス、コーヒー。食事のオプション：朝食、ブランチ、ランチ、ケータリングサービス、シート。施設：犬可、トイレ。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています。計画する：予約を受け付ける。",
+    "owner_ID": 2,
+    "phone_number": "0981358758",
+    "address": "18b Ng. 18 P. Võ Văn Dũng, Chợ Dừa, Đống Đa, Hà Nội",
+    "verified": 0,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Phuc Long Coffee & Tea",
+    "images": ["http://rb.gy/eao5e"],
+    "owner_ID": 8,
+    "opening_at": "07:30",
+    "closing_at": "22:30",
+    "description": "After more than 50 years of extracting the quintessence from premium green tea buds and coffee beans and wishing to bring customers the most valuable experiences when enjoying, Phuc Long is continuously a pioneer brand with many ideas. Innovative ideas at the forefront of the tea and coffee industry.\n\nWe believe that each tea and coffee product will be more and more excellent when created from constant striving and passion. And it is the connection based on trust, honesty and trust that contributes to bringing the beauty of tea & coffee culture to fly higher and farther. Continuing efforts, from the first store, until now, Phuc Long has built more than 80 stores in the areas of Ho Chi Minh City, Binh Duong, Bien Hoa, Can Tho, Da Nang, Nha Trang, and Hanoi serving the Fresh drinks from tea and coffee. Not stopping there, we continue to develop and expand the store system from South to North. Increase product coverage to all systems: supermarkets, convenience stores…\n\nWorking with the motto ",
+    "phone_number": "0914162689",
+    "status": 5,
+    "address": "69 Tran Dai Nghia, Bach Khoa, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 1, 0, 0]
+    ],
+    "devices": [{ "name": "エアコン", "quantity": 3, "status": "good" }],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Gia Huy",
+    "opening_at": "06:00",
+    "closing_at": "23:00",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 4, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 0, 2, 2, 1, 1, 2, 2, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 0, 2, 2, 1, 1, 2, 2, 1, 1, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPDcTGUIfkcIbWZaKh8B66ve6bwosCspYt3M7X9=w426-h240-k-no"
+    ],
+    "description": "サービスオプション：屋外席、取り除く、内部使用。製品サービス：コーヒー。食事のオプション：シート。施設：犬可、トイレ。雰囲気：のんびりとした雰囲気。快適な環境：人口グループ、グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0913502978",
+    "address": "Ki ốt số 4, Nơ 7, KĐT, Pháp Vân, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Căng-tin Caphe",
+    "opening_at": "08:00",
+    "closing_at": "23:00",
+    "status": 4,
+    "devices": [{ "name": "エアコン", "quantity": 0, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 1, 2, 0, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 1, 2, 0, 1, 1, 1, 1, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPAmGxBwm00A4-tQiv0sv-ywgyAWYrDlIftJzps=w426-h240-k-no"
+    ],
+    "description": "チャンティン・カフェのサービスオプション：屋外席、配達、取り除く、内部使用。アクセシビリティ：バリアフリー入口、多目的トイレ、バリアフリー席、バリアフリー駐車場。製品サービス：コーヒー、アルコール飲料。食事のオプション：朝食、ブランチ、ランチ、夕食、ケータリングサービス、シート。施設：犬可、ジェンダーフレンドリーなトイレ、バー付き、トイレ、Wi-Fi、無料Wi-Fi利用可能。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ：グループに適しています、家族全員に適しています。支払方法：現金のみ。",
+    "owner_ID": 2,
+    "phone_number": "0372099359",
+    "address": "Đối diện số, 31 Ngh. 180/29 P. Kim Hoa, Phương Liên, Đống Đa, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Check in Crema Coffee",
+    "opening_at": "07:30",
+    "closing_at": "21:00",
+    "status": 4,
+    "owner_ID": 14,
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "good" }],
+    "images": [
+      "https://ik.imagekit.io/tvlk/blog/2022/09/quan-cafe-dep-o-ha-noi-1-979x1024.jpeg?tr=dpr-2,w-675"
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0, 0, 0]
+    ],
+    "description": "ハノイにある日本庭園風の美しいカフェです。 店内はワンフロアですが、裏と表の2か所に中庭があり、今もきらめく「バーチャルリビング」コーナーが無数にあります。 メインのインテリアは茶色の木を基調とし、随所に緑の木々が配置されており、安らぎとくつろぎの感覚が満たされます。",
+    "phone_number": "0159876432",
+    "address": "65 P. Trần Quang Diệu, Chợ Dừa, Đống Đa, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Brushed Coffee",
+    "opening_at": "08:30",
+    "closing_at": "22:30",
+    "status": 5,
+    "devices": [{ "name": "エアコン", "quantity": 2, "status": "good" }],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNNgnTHH8XBRFqTZiw_p9apF5oQXKEzUCIQK3nA=w426-h240-k-no"
+    ],
+    "description": "サービスオプション：内部使用。アクセシビリティ：バリアフリー入口、バリアフリー席、バリアフリー駐車場。製品サービス：コーヒー。施設：トイレ。雰囲気：のんびりとした雰囲気、快適な環境。人口グループ、グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0919370189",
+    "address": "26 Ng. 44 P. Đại An, P. Văn Quán, Hà Đông, Hà Nội, 越南",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  }
+]

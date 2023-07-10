@@ -1,0 +1,256 @@
+[
+  {
+    "name": "LAPHO Cà phê",
+    "opening_at": "08:30",
+    "closing_at": "23:30",
+    "status": 4,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 2,
+        "status": "good"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 2, 1, 0, 0, 1, 1, 2, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 2, 1, 0, 0, 1, 1, 2, 2, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNMVFZ1qTLGPL_S0Qj1e4n0Tk0qfvLWB4YFuYU6=w408-h306-k-no",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/330001519_860038831752882_7954646677952573830_n.jpg?_nc_cat=111&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=VputPi4W8W0AX8RjawT&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCK1UYV0-JcDGdCKXKyUhgHVBPhJ1Ra1v730shPnsD67g&oe=64B022C6",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/332698256_1194767368065671_1742038346846136326_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=K6-z3Uh9-FEAX-8RGHy&_nc_ht=scontent.fhan14-4.fna&oh=00_AfAgX72PgJIo8P9FmjFeRlVs8ArWf1jhyOrxNCvORbvrwQ&oe=64B02AA9",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/188482552_10159470302674374_8720492325868719884_n.jpg?_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=j4BYjHsRgtQAX8lPRs1&_nc_ht=scontent.fhan14-3.fna&oh=00_AfBmQZup7LmMG2DmBLTYNorucWACeEnomilkuZhHM68RsQ&oe=64D260E4",
+      "https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/160272579_10159301920989374_3720009204666241492_n.jpg?_nc_cat=108&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Vs9tMXi_bT0AX_hX8NZ&_nc_ht=scontent.fhan14-2.fna&oh=00_AfCu-0TVEP1FuaonTqs5WuNHsysssc4tegeUv4ue_dl8Fw&oe=64D24423",
+      "https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/159422432_10159301920959374_4079826853989454384_n.jpg?_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=05RroY8OVdAAX8wj7bf&_nc_ht=scontent.fhan14-1.fna&oh=00_AfAQ3myzyXeHkfxxZwQBKLdc5mDJVYt7wS1gN26rhzgAMg&oe=64D23600",
+      "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/329626180_1197963040827276_5797450995789267181_n.jpg?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=dGwrzQf_qPkAX9pACVc&_nc_ht=scontent.fhan14-1.fna&oh=00_AfDOENDXTPwDsc4_kKbgEBGpSzWe8FNJ36dcgBN10KFNyQ&oe=64AEE02F"
+    ],
+    "description": "サービスオプション：非接触型食品宅配サービス、配達、内部使用。\n製品サービス：コーヒー。\n施設：トイレ。\n雰囲気：のんびりとした雰囲気、快適な環境。\n人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0973989889",
+    "address": "LÔ 11 DV 09, Khu đô thị Tây Nam Linh Đàm, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Lak Lak",
+    "opening_at": "06:30",
+    "closing_at": "22:30",
+    "status": 0,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 2,
+        "status": "good"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipMcpLAb5PQZF_mEiHxPMGv1EY40QApDnKbz4Ewc=w426-h240-k-no",
+      "https://s3-media0.fl.yelpcdn.com/bphoto/vCF4l_c8vfP5wjvyUqItOA/l.jpg",
+      "https://flavorsofhanoi.com/wp-content/uploads/2023/03/The-Luk-Luk-Restaurant.jpg",
+      "https://img.restaurantguru.com/cdbe-Cafe-Lak-Lak-cafe-interior-1.jpg",
+      "https://img.restaurantguru.com/c6ac-Cafe-Lak-Lak-cafe-interior.jpg",
+      "https://10619-2.s.cdn12.com/rests/small/w400/316_55050645.jpg"
+    ],
+    "description": "食事のオプション:朝食、ケータリングサービス。\n施設：トイレ、子供に適した。\n雰囲気：のんびりとした雰囲気、快適な環境。\n人口グループ、グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0979225759",
+    "address": "Khu Vệ Lăng Cây Sung, Song Phượng, Đan Phượng, Hà Nội",
+    "verified": 0,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "LÊLA Cà Phê",
+    "opening_at": "05:00",
+    "closing_at": "22:30",
+    "status": 4,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 2,
+        "status": "good"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 1, 0, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 1, 1, 0, 1, 1, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPfzkVNUHkr9W_KjV1nnPPlSRXQ4KWPWqIHWy3H=w408-h306-k-no",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/60339415_325094458169203_6332264782086799360_n.jpg?_nc_cat=104&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=e_jApWhTAmQAX_dITKu&_nc_ht=scontent.fhan14-3.fna&oh=00_AfD4R9N9NnBR1CiMUI0SZi_S23kbYqxcVQoO8wHSQ8s7Lw&oe=64D23C2E",
+      "https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/61036961_325094454835870_382729023987384320_n.jpg?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=oB3MF5fEdWcAX9GVJDe&_nc_ht=scontent.fhan14-1.fna&oh=00_AfDIn322L6fGNDuImU9AlmPqjd1B32s8KXAEBsd1Qow-4g&oe=64D25AE4",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-9/60488179_325094494835866_5545375873802174464_n.jpg?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=gOS0Ym1IRXIAX8DluvR&_nc_ht=scontent.fhan14-4.fna&oh=00_AfCaaAghvPwPZibYPHCyA3-SBbhjb7xBSATS0ftt-lSGGg&oe=64D24257",
+      "https://media-cdn.tripadvisor.com/media/photo-s/19/e5/a7/db/photo1jpg.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe5Nb-e04Vuw-6jmZnasePqIamLGsE-3aBdQ&usqp=CAU"
+    ],
+    "description": "サービスオプション: 内部使用。\n製品サービス:コーヒー。\n施設：トイレ、子供に適した。\n雰囲気：のんびりとした雰囲気、快適な環境。\n人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0869641555",
+    "address": "XRQ9+9RH, Yên Lạc, Thanh Xuân, Vĩnh Phúc",
+    "verified": 0,
+    "categories": ["猫カフェ", "喫茶店"]
+  },
+  {
+    "name": "Moc An Coffee & Tea",
+    "images": [
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/279844126_374313824746483_1081452090914494820_n.jpg?stp=c31.0.206.206a_dst-jpg_p206x206&_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=dwaJbpENEKIAX_W_Ncx&_nc_ht=scontent.fhan14-3.fna&oh=00_AfAQXchMI8ETTUnzh3AC5DWURK6Ra_x2lvIV1WaiVXiXmA&oe=64AF2B80",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/279287047_374313821413150_2151708032056226171_n.png?stp=dst-jpg_p206x206&_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=WtqhEm04BfAAX9ZpmxB&_nc_ht=scontent.fhan14-3.fna&oh=00_AfB4dLKeGA4b_Tt4yokqst4TcrmQNpYzRsOhKtPguWgvqg&oe=64B0B7EF",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-9/157852685_105303631633777_7934705461569993137_n.jpg?stp=c34.0.206.206a_dst-jpg_p206x206&_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=6uoz-yx-mfgAX-0Ce-y&_nc_ht=scontent.fhan14-4.fna&oh=00_AfDMcRpKBx8gTcvoGd9JPBIe5_dK_uAGswGlbGsxu5d6cg&oe=64D23511",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/157799865_105303684967105_36176513381655793_n.jpg?stp=c34.0.206.206a_dst-jpg_p206x206&_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=mpFMruCk51EAX-yYaiR&_nc_ht=scontent.fhan14-3.fna&oh=00_AfDmlXw6O-FwJWFETBO1mSk3JorhNxUqqv_VH36MVd_jsA&oe=64D24776",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/323779115_1166654124212325_1774200062960707049_n.jpg?stp=c20.0.206.206a_dst-jpg_p206x206&_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=AjMCpMCGY7kAX-_jO8t&_nc_ht=scontent.fhan14-3.fna&oh=00_AfBbkBy8bTJ2zbowxZnuTSWXEy6H-v_gQumeS62QLd9CAg&oe=64AF066E",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t1.6435-9/189860665_142070461290427_2843187229457700033_n.jpg?stp=c34.0.206.206a_dst-jpg_p206x206&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=1vA7RIhLVbwAX-UE319&_nc_ht=scontent.fhan14-4.fna&oh=00_AfBlse2jNZ_5WRQwCuH5Arh1t9guB9UoRc8bR4Ui7WxYYw&oe=64D26299",
+      "https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/159656437_105303674967106_4838369078961276726_n.jpg?stp=c34.0.206.206a_dst-jpg_p206x206&_nc_cat=108&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=fervXAm6PaQAX-SOLVf&_nc_ht=scontent.fhan14-2.fna&oh=00_AfAgB5pDRQc5MlLZArmR09my7D7gGmdqjekPgo40BYgjHA&oe=64D25C42"
+    ],
+    "owner_ID": 9,
+    "opening_at": "07:00",
+    "closing_at": "22:00",
+    "description": "It is a place with excellent coffee, quiet space, sincerity",
+    "phone_number": "0382202836",
+    "status": 5,
+    "address": "19 Le Thanh Nghi, Bach Mai, Hai Ba Trung, Hanoi, Vietnam",
+    "verified": 0,
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0, 0]
+    ],
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 4,
+        "status": "good"
+      }
+    ],
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Fog Coffee Nam",
+    "opening_at": "07:30",
+    "closing_at": "21:30",
+    "status": 1,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 1,
+        "status": "good"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 2, 1, 2, 1, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 0, 1, 2, 1, 2, 0, 0, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipNqz7X4TMDAtIQ_Gef_oY_tQpXMfB2rFRpiRCWG=w408-h272-k-no",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/349148667_4328253297400164_8171944753230877516_n.jpg?stp=c14.0.206.206a_cp6_dst-jpg_p206x206&_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=e6AYD_SSL-UAX95UfHB&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCoHNHmTQbXJGtFnL_Du0mWNiyVOLXlz4TTkd6peCtruQ&oe=64AEEEFD",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/349634478_24326938306905678_4202577632609632893_n.jpg?stp=cp6_dst-jpg_p206x206&_nc_cat=111&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=cP9ZwnVFPVIAX_n1p8U&_nc_ht=scontent.fhan14-3.fna&oh=00_AfBwWYiNZxw4lg99Rcmihumq1hPSzhVxWHyaEECoAb6TpQ&oe=64B09BA0",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/327454042_708944554013351_8982595224293094560_n.jpg?stp=c0.28.206.206a_dst-jpg_p206x206&_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=XGmtS4FdxkoAX-MNJGU&_nc_ht=scontent.fhan14-4.fna&oh=00_AfAJIK7SXDEwvM33FbFB2sziCA4jSeBpOK-tQt26Kn9XwA&oe=64AFFCEA",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/328112084_1126738124657312_5338968529572599414_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=JS_enUPZanwAX-On94E&_nc_ht=scontent.fhan14-4.fna&oh=00_AfAa62tgPQKR-SbQIyHYK5doaCmiecPsYbu7XEslZ6sj4A&oe=64B032D3",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/321841775_3541788612767434_988077384153152395_n.jpg?stp=cp6_dst-jpg_p206x206&_nc_cat=104&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=zg8j_2-k_cEAX_PHeR_&_nc_ht=scontent.fhan14-3.fna&oh=00_AfBnPBHS5ZFeslgyUjhoxBJ0kinhAvLkUB2l8BtpOHIuyg&oe=64B0B8C2",
+      "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/318695474_190945820126865_7232574810254263015_n.jpg?stp=c0.23.206.206a_cp6_dst-jpg_p206x206&_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=UvMHpCKo--AAX8VC6Vn&_nc_ht=scontent.fhan14-1.fna&oh=00_AfBGi-BOiWi95rOTVuIhHFFEvD_1OtyAKmtHuCwz80J06Q&oe=64AFC55F"
+    ],
+    "description": "サービスオプション:屋外席、取り除く、内部使用。\n製品サービス：コーヒー。\n食事のオプション：シート。\n施設：トイレ。\n雰囲気：のんびりとした雰囲気",
+    "owner_ID": 2,
+    "phone_number": "0906258945",
+    "address": "stringNV1-2 Lô 32 Khu biệt thự liền kề Gelenxia, 885 Đ. Tam Trinh, Yên Sở, Hoàng Mai, Hà Nội",
+    "verified": 0,
+    "categories": ["喫茶店"]
+  },
+  {
+    "name": "Cafe Gia Huy",
+    "opening_at": "06:00",
+    "closing_at": "23:30",
+    "status": 4,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 4,
+        "status": "good"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 0, 2, 1, 0, 2, 1, 2, 1, 1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 1, 0, 1, 2, 1, 0, 2, 1, 1, 1, 1, 0, 0, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipPDcTGUIfkcIbWZaKh8B66ve6bwosCspYt3M7X9=w426-h240-k-no",
+      "https://scontent.iocvnpt.com/resources/portal/Images/AGG/admin.tplongxuyen/ca_phe_gia_huy/thumb/coffee_gia_huy_2_346793232.jpg",
+      "https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/292405756_721995825895475_1027141171629307769_n.jpg?stp=c80.0.206.206a_dst-jpg_p206x206&_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=ktArQPotr9sAX9Ns7Lo&_nc_ht=scontent.fhan14-1.fna&oh=00_AfBT-rM_m49cLipX5TbXQYVKgs5k6KzoBOU_DY4_HwyApQ&oe=64AFBA8F",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/34163494_376291956199167_8209389533112827904_n.jpg?stp=c109.0.206.206a_dst-jpg_p206x206&_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=PaK01_hOm34AX8IVw-T&_nc_oc=AQmCqsQ46_KiYEibpv74bTOa7RVqkumIpOYQFIB4tejZyFMDUDvIZTaiKeX9uKzvYk7T_85SYaW_-tpcx--EY3qZ&_nc_ht=scontent.fhan14-3.fna&oh=00_AfB7fRcgY-5Sgsfl5cC2OZonlO5qc_gPT0OPj-Db7ew1Kg&oe=64D254DE",
+      "https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/34266578_375822829579413_2256083493807194112_n.jpg?stp=c99.0.206.206a_dst-jpg_p206x206&_nc_cat=106&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=qsvFJb74Y5wAX-ywNsE&_nc_ht=scontent.fhan14-2.fna&oh=00_AfBGa7HfSd6gOP7nzzQtbUwlbuUGdU0UzeHV-npoKQ1AFw&oe=64D23C48",
+      "https://scontent.fhan14-2.fna.fbcdn.net/v/t31.18172-8/27912693_331584617336568_6032802906303708211_o.jpg?stp=c34.0.206.206a_dst-jpg_p206x206&_nc_cat=100&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=lk7CgUwCr4cAX-hi6ry&_nc_ht=scontent.fhan14-2.fna&oh=00_AfCB6uWNNQ87KjKmuqS_BUnGs2Drrl-sEPfk6LkfwXBjTA&oe=64D25325",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t31.18172-8/26910477_321361738358856_4463536735096477356_o.jpg?stp=c52.0.206.206a_dst-jpg_p206x206&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=_oBNyeZ45eIAX-k_q5N&_nc_ht=scontent.fhan14-4.fna&oh=00_AfA3coFg0IB2plbvuVOpTD_oge2U_ZWys51bFEuajWUjrQ&oe=64D238A2",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t31.18172-8/26952015_320203888474641_6362161951419815413_o.jpg?stp=c52.0.206.206a_dst-jpg_p206x206&_nc_cat=111&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=ES5mlMT2ixgAX87827o&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCDTc4AR4NaH0O0tgJxjgDXUjwL-ZWJ23FOanEdiDlX8w&oe=64D25191"
+    ],
+    "description": "サービスオプション: 屋外席、取り除く、内部使用。\nアクセシビリティ：バリアフリー席。\n製品サービス：コーヒー。\n施設：犬可、トイレ。\n雰囲気：のんびりとした雰囲気、快適な環境。\n人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0986795868",
+    "address": "Ki ốt số 4, Nơ 7, KĐT, Pháp Vân, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["猫カフェ", "喫茶店"]
+  },
+  {
+    "name": "Cà phê góc phố",
+    "opening_at": "16:00",
+    "closing_at": "00:00",
+    "status": 3,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 2,
+        "status": "bad"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 2, 2, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 2, 2, 1, 0, 0]
+    ],
+    "images": [
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/172496217_775067110112691_4460508792878038952_n.jpg?stp=c63.0.206.206a_dst-jpg_p206x206&_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=wh_TH_CMGGMAX_Yvty0&_nc_ht=scontent.fhan14-3.fna&oh=00_AfCP9aOYapXOXztz6o0eLiNAbSj-OjwTbqRiZlrcN5QhfQ&oe=64D247B7",
+      "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/294351434_167300962477865_2189228745913735026_n.png?stp=dst-png_p206x206&_nc_cat=106&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=8CCzfl1JP-QAX_mwsU5&_nc_oc=AQnTHDKYFgdnDdmwmbRHiH2t_TJfUWp6yTARZ4nCyNfCvxV4hVZtA3JMhqjI6HGIBTOpbQUr79G0we8_uQ38g1Gb&_nc_ht=scontent.fhan14-2.fna&oh=00_AfChQGZCAhduGhzjh1HiFVdR3pq5-9si50Xb3ZbYEjnPjg&oe=64AEFF0D",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/176084940_779161169703285_3855207727964582827_n.jpg?stp=c80.0.206.206a_dst-jpg_p206x206&_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=4rraE2Qd5bIAX81vrDD&_nc_ht=scontent.fhan14-3.fna&oh=00_AfAEA0uLJ-2gCFzTDUh5IALfqPKcbwlzmGgBHwHMYw20Dw&oe=64D251AF",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/156985919_749525772666825_7352995120173228289_n.jpg?stp=c72.0.206.206a_dst-jpg_p206x206&_nc_cat=111&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=CBVP81LiN84AX9uRAKX&_nc_ht=scontent.fhan14-3.fna&oh=00_AfBtG4sCmPk8k3yrS0uLVXA42HU0oGaGErcG_y4cSnFoUw&oe=64D2443B",
+      "https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/157032371_749525719333497_1977050664166533877_n.jpg?stp=c0.12.206.206a_dst-jpg_p206x206&_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=6bs11BYKp7AAX_PKv1E&_nc_ht=scontent.fhan14-1.fna&oh=00_AfD_-wbZgO1gkiYxrhyOAlv46ootJclxPN_0Qq98tFoVLA&oe=64D267E3",
+      "https://scontent.fhan14-3.fna.fbcdn.net/v/t1.6435-9/142806064_729047984714604_6487451981176777474_n.jpg?stp=c80.0.206.206a_dst-jpg_p206x206&_nc_cat=111&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=PMsCw19fi8MAX840kRo&_nc_ht=scontent.fhan14-3.fna&oh=00_AfAIYhFj3O6QbTe-3YUczB20ztZcB3GLubC3ozGftIWRjw&oe=64D25E54",
+      "https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-9/135729838_716895505929852_5530900095583180973_n.jpg?stp=c80.0.206.206a_dst-jpg_p206x206&_nc_cat=107&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=ndXYJK3WJ4EAX9XJzEJ&_nc_ht=scontent.fhan14-1.fna&oh=00_AfCWPzEzovSlouKJpbOw-o6B0vzm_HBK2kPgnuE-RdEB6g&oe=64D24977"
+    ],
+    "description": "サービスオプション:内部使用。\n製品サービス：コーヒー。\n施設：トイレ。\n雰囲気：のんびりとした雰囲気、快適な環境。\n人口グループ：グループに適しています。",
+    "owner_ID": 2,
+    "phone_number": "0928273666",
+    "address": "203 Đ. Bờ Sông Sét, Đồng Tâm, Hai Bà Trưng, Hà Nội",
+    "verified": 0,
+    "categories": ["猫カフェ"]
+  },
+  {
+    "name": "Cà Phê Hà Nội 75",
+    "opening_at": "07:00",
+    "closing_at": "23:00",
+    "status": 4,
+    "devices": [
+      {
+        "name": "エアコン",
+        "quantity": 1,
+        "status": "good"
+      }
+    ],
+    "crowded_hours": [
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 0, 1, 1, 1, 1, 1, 2, 0, 1, 1, 0]
+    ],
+    "images": [
+      "https://lh5.googleusercontent.com/p/AF1QipOfXuzf19A7ms_cO0auARfUjmgmXVDhxoaWdNZi=w300-h225-p-k-no",
+      "https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/297577341_765647464773871_8519658292215633062_n.jpg?stp=c34.0.206.206a_dst-jpg_p206x206&_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=da31f3&_nc_ohc=TrnfruVwSFcAX8zFD79&_nc_oc=AQlLkpWbGdM6FTzDwuptADRPG3TVZZamUlvAQ-1m9wviBCZC_HnyNCJzfVlDMfPGloEqDyNgTonbTzTf-lxSO6Rv&_nc_ht=scontent.fhan14-4.fna&oh=00_AfDoo3d1fKULoVOMFalP8YMXMUUG5ZCAoGEe1y7NGlEv2Q&oe=64B07E52",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRncI1_UOhENoyezjv0FNSIaaikQ4KUB2Hwpw&usqp=CAU",
+      "https://images.foody.vn/res/g80/797545/prof/s/foody-upload-api-foody-mobile-hn-c-jpg-181109171737.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj1ykvyHaJDPFazVf7e7y0Ny8EQpFGr0QLXg&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaDLd5STPhUxuntJFycrysvUwmZY0D7VOo3g&usqp=CAU"
+    ],
+    "description": "サービスオプション：屋外席、内部使用。\n製品サービス：コーヒー。\n食事のオプション：ケータリングサービス、シート。\n施設：トイレ、子供に適した。\n雰囲気：のんびりとした雰囲気。\n快適な環境：人口グループ。",
+    "owner_ID": 2,
+    "phone_number": "0913502951",
+    "address": "XRPV+XXC, Tương Mai, Hoàng Mai, Hà Nội",
+    "verified": 1,
+    "categories": ["喫茶店"]
+  }
+]
