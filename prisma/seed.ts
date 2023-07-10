@@ -105,10 +105,23 @@ async function getListWithIdMap(param: {
 export const cleanupDatabase = () => {
   console.log('Cleanup database');
   const prisma = new PrismaClient();
-  const modelNames = Prisma.dmmf.datamodel.models.map((model) => model.name);
+  const names = [
+    'images',
+    'coffee_shops',
+    'users',
+    'reviews',
+    'bookmarks',
+    'categories',
+    'devices',
+    'coffee_shop_categories',
+    'coffee_shop_devices',
+  ];
+  // const modelNames = Prisma.dmmf.datamodel.models.map((model) =>
+  //   console.log(model.name),
+  // );
 
   return Promise.all(
-    modelNames.map((modelName) => prisma[modelName.toLowerCase()].deleteMany()),
+    names.map((modelName) => prisma[modelName.toLowerCase()].deleteMany()),
   );
 };
 
