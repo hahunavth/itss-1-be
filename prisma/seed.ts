@@ -221,7 +221,7 @@ export async function connectPrismaMNCreateOne(
 
 async function main() {
   // delete all
-  await cleanupDatabase();
+  // await cleanupDatabase();
   // console.log(reviews.length);
   // // random sort
   // const reviewsRandom = reviews.sort(() => Math.random() - 0.5);
